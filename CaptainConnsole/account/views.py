@@ -1,11 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-candies = [
-    {'name': 'smartis', 'price': 4.99},
-    {'name': 'skittles', 'price': 5.99}
+favorites = [
+    {'name': 'super mario'},
+    {'name': 'tetris'}
+]
+
+viewed = [
+    {'name': 'super mario'},
+    {'name': 'tetris'}
 ]
 
 # Create your views here.
 def index(request):
-    return render(request, 'account/index.html')
+    return render(request, 'account/index.html', context={'favorites': favorites, 'viewed': viewed})

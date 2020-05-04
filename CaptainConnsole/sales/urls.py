@@ -1,8 +1,7 @@
 from django.urls import path
-from . import views
+from django.shortcuts import render
 
 ''' localhost/3000/admin/ '''
 
-urlpatterns = [
-    path('', views.index, name="sales-index")
-]
+def index(request):
+    return render(request, 'sales/index.html')

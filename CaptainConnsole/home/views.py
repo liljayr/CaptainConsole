@@ -8,5 +8,4 @@ candies = [
 
 # Create your views here.
 def index(request):
-    return HttpResponse('the hoooome site!')
-
+    return render(request, 'home/index.html')

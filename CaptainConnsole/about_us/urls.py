@@ -1,7 +1,7 @@
 from django.urls import path
-from django.shortcuts import render
+from . import views
 
-''' localhost/3000/admin/ '''
-
-def index(request):
-    return render(request, 'about_us/index.html')
+urlpatterns = [
+    # http://localhost:8000/manufacturers
+    path('', views.index, name="about_us-index"),
+]

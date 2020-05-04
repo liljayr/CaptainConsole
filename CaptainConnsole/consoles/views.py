@@ -9,4 +9,4 @@ candies = [
 
 # Create your views here.
 def index(request):
-    return render(request, 'console/index.html')
+    return render(request, 'consoles/index.html')

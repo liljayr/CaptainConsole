@@ -1,5 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Account</h1>
 
+    <div class="container">
+        <h1>Account</h1>
+        <div class="accinfo">
+
+            <img src="" alt="Profile picture">
+            <p>Matthildur</p>
+            <p>matta@gmail.com</p>
+            <div>
+                <p>edit</p>
+                <img src="" alt="Pen">
+            </div>
+        </div>
+        <div class="favorites">
+            <h2>Favorites</h2>
+            {% for fav in favorites %}
+                <img src="" alt="Picture of game">
+                <p>{{ fav.name }} </p>
+            {% endfor %}
+        </div>
+        <div class="viewed">
+            <h2>Recently viewed</h2>
+            {% for view in viewed %}
+                <img src="" alt="Picture of game">
+                <p>{{ view.name }} </p>
+            {% endfor %}
+        </div>
+        <div class="prevorders">
+            <h2>Previous orders</h2>
+        </div>
+    </div>
 {% endblock %}

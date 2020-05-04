@@ -8,4 +8,4 @@ candies = [
 
 # Create your views here.
 def index(request):
-    return HttpResponse('your account site!')
+    return render(request, 'account/index.html')

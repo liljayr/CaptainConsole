@@ -8,7 +8,7 @@ candies = [
 
 # Create your views here.
 def index(request):
-    return HttpResponse('heyjo gameers')
+    return render(request, 'games/index.html')
 
     #return render(request, 'candy/index.html', context={
     #    'candies': candies

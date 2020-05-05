@@ -1,0 +1,8 @@
+.gameStyle {
+    border: thin solid black;
+}
+
+.allGames {
+    /*flex: auto;*/
+    display:flex;
+}

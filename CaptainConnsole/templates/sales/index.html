@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Sales!</h1>
+    {% for item in onSale %}
+        <h4> {{ item.name }}</h4>
+        <p> {{ item.price }}</p>
+    {% endfor %}
 {% endblock %}

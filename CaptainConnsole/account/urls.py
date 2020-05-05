@@ -4,6 +4,5 @@ from . import views
 urlpatterns = [
     # http://localhost:8000/manufacturers
     path('', views.index, name="account-index"),
-    # http://localhost:8000/manufacturers
-    path('', views.prev_index, name="prev-index"),
+    path('prev_orders', views.index2, name="prev-index"),
 ]

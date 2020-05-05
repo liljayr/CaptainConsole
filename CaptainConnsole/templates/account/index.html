@@ -13,6 +13,9 @@
                 <img src="" alt="Pen">
             </div>
         </div>
+        <div class="prevorders">
+            <a href = 'prev_orders/'>Previous orders</a>
+        </div>
         <div class="favorites">
             <h2>Favorites</h2>
             {% for fav in favorites %}
@@ -27,8 +30,6 @@
                 <p>{{ view.name }} </p>
             {% endfor %}
         </div>
-        <div class="prevorders">
-            <h2>Previous orders</h2>
-        </div>
+
     </div>
 {% endblock %}

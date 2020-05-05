@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <div class="accinfo">
+            <h2>Account info</h2>
+            <img src="" alt="Profile picture">
+            <p>Matthildur</p>
+            <p>matta@gmail.com</p>
+            <div>
+                <p>edit</p>
+                <img src="" alt="Pen">
+            </div>
+        </div>
+        <div class="prevorders">
+            <h2>Previous orders</h2>
+            {% for order in prevorders %}
+                <img src="" alt="Picture of game">
+                <p>{{ order.name }} </p>
+                <p>{{ order.price }}$ </p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -10,6 +10,6 @@ candies = [
 def index(request):
     return render(request, 'games/index.html')
 
-    #return render(request, 'candy/prev_index.html', context={
+    #return render(request, 'candy/prev_orders.html', context={
     #    'candies': candies
     #})

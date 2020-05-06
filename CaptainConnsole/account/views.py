@@ -23,4 +23,7 @@ def index(request):
 def index2(request):
     return render(request, 'account/prev_orders.html', context={'prev_orders': prev_orders})
 
+def index3(request):
+    return render(request, 'account/edit.html')
+
 

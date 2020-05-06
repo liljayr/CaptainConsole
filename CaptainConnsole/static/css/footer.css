@@ -1,0 +1,25 @@
+.footer{
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: aliceblue;
+    padding: 2rem;
+}
+.left-half {
+    display: flex;
+    flex: 1;
+}
+.right-half {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.contact-info{
+    flex: 1;
+    font-size: large;
+}
+.address-info{
+    flex: 1;
+}

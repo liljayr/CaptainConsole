@@ -1,0 +1,28 @@
+.header{
+    display:flex;
+    padding:1rem;
+    background-color: aliceblue;
+}
+.left-corner{
+    flex: 1;
+    display: flex;
+    margin:auto;
+    align-items: center;
+}
+.right-corner{
+    flex: 1;
+    display:flex;
+    justify-content: flex-end;
+}
+.img_account{
+    width: 6rem;
+}
+
+.img_captain{
+    width: 8rem;
+}
+.logo-title{
+    font-size: large;
+    padding-left: 1rem;
+    font-family: monospace;
+}

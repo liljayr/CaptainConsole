@@ -14,11 +14,7 @@
     <h1>Games!</h1>
     <div class="allGames">
         {% for game in games %}
-            <div class="gameStyle">
-                <h4> {{ game.name }}</h4>
-                <p> {{ game.price }}</p>
-                <!--<img src={{ game.image }}/>-->
-            </div>
+            {%  include 'games/single_game.html' with games=games %}
         {% endfor %}
     </div>
     <!--<script src="../../static/js/gameScript.js"></script>-->

@@ -1,0 +1,47 @@
+.shipping_info{
+    display: flex;
+    flex-direction: column;
+}
+
+.card_info{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-right: 40rem;
+}
+
+.checkout_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+input{
+    border-radius: 3rem;
+    padding: 0.5rem;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-right: 35rem;
+}
+
+.back_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: none;
+    width: 14rem;
+}
+
+.next_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: #7fffd4;
+    width: 14rem;
+}
+

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" href="{%static 'css/cart/checkoutt.css' %}"/>
+    <h1>Checkout</h1>
+    <div class="checkout_info">
+        <div class="shipping_info">
+            <h3>Shipping information</h3>
+            <input type="text" id="country" placeholder="Country">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="streetname" placeholder="Streetname">
+            <input type="text" id="housenumber" placeholder="Housenumber">
+            <input type="text" id="postalcode" placeholder="Postalcode">
+        </div>
+        <div class="card_info">
+            <h3>Card information</h3>
+            <input type="text" id="cardholder" placeholder="Cardholder">
+            <input type="text" id="cardnumber" placeholder="Cardnumber">
+            <input type="text" id="expiration_date" placeholder="Expiration date">
+            <input type="text" id="cvc" placeholder="CVC">
+        </div>
+    </div>
+
+    <div class="buttons">
+        <form action="{% url 'cart-index' %}">
+            <input type="submit" class="back_button"value="Back" />
+        </form>
+
+        <form action="{% url 'success-index' %}">
+            <input type="submit" class="next_button"value="Next" />
+        </form>
+    </div>
+
+
+    
+
+{% endblock %}

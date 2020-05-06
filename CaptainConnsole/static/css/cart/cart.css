@@ -1,0 +1,45 @@
+.page{
+    font-size: medium;
+}
+
+.header{
+    background-color: #7fffd4;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+.table {
+    mso-cellspacing: 5rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.prev_order_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: #7fffd4;
+    width: 14rem;
+}
+
+.checkout_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: #7fffd4;
+    width: 14rem;
+}
+
+.cart{
+    border: black;
+}
+
+
+
+
+
+
+

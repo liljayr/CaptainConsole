@@ -1,0 +1,10 @@
+.success{
+    display: flex;
+    justify-content: center;
+    width: 40rem;
+    background-color: #6DDCBD;
+}
+
+.text_n_stuff{
+    background-color: aquamarine;
+}

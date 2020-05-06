@@ -1,5 +1,39 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <h1>Cart</h1>
+    <link rel="stylesheet" href="{%static 'css/cart/cart.css' %}"/>
+    <h2>My Cart</h2>
+    <div class="page">
+        <div class="cart">
+                <table class="table">
+                    <tbody>
+                            <tr class="header">
+                                <td>Items</td>
+                                <td>Amount</td>
+                                <td>Price</td>
+                            </tr>
+
+                        {% for item in cart%}
+                            <tr>
+                                <td> {{ item.name }} </td>
+                                <td> {{ item.amount }} </td>
+                                <td> ${{ item.price }} </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+
+        <p>Total price : ${{ total_price }}</p>
+        <div class="buttons">
+            <form action="{% url 'prev-index' %}">
+                <input type="submit" class="prev_order_button" value="Previous orders" />
+            </form>
+            <form action="{% url 'checkout-index' %}">
+                <input type="submit" class="checkout_button"value="Checkout" />
+            </form>
+        </div>
+    </div>
+
 
 {% endblock %}

@@ -1,4 +1,4 @@
-.success{
+.container{
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -10,16 +10,12 @@
     display: flex;
     justify-content: center;
 }
+
 .text{
     display: flex;
     font-size: large;
     justify-content: center;
-}
-
-.more_games_button{
-    border-radius: 3rem;
-    padding: 1rem;
-    background-color: #7fffd4;
-    font-size: large;
-    justify-self: center;
+    text-align: center;
+    margin-left: 40rem;
+    margin-right: 40rem;
 }

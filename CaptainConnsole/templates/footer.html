@@ -1,18 +1,22 @@
+{% load static %}
 <div class="footer">
     <div class="left-half">
         <div class="contact-info">
-            <h3>Contact us</h3>
-            <p>phone: 777-7777</p>
-            <p>email: capcons@mail.com</p>
+            <strong>Contact us</strong>
+            <div>Phone: 777-7777</div>
+            <div>Email: captaincons@mail.com</div>
         </div>
         <div class="address-info">
-            <p>Something avenue,
-            Something lane 1029,
-            Somewheresville,
-            Earth</p>
+            <div>Something Avenue</div>
+            <div>Something Lane 1029</div>
+            <div>Somewheresville</div>
+            <div>Earth</div>
         </div>
     </div>
     <div class="right-half">
-        <p>Follow us</p>
+        <div class="follow-link">Follow us</div>
+        <div class="social-media-links">
+            {% include 'social_media.html' %}
+        </div>
     </div>
 </div>

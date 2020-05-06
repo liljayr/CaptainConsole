@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="{%static 'css/footer.css' %}"/>
 </head>
 <body>
-    {% include 'header.html' %}
-    {% include 'navigation.html' %}
+    <div>
+        {% include 'header.html' %}
+        {% include 'navigation.html' %}
+    </div>
 
     <div class="container">
         {% block content %}

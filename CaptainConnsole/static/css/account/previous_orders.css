@@ -18,15 +18,11 @@
     width: 30%;
 }
 
-.favorites{
-    width: 30%;
+.prevorders{
+    width: 60%;
 }
 
-.viewed{
-    width: 30%;
-}
-
-.gamescroll{
+.orders{
     border: 0.1rem solid black;
     border-radius: 1rem;
     text-align: center;
@@ -35,4 +31,17 @@
 
 .game{
     margin-top: 1rem;
+}
+
+.edit{
+    border-radius: 3rem;
+    padding: 1rem;
+    width: 7rem;
+}
+
+.profile_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: #7fffd4;
+    width: 14rem;
 }

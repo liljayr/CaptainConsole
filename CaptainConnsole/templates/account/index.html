@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/account/account.css' %}">
     <div class="container">
         <div class="account">
             <div class="acc">
@@ -12,12 +12,12 @@
             <div class="accinfo">
                 <p>Matthildur</p>
                 <p>matta@gmail.com</p>
-                <form action="{% url 'prev-index' %}">
-                    <input type="submit" value="Edit"/>
+                <form action="{% url 'edit-index' %}">
+                    <input class="edit" type="submit" value="Edit"/>
                 </form>
             </div>
             <form action="{% url 'prev-index' %}">
-                    <input type="submit" value="Previous orders"/>
+                    <input class="prev_order_button" type="submit" value="Previous orders"/>
             </form>
         </div>
         <div class="favorites">

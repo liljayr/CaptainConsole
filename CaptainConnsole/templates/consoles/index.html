@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Consoles</h1>
+    {% for console in consoles %}
+        <h4> {{ console.name }}</h4>
+        <p> {{ console.price }}</p>
+    {% endfor %}
 {% endblock %}

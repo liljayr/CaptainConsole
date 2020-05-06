@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.accinfo{
+    text-align: center;
+    margin-top: 7rem;
+}
+
+.account{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.favorites{
+    width: 30%;
+}
+
+.viewed{
+    width: 30%;
+}
+
+.gamescroll{
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    text-align: center;
+    height: 40rem;
+}
+
+.game{
+    margin-top: 1rem;
+}

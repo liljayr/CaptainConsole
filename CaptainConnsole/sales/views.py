@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from renderTemplates import renderTemplate
 
 onSale = [
     {'name': 'Super Mario Bros', 'price': 4.99},
@@ -7,6 +6,6 @@ onSale = [
 
 # Create your views here.
 def index(request):
-    return render(request, 'sales/index.html', context={
+    return renderTemplate(request, 'sales/index.html', context={
         'onSale': onSale
     })

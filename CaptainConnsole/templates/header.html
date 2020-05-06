@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% load static %}
+<div class="header">
+    <div class="left-corner">
+        <img src="{% static 'images/captain_icon.png' %}" class="img_captain" />
+        <div class="logo-title">Captain Console</div>
+    </div>
+    <div class="right-corner">
+        <div class="account">
+            <img src="{% static 'images/account_icon.png' %}" class="img_account" />
+            <p> is logged in? {{ isLoggedIn }} </p>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from renderTemplates import renderTemplate
 
 
 #Dummy data -- replace with connection to database
@@ -13,10 +12,10 @@ for item in range(len(cart)):
 
 # Create your views here.
 def index(request):
-    return render(request, 'cart/index.html', context={ 'cart' : cart, 'total_price' : total_price })
+    return renderTemplate(request, 'cart/index.html', context={ 'cart' : cart, 'total_price' : total_price })
 
 def checkout(request):
-    return render(request, 'cart/checkout.html')
+    return renderTemplate(request, 'cart/checkout.html')
 
 def success(request):
-    return render(request, 'cart/success.html')
+    return renderTemplate(request, 'cart/success.html')

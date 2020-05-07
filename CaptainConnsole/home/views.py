@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from renderTemplates import renderTemplate
+from common.renderTemplates import renderTemplate
 
 games = [
     {'img': 'https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/virtual_console_nintendo_3ds_7/SI_3DSVC_SuperMarioBros.jpg'},

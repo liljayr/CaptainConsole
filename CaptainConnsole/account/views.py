@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from renderTemplates import renderTemplate
 
 favorites = [
     {'name': 'super mario'},
@@ -18,12 +17,12 @@ prev_orders = [
 
 # Create your views here.
 def index(request):
-    return render(request, 'account/index.html', context={'favorites': favorites, 'viewed': viewed})
+    return renderTemplate(request, 'account/index.html', context={'favorites': favorites, 'viewed': viewed})
 
 def prev_orders(request):
-    return render(request, 'account/prev_orders.html', context={'prev_orders': prev_orders})
+    return renderTemplate(request, 'account/prev_orders.html', context={'prev_orders': prev_orders})
 
 def edit(request):
-    return render(request, 'account/edit.html')
+    return renderTemplate(request, 'account/edit.html')
 
 

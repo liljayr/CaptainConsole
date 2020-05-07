@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'sales.apps.SalesConfig',
     'about_us.apps.AboutUsConfig',
-]
+    ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'account.apps.AccountConfig',
     'cart.apps.CartConfig',
     'consoles.apps.ConsolesConfig',
@@ -45,11 +44,9 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'sales.apps.SalesConfig',
     'about_us.apps.AboutUsConfig',
-=======
-    'games.apps.GamesConfig',
-    'consoles.apps.ConsolesConfig',
->>>>>>> 6e1d114ffc757d8d5fcac5794add88a45679e032
-]
+    ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

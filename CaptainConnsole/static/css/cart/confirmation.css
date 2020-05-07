@@ -1,0 +1,37 @@
+.confirm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.delivery_info{
+    display: flex;
+    flex-direction: column;
+}
+
+.card_info{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-right: 35rem;
+}
+
+.back_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: none;
+    width: 14rem;
+}
+
+.confirm_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: #7fffd4;
+    width: 14rem;
+    margin-left: 2rem;
+}

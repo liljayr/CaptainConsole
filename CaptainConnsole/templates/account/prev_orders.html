@@ -22,11 +22,11 @@
         <div class="prevorders">
             <h2>Previous orders</h2>
             <div class="orders">
-                {% for order in prev_orders %}
+                {% for o in prev_orders %}
                     <div class="order">
-                        <img src="" alt="Picture of game">
-                        <p>{{ order.name }} </p>
-                        <p>{{ order.price }}$ </p>
+                        <img src="" alt="Pic of order">
+                        <p>{{ o.name }}</p>
+                        <p>{{ o.price }}</p>
                     </div>
                 {% endfor %}
             </div>

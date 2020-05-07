@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% load static %}
+<div class="footer">
+    <div class="left-half">
+        <div class="contact-info">
+            <strong>Contact us</strong>
+            <div>Phone: 777-7777</div>
+            <div>Email: captaincons@mail.com</div>
+        </div>
+        <div class="address-info">
+            <div>Something Avenue</div>
+            <div>Something Lane 1029</div>
+            <div>Somewheresville</div>
+            <div>Earth</div>
+        </div>
+    </div>
+    <div class="right-half">
+        <div class="follow-link">Follow us</div>
+        <div class="social-media-links">
+            {% include 'social_media.html' %}
+        </div>
+    </div>
+</div>

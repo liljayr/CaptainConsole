@@ -1,14 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from renderTemplates import renderTemplate
 
-candies = [
-    {'name': 'smartis', 'price': 4.99},
-    {'name': 'skittles', 'price': 5.99}
-]
-
-# Create your views here.
-
-
-# Create your views here.
 def index(request):
-    return render(request, 'about_us/index.html')
+    return renderTemplate(request, 'about_us/index.html')

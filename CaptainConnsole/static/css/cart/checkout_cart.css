@@ -1,0 +1,26 @@
+.items{
+    font-weight: bold;
+    font-size: medium;
+    padding-bottom: 1rem;
+}
+
+.header{
+    font-weight: bold;
+    font-size: medium;
+}
+
+.checkout_cart{
+    border-style: solid;
+    border-color: gray;
+    border-radius: 3rem;
+    border-width: 0.1rem;
+    padding: 3rem
+}
+
+.total{
+    border-top: 0.1rem solid slategrey;
+    padding-top: 2rem;
+    font-size: medium;
+    font-weight: bold;
+}
+

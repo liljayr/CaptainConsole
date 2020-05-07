@@ -1,0 +1,10 @@
+.captain-slide {
+    overflow: hidden;
+    max-height: 34rem;
+    height: 34rem;
+}
+
+.captain-carousel-inner, .captain-image {
+    height: 100%;
+    width: 100%;
+}

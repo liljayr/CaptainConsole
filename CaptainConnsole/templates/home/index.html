@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div id="myCarousel" class="carousel slide retro-slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide captain-slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         {% for game in games %}
@@ -9,10 +9,10 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner captain-carousel-inner">
         {% for game in games %}
-        <div class="item{% if forloop.first %} active{% endif %}">
-            <img src="{{ game.img }}" style="width:100%;">
+        <div class="item captain-image{% if forloop.first %} active{% endif %}">
+            <img class="captain-game-img" src="{{ game.img }}" style="width:100%; height: 100%">
         </div>
         {% endfor %}
     </div>

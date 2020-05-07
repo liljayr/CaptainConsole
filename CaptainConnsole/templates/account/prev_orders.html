@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/account/previous_orders.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/account/account.css' %}">
     <div class="container">
         <div class="account">
             {% include 'account/account.html' %}
             <form action="{% url 'account-index' %}">
-                    <input class="profile_button" type="submit" value="Back to profile"/>
+                    <input class="button" type="submit" value="Back to profile"/>
             </form>
         </div>
         <div class="prevorders">
             <h2>Previous orders</h2>
-            <div class="orders">
+            <div class="scroll">
                 {% for o in orders %}
-                    <div class="order">
+                    <div class="product">
                         <img src="" alt="Pic of order">
                         <p>{{ o.name }}</p>
                         <p>{{ o.price }}$</p>

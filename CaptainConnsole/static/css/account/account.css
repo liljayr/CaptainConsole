@@ -39,13 +39,17 @@
     margin-top: 1rem;
 }
 
+.prevorders{
+    width: 60%;
+}
+
 .edit{
     border-radius: 3rem;
     padding: 1rem;
     width: 7rem;
 }
 
-.prev_order_button{
+.button{
     border-radius: 3rem;
     padding: 1rem;
     background-color: #7fffd4;

@@ -1,4 +1,4 @@
-from renderTemplates import renderTemplate
+from common.renderTemplates import renderTemplate
 
 
 #Dummy data -- replace with connection to database

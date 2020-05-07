@@ -20,10 +20,10 @@ prev_orders = [
 def index(request):
     return render(request, 'account/index.html', context={'favorites': favorites, 'viewed': viewed})
 
-def index2(request):
+def prev_orders(request):
     return render(request, 'account/prev_orders.html', context={'prev_orders': prev_orders})
 
-def index3(request):
+def edit(request):
     return render(request, 'account/edit.html')
 
 

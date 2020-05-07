@@ -12,7 +12,7 @@ class Games(models.Model):
     category = models.ForeignKey(GameCategory, on_delete=models.CASCADE)
     price = models.FloatField()
     onSale = models.BooleanField()
-    console = models.ForeignKey(Consoles, on_delete=models.CASCADE)       #TODO: Map to console
+    console = models.ForeignKey(Consoles, on_delete=models.CASCADE)
 
 
 class GameImage(models.Model):

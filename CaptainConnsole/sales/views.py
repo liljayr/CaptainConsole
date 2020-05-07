@@ -1,4 +1,4 @@
-from renderTemplates import renderTemplate
+from common.renderTemplates import renderTemplate
 
 onSale = [
     {'name': 'Super Mario Bros', 'price': 4.99},

@@ -1,4 +1,4 @@
-from renderTemplates import renderTemplate
+from common.renderTemplates import renderTemplate
 
 consoles = [
     {'name': 'Nintendo', 'price': 40.99},

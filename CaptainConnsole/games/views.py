@@ -10,4 +10,4 @@ def index(request):
     return render(request, 'games/index.html', context)
 #if doesn't runn turn off db connection in pycharm
 def index2(request):
-    return renderTemplate(request, 'games/index.html')
+    return render(request, 'games/index.html')

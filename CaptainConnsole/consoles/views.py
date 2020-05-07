@@ -1,3 +1,5 @@
+from django.shortcuts import render
+
 from renderTemplates import renderTemplate
 
 consoles = [
@@ -7,6 +9,6 @@ consoles = [
 
 # Create your views here.
 def index(request):
-    return renderTemplate(request, 'consoles/index.html', context={
+    return render(request, 'consoles/index.html', context={
         'consoles': consoles
     })

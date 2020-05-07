@@ -1,3 +1,4 @@
+from django.shortcuts import render
 
 from renderTemplates import renderTemplate
 
@@ -10,7 +11,7 @@ games = [
 #commonParams = {'isLoggedIn': True}
 
 def index(request):
-    return renderTemplate(request, 'home/index.html', {'games': games})
+    return render(request, 'home/index.html', {'games': games})
 
 
 #def renderTemplate(request, template, params):

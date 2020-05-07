@@ -10,6 +10,6 @@ class Consoles(models.Model):
     price = models.FloatField()
     onSale = models.BooleanField()
 
-class GameImage(models.Model):
+class ConsoleImage(models.Model):
     image = models.CharField(max_length=999)
-    game = models.ForeignKey(Consoles, on_delete=models.CASCADE)
+    console = models.ForeignKey(Consoles, on_delete=models.CASCADE)

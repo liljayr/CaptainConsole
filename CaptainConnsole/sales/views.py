@@ -1,3 +1,5 @@
+from django.shortcuts import render
+
 from renderTemplates import renderTemplate
 
 onSale = [
@@ -6,6 +8,6 @@ onSale = [
 
 # Create your views here.
 def index(request):
-    return renderTemplate(request, 'sales/index.html', context={
+    return render(request, 'sales/index.html', context={
         'onSale': onSale
     })

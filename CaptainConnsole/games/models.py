@@ -1,5 +1,5 @@
 from django.db import models
-from consoles.models import Consoles
+from consoles.models import ConsoleCategory
 
 #id column is default created as primary key, autoincrement
 
@@ -12,7 +12,8 @@ class Games(models.Model):
     category = models.ForeignKey(GameCategory, on_delete=models.CASCADE)
     price = models.FloatField()
     onSale = models.BooleanField()
-    console = models.ForeignKey(Consoles, on_delete=models.CASCADE)
+    discount = models.FloatField(default=0)
+    console = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE)
 
 
 class GameImage(models.Model):

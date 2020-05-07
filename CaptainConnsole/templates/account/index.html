@@ -1,46 +1,14 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/account/account.css' %}">
     <div class="container">
         <div class="account">
-            <div class="acc">
-                <h1>Account</h1>
-                <img src="" alt="Profile picture">
-            </div>
-            <div class="accinfo">
-                <p>Matthildur</p>
-                <p>matta@gmail.com</p>
-                <form action="{% url 'edit-index' %}">
-                    <input class="edit" type="submit" value="Edit"/>
-                </form>
-            </div>
+            {% include 'account/account.html' %}
             <form action="{% url 'prev-index' %}">
                     <input class="prev_order_button" type="submit" value="Previous orders"/>
             </form>
         </div>
-        <div class="favorites">
-            <h2>Favorites</h2>
-            <div class="gamescroll">
-                {% for fav in favorites %}
-                    <div class="game">
-                        <img src="" alt="Picture of game">
-                        <p>{{ fav.name }} </p>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="viewed">
-            <h2>Recently viewed</h2>
-            <div class="gamescroll">
-                {% for view in viewed %}
-                    <div class="game">
-                        <img src="" alt="Picture of game">
-                        <p>{{ view.name }} </p>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
+        {% include 'account/account_extra.html' %}
     </div>
 {% endblock %}

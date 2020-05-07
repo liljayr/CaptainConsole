@@ -26,14 +26,16 @@
     width: 30%;
 }
 
-.gamescroll{
+.scroll{
     border: 0.1rem solid black;
     border-radius: 1rem;
     text-align: center;
     height: 40rem;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.game{
+.product{
     margin-top: 1rem;
 }
 

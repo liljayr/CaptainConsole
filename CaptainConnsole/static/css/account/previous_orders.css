@@ -27,6 +27,8 @@
     border-radius: 1rem;
     text-align: center;
     height: 40rem;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .order{

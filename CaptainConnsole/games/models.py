@@ -16,7 +16,6 @@ class Games(models.Model):
     console = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE)
     amount = models.FloatField(default=0)
 
-
 class GameImage(models.Model):
     image = models.CharField(max_length=999)
     game = models.ForeignKey(Games, on_delete=models.CASCADE)

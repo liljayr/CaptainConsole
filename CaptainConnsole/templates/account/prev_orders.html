@@ -5,9 +5,12 @@
     <div class="container">
         <div class="account">
             {% include 'account/account.html' %}
-            <form action="{% url 'account-index' %}">
-                    <input class="button" type="submit" value="Back to profile"/>
-            </form>
+            <div class="button_container">
+                <form action="{% url 'account-index' %}">
+                    <button class="button" type="submit">Back to profile</button>
+                </form>
+            </div>
+
         </div>
         <div class="prevorders">
             <h2>Previous orders</h2>

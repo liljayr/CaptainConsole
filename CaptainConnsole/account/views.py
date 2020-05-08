@@ -25,4 +25,7 @@ def prev_orders(request):
 def edit(request):
     return renderTemplate(request, 'account/edit.html')
 
+def login(request):
+    return renderTemplate(request, 'account/login.html')
+
 

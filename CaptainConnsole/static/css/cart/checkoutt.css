@@ -1,10 +1,4 @@
-.confirm{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.delivery_info{
+.shipping_info{
     display: flex;
     flex-direction: column;
 }
@@ -12,6 +6,20 @@
 .card_info{
     display: flex;
     flex-direction: column;
+    align-content: center;
+}
+
+.checkout_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+input{
+    border-radius: 3rem;
+    padding: 0.5rem;
+    justify-content: space-around;
+    margin: 1rem;
 }
 
 .buttons{
@@ -28,10 +36,12 @@
     width: 14rem;
 }
 
-.confirm_button{
+.next_button{
     border-radius: 3rem;
     padding: 1rem;
-    background-color: #7fffd4;
+    background-color: #5dbcd2c4;
     width: 14rem;
-    margin-left: 2rem;
 }
+
+
+

@@ -2,12 +2,11 @@
     font-size: medium;
 }
 
-.header{
-    background-color: #7fffd4;
+.cart_header{
+    background-color: #5dbcd2c4;
     font-size: large;
     font-weight: bold;
 }
-
 
 .table {
     mso-cellspacing: 5rem;
@@ -22,14 +21,14 @@
 .prev_order_button{
     border-radius: 3rem;
     padding: 1rem;
-    background-color: #7fffd4;
+    background-color: #5dbcd2c4;
     width: 14rem;
 }
 
 .checkout_button{
     border-radius: 3rem;
     padding: 1rem;
-    background-color: #7fffd4;
+    background-color: #5dbcd2c4;
     width: 14rem;
 }
 

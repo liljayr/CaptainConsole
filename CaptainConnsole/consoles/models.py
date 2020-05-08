@@ -8,6 +8,7 @@ class Consoles(models.Model):
     description = models.CharField(max_length=999)
     category = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE)
     price = models.FloatField()
+    discount = models.FloatField(default=0)
     onSale = models.BooleanField()
 
 class ConsoleImage(models.Model):

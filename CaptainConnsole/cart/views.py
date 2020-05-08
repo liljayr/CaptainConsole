@@ -19,7 +19,7 @@ def checkout(request):
     return renderTemplate(request, 'cart/checkout.html', context={  'cart' : cart, 'total_price' : total_price ,'num_in_cart' : num_in_cart})
 
 def confirmation(request):
-    return renderTemplate(request, 'cart/confirmation.html', context={  'cart' : cart, 'total_price' : total_price, 'num_in_cart' : num_in_cart})
+    return renderTemplate(request, 'cart/confirm.html', context={  'cart' : cart, 'total_price' : total_price, 'num_in_cart' : num_in_cart})
 
 def success(request):
     return renderTemplate(request, 'cart/success.html')

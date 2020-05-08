@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{%static 'css/account/login.css' %}"/>
+    <div class="login_info">
+        <h1>Login</h1>
+        <input type="text" id="Email" placeholder="Email">
+        <input type="text" id="password" placeholder="Password">
+    </div>
+
+
+    <div class="buttons">
+        <form action="{% url 'login-index' %}">
+            <input type="submit" class="login_button"value="Log in" />
+        </form>
+        <div class="signup">
+            <p>Don't have an account?</p>
+            <form action="{% url 'games-index' %}">
+                <input type="submit" class="signup_button"value="Sign up" />
+            </form>
+        </div>
+    </div>
+
+
+{%  endblock %}

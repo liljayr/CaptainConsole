@@ -14,7 +14,7 @@ class Games(models.Model):
     onSale = models.BooleanField()
     discount = models.FloatField(default=0)
     console = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE)
-
+    amount = models.FloatField(default=0)
 
 class GameImage(models.Model):
     image = models.CharField(max_length=999)

@@ -1,13 +1,41 @@
 {% load static %}
+<link rel="stylesheet" href="{%static 'css/account/header.css' %}"/>
 <div class="header">
     <div class="left-corner">
-        <img src="{% static 'images/captain_icon.png' %}" class="img_captain" />
-        <div class="logo-title">Captain Console</div>
+        <a href="{% url 'home-index' %}">
+            <img src="{% static 'images/captain_icon.png' %}" class="img_captain" />
+        </a>
+        <a href="{% url 'home-index' %}">
+            <div class="logo-title">
+                <p>Captain Console</p>
+            </div>
+        </a>
     </div>
     <div class="right-corner">
-        <div class="account">
-            <img src="{% static 'images/account_icon.png' %}" class="img_account" />
-            <p> is logged in? {{ isLoggedIn }} </p>
+        <div class="cart_img">
+            <a href="{% url 'cart-index' %}">
+                <img src="{% static 'images/colored_cart.png' %}" class="img_account" />
+            </a>
         </div>
+
+        <div class="account">
+            <div class="logged_in_true">
+                {% if isLoggedIn == True %}
+                    <a href="{% url 'account-index' %}">
+                        <img src="{% static 'images/account_icon.png' %}" class="img_account" />
+                        <p> Account </p>
+                    </a>
+                {% endif %}
+            </div>
+            <div class="logged_in_false">
+                {% if isLoggedIn == False %}
+                    <a href="{% url 'login-index' %}">
+                        <img src="{% static 'images/account_icon.png' %}" class="img_account" />
+                        <p> Login </p>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 </div>

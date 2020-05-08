@@ -47,4 +47,7 @@ def prev_orders(request):
 def edit(request):
     return renderTemplate(request, 'account/edit.html', context={'favorites': favorites, 'viewed': viewed})
 
+def login(request):
+    return renderTemplate(request, 'account/login.html')
+
 

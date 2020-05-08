@@ -1,0 +1,42 @@
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-right: 35rem;
+}
+
+.login_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: none;
+    width: 14rem;
+    margin-top: 3rem;
+    margin-right: 2rem;
+}
+
+.signup_button{
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: #5dbcd2c4;
+    width: 14rem;
+}
+
+.signup{
+    display: flex;
+    flex-direction: column;
+}
+
+.login_info{
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    justify-content: center;
+}
+
+
+input{
+    border-radius: 3rem;
+    padding: 0.5rem;
+    justify-content: space-around;
+    margin: 1rem;
+}

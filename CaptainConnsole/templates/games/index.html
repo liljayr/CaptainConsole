@@ -13,8 +13,8 @@
     </head>
     <h1>Games!</h1>
     <div class="allGames">
-        {% for game in games %}
-            {%  include 'games/single_game.html' with games=games %}
+        {% for game in indi_games %}
+            {%  include 'games/single_game.html' with games=game %}
         {% endfor %}
     </div>
     <!--<script src="../../static/js/gameScript.js"></script>-->

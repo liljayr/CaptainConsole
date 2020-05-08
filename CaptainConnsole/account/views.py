@@ -9,7 +9,7 @@ from common.renderTemplates import renderTemplate
 
 # Create your views here.
 def index(request):
-    return renderTemplate(request, 'account/index.html')
+    return renderTemplate(request, 'account/login.html')
 
 def get_account_id(request, id):
     return renderTemplate(request, 'account/index.html', {'account': get_object_or_404(Accounts, pk=id),

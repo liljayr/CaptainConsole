@@ -6,7 +6,7 @@
         <div class="account">
             {% include 'account/account.html' %}
             <div class="button_container">
-                <form action="{% url 'account-index' account.id %}">
+                <form action="{% url 'account-id-index' account.id %}">
                     <button class="button" type="submit">Back to profile</button>
                 </form>
             </div>

@@ -1,6 +1,7 @@
 <div class="favorites">
             <h2>Favorites</h2>
-            <div class="scroll">
+            <div class="scrollbox">
+                <div class="scroll">
                 {% for fav in favorites %}
                     <div class="product">
                         <img src="" alt="Picture of product">
@@ -8,10 +9,13 @@
                     </div>
                 {% endfor %}
             </div>
+            </div>
+
         </div>
 <div class="viewed">
             <h2>Recently viewed</h2>
-            <div class="scroll">
+            <div class="scrollbox">
+                <div class="scroll">
                 {% for view in viewed %}
                     <div class="product">
                         <img src="" alt="Picture of product">
@@ -19,4 +23,6 @@
                     </div>
                 {% endfor %}
             </div>
+            </div>
+
         </div>

@@ -11,7 +11,8 @@
         </div>
         <div class="prevorders">
             <h2>Previous orders</h2>
-            <div class="scroll">
+            <div class="scrollbox">
+                <div class="scroll">
                 {% for o in orders %}
                     <div class="product">
                         <img src="" alt="Pic of order">
@@ -19,6 +20,7 @@
                         <p>{{ o.price }}$</p>
                     </div>
                 {% endfor %}
+                </div>
             </div>
         </div>
     </div>

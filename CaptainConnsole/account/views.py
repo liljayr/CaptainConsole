@@ -45,6 +45,6 @@ def prev_orders(request):
     return renderTemplate(request, 'account/prev_orders.html', context={'orders': orders})
 
 def edit(request):
-    return renderTemplate(request, 'account/edit.html')
+    return renderTemplate(request, 'account/edit.html', context={'favorites': favorites, 'viewed': viewed})
 
 

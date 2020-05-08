@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{%static 'css/cart/success.css' %}"/>
+    <link rel="stylesheet" href="{%static 'css/cart/sucess.css' %}"/>
 
     <div class="success">
         <div class="heading">
             <h1>Success!</h1>
         </div>
-        <div class="text">
+        <div class="success_text">
             <p>
                 Your order has been successfully processed and your order will arrive in 3-4 business days.
                 You can view all of your previous orders on your profile.
             </p>
         </div>
-
-        <form action="{% url 'games-index' %}">
-            <input type="submit" class="more_games_button"value="Check out more games" />
-        </form>
+        <div class="button_container">
+            <form action="{% url 'games-index' %}">
+                <input type="submit" class="more_games_button"value="Check out more games" />
+            </form>
+        </div>
     </div>
 {%  endblock %}

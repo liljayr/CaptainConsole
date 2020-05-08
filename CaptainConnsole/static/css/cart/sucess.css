@@ -4,22 +4,31 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 15rem;
 }
 
 .heading{
     display: flex;
     justify-content: center;
 }
-.text{
+.success_text{
     display: flex;
     font-size: large;
     justify-content: center;
+    justify-self: center;
+    width: 60rem;
+    margin-left: 25rem;
 }
 
 .more_games_button{
     border-radius: 3rem;
     padding: 1rem;
-    background-color: #7fffd4;
+    background-color: #5dbcd2c4;
     font-size: large;
     justify-self: center;
+}
+
+.button_container{
+    display: flex;
+    justify-content: center;
 }

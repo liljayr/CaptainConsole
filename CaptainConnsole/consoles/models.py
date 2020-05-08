@@ -10,6 +10,7 @@ class Consoles(models.Model):
     price = models.FloatField()
     discount = models.FloatField(default=0)
     onSale = models.BooleanField()
+    amount = models.FloatField(default=0)
 
 class ConsoleImage(models.Model):
     image = models.CharField(max_length=999)

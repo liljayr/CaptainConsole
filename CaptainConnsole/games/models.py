@@ -8,7 +8,7 @@ class GameCategory(models.Model):
 
 class Games(models.Model):
     name = models.CharField(max_length=255)     #blank = True makes it a non required field
-    description = models.CharField(max_length=999)
+    description = models.CharField(max_length=3000)
     category = models.ForeignKey(GameCategory, on_delete=models.CASCADE)
     price = models.FloatField()
     onSale = models.BooleanField()

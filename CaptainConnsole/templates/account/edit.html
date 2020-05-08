@@ -12,7 +12,7 @@
                 <input type="text" class="edit_info" placeholder="Name">
                 <input type="text" class="edit_info" placeholder="Email">
                 <input type="text" class="edit_info" placeholder="Png picture">
-                <form action="{% url 'account-index' %}">
+                <form action="{% url 'account-index' account.id %}">
                     <button class="small_button" type="submit">Save</button>
                 </form>
             </div>

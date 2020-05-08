@@ -4,9 +4,9 @@
                 <img src="" alt="Profile picture">
             </div>
             <div class="accinfo">
-                <p>Matthildur</p>
-                <p>matta@gmail.com</p>
-                <form action="{% url 'edit-index' %}">
+                <p>{{account.user_name }}</p>
+                <p>{{ account.email }}</p>
+                <form action="{% url "edit-index" account.id %}">
                     <button class="small_button" type="submit">Edit</button>
                 </form>
             </div>

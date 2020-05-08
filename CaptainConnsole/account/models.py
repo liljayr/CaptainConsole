@@ -11,10 +11,10 @@ class Accounts(models.Model):
     user_name = models.CharField(max_length=225)
     email = models.CharField(max_length=225)
     street_name = models.CharField(max_length=225, blank=True)
-    house_nr = models.FloatField()
+    house_nr = models.FloatField(blank=True)
     city = models.CharField(max_length=225, blank=True)
     country = models.CharField(max_length=225, blank=True)
-    postal_code = models.FloatField()
+    postal_code = models.FloatField(blank=True)
     password = models.CharField(max_length=225)
     role = models.CharField(max_length=225, blank=True)
 

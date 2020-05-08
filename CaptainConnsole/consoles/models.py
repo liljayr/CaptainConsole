@@ -5,11 +5,12 @@ class ConsoleCategory(models.Model):
 
 class Consoles(models.Model):
     name = models.CharField(max_length=255)
-    description = models.CharField(max_length=999)
+    description = models.CharField(max_length=3000)
     category = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE)
     price = models.FloatField()
     discount = models.FloatField(default=0)
     onSale = models.BooleanField()
+    amount = models.FloatField(default=0)
 
 class ConsoleImage(models.Model):
     image = models.CharField(max_length=999)

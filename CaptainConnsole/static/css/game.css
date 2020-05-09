@@ -1,3 +1,20 @@
+.game-img {
+    flex: 1 100%;
+    position:relative;
+    width: 100%;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.well-game {
+    width: 100px;
+}
+
+/* TODO: Make a hover edit for all games and consoles*/
+
 .gameStyle {
     border: thin solid black;
 }

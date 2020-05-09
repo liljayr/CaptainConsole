@@ -17,7 +17,8 @@ def get_account_id(request, id):
 
 def prev_orders(request, id):
     return renderTemplate(request, 'account/prev_orders.html', {'account': get_object_or_404(Accounts, pk=id),
-                                                          'orders': Orders.objects.filter(account_id=id, ordered=True)})
+                                                                'orders': Orders.objects.filter(account_id=id, ordered=True)
+                                                                })
 
 def edit(request, id):
     return renderTemplate(request, 'account/edit.html', {'account': get_object_or_404(Accounts, pk=id),

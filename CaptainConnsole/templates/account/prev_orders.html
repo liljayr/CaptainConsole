@@ -18,9 +18,12 @@
                 <div class="scroll">
                 {% for o in orders %}
                     <div class="product">
-                        <img src="" alt="Pic of order">
-                        <p>{{ o.name }}</p>
-                        <p>{{ o.price }}$</p>
+                        <img src="" alt="Pic of order"> <!---make pretty, prods w same order nr shown together--->
+                        <p>{{ o.game_id }}</p>
+                        <p>{{ o.console_id }}</p>
+                        <p>{{ o.ordered }}</p>
+                        <p>{{ o.amount }}</p>
+                        <p>{{ o.order_nr }}</p>
                     </div>
                 {% endfor %}
                 </div>

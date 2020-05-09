@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
     <link rel="stylesheet" href="{%static 'css/cart/checkoutt.css' %}"/>
     <h1>Checkout</h1>
     <p>Step 1 out of 2</p>
     <div class="checkout_info">
         <div class="shipping_info">
             <h3>Shipping information</h3>
-            <input type="text" id="country" placeholder="Country">
+             <input type="text" id="country" placeholder="Country">
             <input type="text" id="city" placeholder="City">
             <input type="text" id="streetname" placeholder="Streetname">
             <input type="text" id="housenumber" placeholder="Housenumber">
             <input type="text" id="postalcode" placeholder="Postalcode">
         </div>
+
         <div class="card_info">
             <h3>Card information</h3>
             <input type="text" id="cardholder" placeholder="Cardholder">
@@ -27,17 +27,19 @@
     </div>
 
 
-    <div class="buttons">
+    <div class="buttons" id="buttons">
         <form action="{% url 'cart-index' %}">
-            <input type="submit" class="back_button"value="Back" />
+            <button type="submit" id="back_button" class="back_button"> Back</button>
         </form>
 
-        <form action="{% url 'confirmation-index' %}">
-            <input type="submit" class="next_button"value="Next" />
+
+        <form action="{% url 'confirmation-index' %}" >
+            <button type="submit" id="next_button" class="next_button"> Next</button>
         </form>
+
 
     </div>
 
 
-
+ <script src="{%static 'js/localStorage.js' %}"></script>
 {% endblock %}

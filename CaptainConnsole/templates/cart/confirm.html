@@ -3,48 +3,23 @@
 {% block content %}
 
     <link rel="stylesheet" href="{%static 'css/cart/confirm.css' %}"/>
-
+    <script src="{%static 'js/localStorage.js' %}"></script>
     <h1>My order</h1>
     <p>Step 2 out of 2</p>
 
     <div class="confirm">
-        <div class="delivery_info">
+        <div class="delivery_info" id="delivery_info">
             <h3>
                 Delivery Address
             </h3>
-            <p>
-                Name:
-            </p>
-            <p>
-                Address:
-            </p>
-            <p>
-                City:
-            </p>
-            <p>
-                Postal code:
-            </p>
-            <p>
-                Country:
-            </p>
+
         </div>
 
-        <div class="card_info">
+        <div class="card_info" id="card_info">
             <h3>
                 Card information
             </h3>
-            <p>
-                Cardholder:
-            </p>
-            <p>
-                Cardnumber:
-            </p>
-            <p>
-                Expiration date:
-            </p>
-            <p>
-                CVC:
-            </p>
+
         </div>
 
         {% include 'cart/checkout_cart.html' %}
@@ -52,14 +27,14 @@
 
         <div class="buttons">
         <form action="{% url 'checkout-index' %}">
-            <input type="submit" class="back_button"value="Back" />
+            <input type="submit" class="back_button" id="back_button_check" value="Back" />
         </form>
 
         <form action="{% url 'success-index' %}">
-            <input type="submit" class="confirm_button"value="Confirm" />
+            <input type="submit" class="confirm_button" id="confirm_button" value="Confirm" />
         </form>
 
     </div>
 
-
+<script src="{%static 'js/localStorage2.js' %}"></script>
 {% endblock %}

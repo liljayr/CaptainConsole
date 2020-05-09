@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="{%static 'css/game.css' %}"/>
     </head>
     <h1>Games!</h1>
-    <div class="allGames">
+    <div class="games">
         {% for game in indi_games %}
             {%  include 'games/single_game.html' with games=game %}
         {% endfor %}

@@ -12,3 +12,9 @@ for (let i=0; i<localStorage.length; i++) {
 
 }
 
+
+let clear_button = document.getElementById("confirm_button")
+clear_button.onclick = function () {
+    localStorage.clear()
+}
+

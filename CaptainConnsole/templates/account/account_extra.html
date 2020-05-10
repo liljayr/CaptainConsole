@@ -4,9 +4,10 @@
                 <div class="scroll">
                 {% for fav in favorites %}
                     <div class="product">
-                        <img src="" alt="Picture of product">
-                        <p>{{ fav.game_id }} </p>
-                        <p>{{ fav.console_id }} </p>
+                        <img class="prod_img" src="{{ fav.game_id.gameimage_set.first.image}}" alt="Picture of product">
+                        <p>{{ fav.game_id.name }} </p>
+                        <img class="prod_img" src="{{ fav.console_id.consoleimage_set.first.image}}" alt="Picture of product">
+                        <p>{{ fav.console_id.name }} </p>
                     </div>
                 {% endfor %}
             </div>

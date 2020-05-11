@@ -12,6 +12,12 @@
         <link rel="stylesheet" href="{%static 'css/game.css' %}"/>
     </head>
     <h1>Games!</h1>
+    <!---<div class="form-group col-md-4">
+        <label for="category">Category</label>
+        <select id="category" class="form-control" name="category">
+            <option selected>Choose...</option>
+        </select>
+    </div>-->
     <div class="games">
         {% for game in indi_games %}
             {%  include 'games/single_game.html' with games=game %}

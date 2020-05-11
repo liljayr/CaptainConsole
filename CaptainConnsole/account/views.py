@@ -13,7 +13,7 @@ def index(request):
 
 def get_account_id(request, id):
     context = {'account': get_object_or_404(Accounts, pk=id), 'favorites': Favorites.objects.filter(account_id=id),
-               'game': Games.objects.all()}
+               'game': Games.objects.all(), 'fav_length': len(Favorites.objects.filter(account_id=id))}
     return renderTemplate(request, 'account/index.html', context)
 
 def prev_orders(request, id):

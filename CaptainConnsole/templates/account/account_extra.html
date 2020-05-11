@@ -1,23 +1,26 @@
+{% load static %}
 <div class="favorites">
             <h2>Favorites</h2>
             <div class="scrollbox">
                 <div class="scroll">
                 {% for fav in favorites %}
                     <div class="product">
-                        <div id="game" class="game hide">
+
+                        <a href='/games/{{ fav.game_id.id }}' id="game" class="game hide">
                             <img id="p_img" class="prod_img"  src="{{ fav.game_id.gameimage_set.first.image}}" alt="Picture of product">
                             <p id="g_name"> {{ fav.game_id.name }} </p>
-                        </div>
-                        <div id="console" class="console hide">
+                        </a>
+                        <a id="console" class="console hide">
                             <img id="p_img" class="prod_img" src="{{ fav.console_id.consoleimage_set.first.image}}" alt="Picture of product">
                             <p id="c_name">{{ fav.console_id.name }} </p>
-                        </div>
-
+                        </a>
                     </div>
+
                 {% endfor %}
             </div>
             </div>
 
         </div>
 
+<script src="{% static 'js/favorites.js' %}"> </script>
 

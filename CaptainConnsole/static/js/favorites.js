@@ -15,9 +15,7 @@ function hideImg(){
 
 
 };
-
-
-hideImg();
+hideImg()
 
 
 

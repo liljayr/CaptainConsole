@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1>Search results</h1>
+    <div class="search_result_div">
+        {% for game in indi_games %}
+            {%  include 'games/single_game.html' with games=game %}
+        {% endfor %}
+        {% for console in consoles %}
+            {%  include 'games/single_game.html' with consoles=console%}
+        {% endfor %}
+    </div>
+
+    <script src="{% static 'js/searchResult.js' %}"></script>
+
+{% endblock %}

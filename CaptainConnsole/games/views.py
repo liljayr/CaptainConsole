@@ -13,8 +13,8 @@ def index(request):
             'id': x.id,
             'name': x.name,
             'description': x.description,
-            'price': x.price
-            # 'firstImage':x.gameimage_set.first().image
+            'price': x.price,
+            'firstImage': x.gameimage_set.first().image
         } for x in Games.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': games})
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all()}

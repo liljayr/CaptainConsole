@@ -23,3 +23,7 @@
     /*flex: auto;*/
     display:flex;
 }
+
+.input-group {
+    margin-bottom: 3rem;
+}

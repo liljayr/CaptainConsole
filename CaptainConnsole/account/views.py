@@ -16,6 +16,19 @@ def find_fav(id):
                 fav_consoles.append(prod)
     return fav_games, fav_consoles
 
+def find_orders(id):
+    orders = Orders.objects.filter(account_id=id, ordered=True)
+    game_orders = []
+    console_orders = []
+    for ord in orders:
+        try:
+            if ord.game_id:
+                game_orders.append(ord)
+        except:
+            if ord.console_id:
+                console_orders.append(ord)
+    return game_orders, console_orders
+
 # Create your views here.
 def index(request):
     return renderTemplate(request, 'account/login.html')
@@ -27,7 +40,9 @@ def get_account_id(request, id):
     return renderTemplate(request, 'account/index.html', context)
 
 def prev_orders(request, id):
-    context = {'account': get_object_or_404(Accounts, pk=id), 'orders': Orders.objects.filter(account_id=id, ordered=True)}
+    game_orders, console_orders = find_orders(id)
+    context = {'account': get_object_or_404(Accounts, pk=id), 'game_orders': game_orders,
+               'console_orders': console_orders}
     return renderTemplate(request, 'account/prev_orders.html', context)
 
 def edit(request, id):

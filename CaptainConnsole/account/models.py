@@ -1,11 +1,11 @@
 from django.db import models
-
-# Create your models here.
+from django.contrib.auth.models import User
 from consoles.models import Consoles
 from games.models import Games
 
 
 class Accounts(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default='-1')
     first_name = models.CharField(max_length=225)
     last_name = models.CharField(max_length=225)
     user_name = models.CharField(max_length=225)

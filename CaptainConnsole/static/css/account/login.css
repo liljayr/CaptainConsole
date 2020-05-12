@@ -33,6 +33,10 @@
     justify-content: center;
 }
 
+.signup-form{
+    display: flex;
+    margin: auto;
+}
 
 input{
     border-radius: 3rem;

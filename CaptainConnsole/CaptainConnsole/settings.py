@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'sales.apps.SalesConfig',
     'about_us.apps.AboutUsConfig',
+    'user.apps.UserConfig'
     ]
 
 
@@ -135,3 +136,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS =[
     os.path.join(BASE_DIR, 'static')
 ]
+
+LOGIN_URL = '/user/login'
+LOGIN_REDIRECT_URL = '/home/'

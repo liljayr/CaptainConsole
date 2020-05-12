@@ -18,6 +18,12 @@
         <li><a href="{% url 'consoles-index' %}">Consoles <span class="sr-only">(current)</span></a></li>
         <li><a href="{% url 'about_us-index' %}">About us <span class="sr-only">(current)</span></a></li>
         <li><a href="{% url 'sales-index' %}">Sale <span class="sr-only">(current)</span></a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+          {% endif %}
       </ul>
     <form class="navbar-form navbar-left" role="search">
         <div class="form-group">

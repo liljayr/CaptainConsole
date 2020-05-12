@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="{%static 'css/game.css' %}"/>
 </head>
 <div class="well-game">
-    <!--<a href="#">-->
-        <img class="game-img" src="{{ games.gameimage_set.first.image }}" />
+    <a href="/games/{{ games.id }}">
+        <img class="game-img" src="{{ games.gameimage_set.first.image }}" alt="No picture available" />
         <h4>{{ games.name }}</h4>
         <h4>${{ games.price }}</h4>
-    <!--</a>-->
+    </a>
 </div>

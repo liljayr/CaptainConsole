@@ -2,7 +2,6 @@
 
 function hideImg(){
     let g_name = document.getElementById("g_name");
-    let c_name = document.getElementById("c_name");
     let game = document.getElementById("game");
     let console = document.getElementById("console")
     if(g_name){
@@ -17,7 +16,8 @@ function hideImg(){
 };
 
 
-hideImg();
+
+hideImg()
 
 
 

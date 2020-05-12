@@ -41,7 +41,8 @@ def get_account_id(request, id):
 
 def prev_orders(request, id):
     game_orders, console_orders = find_orders(id)
-    context = {'account': get_object_or_404(Accounts, pk=id), 'game_orders': game_orders, 'console_orders': console_orders}
+    context = {'account': get_object_or_404(Accounts, pk=id), 'game_orders': game_orders,
+               'console_orders': console_orders}
     return renderTemplate(request, 'account/prev_orders.html', context)
 
 def edit(request, id):

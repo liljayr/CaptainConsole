@@ -19,7 +19,7 @@
                 {% for game in game_orders %}
                     <div class="product">
                         <div class="inner_prod">
-                            <img class="prod_img" src="{{ game.game_id.gameimage_set.first.image}}" alt="Pic of order"> <!---make pretty, prods w same order nr shown together--->
+                            <img class="prod_img" src="{{ game.game_id.gameimage_set.first.image}}" alt="Pic of order">
                             <p>{{ game.game_id.name }}</p>
                             <p>Order nr: {{ game.order_nr }}</p>
                         </div>
@@ -28,7 +28,7 @@
                 {% for console in console_orders %}
                     <div class="product">
                         <div class="inner_prod">
-                            <img class="prod_img" src="{{ console.console_id.consoleimage_set.first.image}}" alt="Pic of order"> <!---make pretty, prods w same order nr shown together--->
+                            <img class="prod_img" src="{{ console.console_id.consoleimage_set.first.image}}" alt="Pic of order">
                             <p>{{ console.console_id.name }}</p>
                             <p>Order nr: {{ console.order_nr }}</p>
                         </div>

@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Consoles</h1>
+    <div class="input-group">
+        <input type="search" class="form-control" id="search-box" placeholder="Search"/>
+        <div class="input-group-btn">
+            <button type="button" id="search-btn" class="btn btn-default">Search</button>
+        </div>
+
+    </div>
+    <div class="consoles">
     {% for console in consoles %}
         <h4> {{ console.name }}</h4>
         <p> {{ console.price }}</p>
     {% endfor %}
+    </div>
 {% endblock %}

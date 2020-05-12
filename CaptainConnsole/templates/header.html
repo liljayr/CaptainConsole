@@ -21,7 +21,7 @@
         <div class="account">
             <div class="logged_in_true">
                 {% if isLoggedIn == True %}
-                    <a href="{% url 'account-index' %}">
+                    <a href="{% url 'account-index' %}"> <!--- þurfum að laga þannig að ef maður er logged in þá se account.id sent með urlinu--->
                         <img src="{% static 'images/account_icon.png' %}" class="img_account" />
                         <p> Account </p>
                     </a>

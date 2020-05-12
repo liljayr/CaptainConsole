@@ -23,3 +23,18 @@
     /*flex: auto;*/
     display:flex;
 }
+
+.scrollbox{
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    height: 40rem;
+}
+
+.scroll{
+    text-align: center;
+    border-radius: .7rem;
+    height: 38rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 1rem;
+}

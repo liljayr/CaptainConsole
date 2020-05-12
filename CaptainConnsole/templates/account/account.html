@@ -6,7 +6,7 @@
             <div class="accinfo">
                 <p>{{account.user_name }}</p>
                 <p>{{ account.email }}</p>
-                <form action="{% url "edit-index" account.id %}">
+               <form action="{% url "edit-index" account.id %}" >
                     <button class="small_button" type="submit">Edit</button>
                 </form>
             </div>

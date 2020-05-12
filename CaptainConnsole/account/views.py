@@ -1,7 +1,9 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 
 from account.models import *
 from common.renderTemplates import renderTemplate
+from forms.account_form import EditAccountForm
+
 
 def find_fav(id):
     fav = Favorites.objects.filter(account_id=id)
@@ -46,10 +48,23 @@ def prev_orders(request, id):
     return renderTemplate(request, 'account/prev_orders.html', context)
 
 def edit(request, id):
-
     fav_games, fav_consoles = find_fav(id)
-    context = {'account': get_object_or_404(Accounts, pk=id), 'favorites': Favorites.objects.filter(account_id=id),
-               'fav_games': fav_games, 'fav_consoles': fav_consoles}
+    account = get_object_or_404(Accounts, pk=id)
+
+    if request.method == 'POST':
+        print("haha")
+        form = EditAccountForm(data=request.POST, instance=account)
+        if form.is_valid():
+            print("lalalalalala")
+            account = form.save()
+            account_image = AccountImage(image=request.POST['image'], account=account)
+            account_image.save()
+            return redirect('account-id-index', id=id)
+    else:
+        print("gaga")
+        form = EditAccountForm(instance=account)
+    context = {'account': account, 'fav_games': fav_games, 'fav_consoles': fav_consoles,
+               'form': form, 'id': id}
     return renderTemplate(request, 'account/edit.html', context)
 
 def login(request):

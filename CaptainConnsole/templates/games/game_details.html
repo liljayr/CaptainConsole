@@ -1,9 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
-    <h1>{{ game.name }}</h1>
-    <p>${{ game.price }}</p>
-    <p>{{ game.description }}</p>
-    {% for game_image in game.gameimage_set.all %}
-        <img src="{{ game_image.image }}" class="game-img" alt="Picture not available"/>
-    {% endfor %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/game.css' %}">
+    <div class="scrollbox">
+        <div class="scroll">
+            <h1>{{ game.name }}</h1>
+            <p>${{ game.price }}</p>
+            <p>{{ game.description }}</p>
+            {% for game_image in game.gameimage_set.all %}
+                <img src="{{ game_image.image }}" class="game-img" alt="Picture not available"/>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

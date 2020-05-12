@@ -1,21 +1,26 @@
+
 <div class="favorites">
             <h2>Favorites</h2>
             <div class="scrollbox">
                 <div class="scroll">
-                {% for fav in favorites %}
-                    <div class="product">
-                        <div id="game" class="game hide">
-                            <img id="p_img" class="prod_img"  src="{{ fav.game_id.gameimage_set.first.image}}" alt="Picture of product">
-                            <p id="g_name"> {{ fav.game_id.name }} </p>
+                    {% for game in fav_games %}
+                        <div class="game product">
+                            <a href="/games/{{ game.game_id.id }}" >
+                                <img src="{{ game.game_id.gameimage_set.first.image}}" alt="Picture of product">
+                                <p>{{ game.game_id.name }} </p>
+                            </a>
                         </div>
-                        <div id="console" class="console hide">
-                            <img id="p_img" class="prod_img" src="{{ fav.console_id.consoleimage_set.first.image}}" alt="Picture of product">
-                            <p id="c_name">{{ fav.console_id.name }} </p>
+                    {% endfor %}
+                    {% for console in fav_consoles %}
+                        <div class="console product">
+                            <a>
+                                <img src="{{ console.console_id.consoleimage_set.first.image}}" alt="Picture of product">
+                                <p>{{ console.console_id.name }} </p>
+                            </a>
                         </div>
+                    {% endfor %}
 
-                    </div>
-                {% endfor %}
-            </div>
+                </div>
             </div>
 
         </div>

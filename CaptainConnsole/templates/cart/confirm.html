@@ -30,11 +30,11 @@
             <input type="submit" class="back_button" id="back_button_check" value="Back" />
         </form>
 
-        <form action="{% url 'success-index' %}">
-            <input type="submit" class="confirm_button" id="confirm_button" value="Confirm" />
+        <form action="{% url 'success-index' %}" >
+            <button onclick="window.localStorage.clear();" type="submit" id="confirm_button" class="confirm_button"> Confirm</button>
         </form>
 
-    </div>
 
-<script src="{%static 'js/localStorage2.js' %}"></script>
+        <script src="{%static 'js/localStorage2.js' %}"></script>
+
 {% endblock %}

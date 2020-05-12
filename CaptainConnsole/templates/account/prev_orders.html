@@ -6,7 +6,7 @@
         <div class="account">
             {% include 'account/account.html' %}
             <div class="button_container">
-                <form action="{% url 'account-index' %}">
+                <form action="{% url 'account-id-index' account.id %}">
                     <button class="button" type="submit">Back to profile</button>
                 </form>
             </div>
@@ -18,9 +18,11 @@
                 <div class="scroll">
                 {% for o in orders %}
                     <div class="product">
-                        <img src="" alt="Pic of order">
-                        <p>{{ o.name }}</p>
-                        <p>{{ o.price }}$</p>
+                        <img src="{{ o.game_id.gameimage_set.first.image}}" alt="Pic of order"> <!---make pretty, prods w same order nr shown together--->
+                        <p>{{ o.game_id.name }}</p>
+                        <p>{{ o.console_id.name }}</p>
+                        <p>Quantity: {{ o.amount }}</p>
+                        <p>Order nr: {{ o.order_nr }}</p>
                     </div>
                 {% endfor %}
                 </div>

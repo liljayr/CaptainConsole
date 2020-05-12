@@ -1,11 +1,11 @@
 from django.forms import ModelForm, widgets
 from django import forms
 
-from account.models import Accounts
+from account.models import Accounts, AccountImage
 
 
 class EditAccountForm(ModelForm):
-    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+   # image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = Accounts
@@ -17,3 +17,10 @@ class EditAccountForm(ModelForm):
         }
 
 
+class EditImageForm(ModelForm):
+    class Meta:
+        model = AccountImage
+        exclude = ['id', 'account']
+        widgets = {
+            'image': widgets.TextInput(attrs={'class': 'form-control'})
+        }

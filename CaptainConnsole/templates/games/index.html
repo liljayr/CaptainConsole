@@ -19,23 +19,32 @@
             <button type="button" id="search-btn" class="btn btn-default">Search</button>
         </div>
     </div>
-    <!--<form method="GET" action=".">
-        <div class="form-group col-md-4">
-            <label for="price">Category</label>
-            <select id="price" class="form-control" name="price">
-                <option selected>Choose...</option>
-                {% for pri in prices %}
-                <option value="{{ pri }}">{{ pri }}</option>
-                {% endfor %}
-            </select>
+    <div>
+        <div class="multiple-choice">
+            <div class="consoles" id="consoles">
+                {% include 'games/checklist.html' with group=consoles %}
+            </div>
+            <!--<div class="types" id="types">
+            </div>-->
         </div>
-    </form>-->
-    <!--<button type="submit" class="btn btn-primary">Search</button>-->
-    <div class="games">
-        {% for game in indi_games %}
-            {%  include 'games/single_game.html' with games=game %}
-        {% endfor %}
+        <!--<form method="GET" action=".">
+            <div class="form-group col-md-4">
+                <label for="price">Category</label>
+                <select id="price" class="form-control" name="price">
+                    <option selected>Choose...</option>
+                    {% for pri in prices %}
+                    <option value="{{ pri }}">{{ pri }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>-->
+        <!--<button type="submit" class="btn btn-primary">Search</button>-->
+        <div class="games">
+            {% for game in indi_games %}
+                {%  include 'games/single_game.html' with games=game %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
-<script src="../../static/js/games.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<!--<script src="../../static/js/games.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>-->

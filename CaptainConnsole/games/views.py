@@ -4,6 +4,7 @@ from common.renderTemplates import renderTemplate
 #from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 
+from consoles.models import Consoles, ConsoleCategory
 from games.models import Games
 
 #if doesn't runn turn off db connection in pycharm
@@ -38,17 +39,52 @@ def filter_view(request):
     #           'prices': {'$0.00-$10.00', '$10.01-$15.00', '$15.01-$20.00'}}
 '''
 
+#TODO: finish this
 def index(request):
-    info=Games.objects.exclude(description=' ')
+    if 'search_filter' in request.GET:
+        info=Games.objects.exclude(description=' ')
+        if 'check' in request.GET:
+            consoles = request.GET['check']
+            if consoles == "":
+                info = info.all()
+            else:
+                for id in consoles.split(','):
+                    info = info.filter(console_id=int(id))
+        info = info.filter(name__icontains=request.GET['search_filter'])
+        games = [{
+            'id': x.id,
+            'name': x.name,
+            'price': x.price,
+            'description': x.description,
+            'first_image': x.gameimage_set.first().image
+        } for x in info]
+        return JsonResponse({'data': games})
+    '''
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         games = [ {
             'id': x.id,
             'name': x.name,
+            'price': x.price,
             'description': x.description,
             'first_image': x.gameimage_set.first().image
         } for x in info.filter(name__icontains=search_filter) ]
+        #return JsonResponse({'data': games})
+    if 'check' in request.GET:
+        consoles = request.GET['consoles']
+        games = []
+        for item in consoles.split(',').strip():
+            games.append({
+            'id': x.id,
+            'name': x.name,
+            'price': x.price,
+            'description': x.description,
+            'first_image': x.gameimage_set.first().image
+            } for x in info.filter(category_id=int(item)))
+        print(games)
         return JsonResponse({'data': games})
+    '''
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all(),
-               'prices': {'$0.00-$10.00', '$10.01-$15.00', '$15.01-$20.00'}}
+               'prices': {'$0.00-$10.00', '$10.01-$15.00', '$15.01-$20.00'},
+               'consoles': ConsoleCategory.objects.all()}
     return renderTemplate(request, 'games/index.html', context)

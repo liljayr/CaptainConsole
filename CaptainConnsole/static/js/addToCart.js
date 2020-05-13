@@ -1,59 +1,94 @@
-// create json string for cart "[{\"country\":\"Iceland\"}]"
-
-function addCartToStorage() {
+function addCartToStorage(dict) {
     //búa til cart item í localStorage og setja inní það
-    let dict = {
-        product_id: 4,
-        type: "console",
-        amount: 1
-    }
-    let array = []
-    array.push(dict)
-    let cart_item = JSON.stringify(array)
-    localStorage.setItem("cart",cart_item)
+    let array = [];
+    array.push(dict);
+    let cart_item = JSON.stringify(array);
+    localStorage.setItem("cart",cart_item);
 }
 
+
+function getCartCounter() {
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    let cart_counter = 0;
+    for (let i=0; i<cart.length; i++) {
+        cart_counter += cart[i].amount;
+    }
+    console.log(cart_counter);
+    document.getElementById("num_in_cart").innerHTML = cart_counter;
+}
+
+function enoughInStock() {
+    let amount_in_stock = document.getElementById("amount_in_stock");
+    if (amount_in_stock > 0) {
+        return true;
+    };
+    return false;
+};
+
+function displayInCart() {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    for (let i=0; i<cart.length; i++) {
+        let type_id_name = (cart[i].product_id).split("_");
+        let type = type_id_name[0];
+        let id = type_id_name[1];
+        let name = type_id_name[2];
+        console.log("list ",type_id_name);
+        console.log("type", type);
+        console.log("id ", id);
+        console.log("name ", name);
+        let amount = cart[i].amount;
+    };
+};
+
+
+
 function addToCart() {
-    let add_to_cart_button = document.getElementById("{{ games.id }}")
-    add_to_cart_button.onclick = function () {
-        let product_id = 
-        let current_cart = localStorage.getItem("cart")
-        //Bæta við tölu hjá cart
-        if (current_cart === null) {
-            let cart_counter = 1;
-            addCartToStorage()
-        }
-        else {
-            cart_counter += 1;
-
-            let dict2 = {
-                product_id: 4,
-                type: "console",
+    let add_game_to_cart = document.getElementById("add_button_games");
+    //let add_console_to_cart = document.getElementById("add_button_consoles");
+    let buttons = [add_game_to_cart];
+    for (let i=0; i<buttons.length; i++) {
+        buttons[i].onclick = function () {
+            let product_id = -1;
+            $('#add_button_div :button').each(function(index){
+                product_id = this.value;
+            });
+            let current_cart = localStorage.getItem("cart")
+            if (current_cart === null) {
+                let dict = {
+                product_id: product_id,
                 amount: 1
+                };
+                addCartToStorage(dict);
             }
-            let cart_items = JSON.parse(localStorage.getItem("cart"))
-            let item_exists = false;
-            for (let i = 0; i < cart_items.length; i++) {
-                console.log(dict2.product_id == cart_items[i].product_id)
-                if (dict2.product_id == cart_items[i].product_id) {
-                    cart_items[i].amount += 1;
-                    item_exists = true
+            else {
+                let cart_items = JSON.parse(localStorage.getItem("cart"))
+                let item_exists = false;
+                for (let j = 0; j < cart_items.length; j++) {
+                    if (product_id == cart_items[j].product_id) {
+                        cart_items[j].amount += 1;
+                        item_exists = true;
+                    }
                 }
-            }
-            if (item_exists == false) {
-                cart_items.push(dict2)
+                if (item_exists == false) {
+                    let dict = {
+                        product_id: product_id,
+                        amount: 1
+                    };
+                    cart_items.push(dict);
 
-                let str_cart_item = JSON.stringify(cart_items)
-                localStorage.setItem("cart", str_cart_item)
-                //ath hvort type (game/console) og id er til í cart þá hækka amount um 1
-                //annars bæta við nýju product í cart
+                }
+                let str_cart_item = JSON.stringify(cart_items);
+                localStorage.setItem("cart", str_cart_item);
             }
-        }
-        document.getElementById("cart_img").innerHTML = cart_counter;
-
-        location.reload();
+            getCartCounter();
+            displayInCart();
+            //location.reload();
         };
+    }
+
 };
 
 addToCart()
+
+
 

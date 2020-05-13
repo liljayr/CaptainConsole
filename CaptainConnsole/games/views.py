@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from consoles.models import Consoles, ConsoleCategory
 from games.models import Games
 
+
 #if doesn't runn turn off db connection in pycharm
 #def index2(request):
 #    return renderTemplate(request, 'games/index.html')

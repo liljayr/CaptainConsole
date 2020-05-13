@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/item.css' %}">
+    <div class="scrollbox">
+        <div class="scroll">
+            <div>
+                {% for console_image in console.consoleimage_set.all %}
+                    <img src="{{ console_image.image }}" class="item-img" alt="Picture not available"/>
+                {% endfor %}
+            </div>
+            <div>
+                <h1>{{ console.name }}</h1>
+                <p>${{ console.price }}</p>
+                <p>{{ console.description }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

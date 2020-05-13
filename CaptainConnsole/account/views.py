@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 from account.models import *
 from common.renderTemplates import renderTemplate
-from forms.account_form import EditAccountForm, EditImageForm
+from account.forms.account_form import EditAccountForm, EditImageForm
 
 
 def find_fav(id):

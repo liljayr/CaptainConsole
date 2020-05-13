@@ -5,7 +5,7 @@ from games.models import Games
 
 
 class Accounts(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, default='-1')
+    #user = models.OneToOneField(User, on_delete=models.CASCADE, default='-1')
     first_name = models.CharField(max_length=225)
     last_name = models.CharField(max_length=225)
     user_name = models.CharField(max_length=225)

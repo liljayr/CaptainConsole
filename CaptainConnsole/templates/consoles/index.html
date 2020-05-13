@@ -1,17 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <h1>Consoles</h1>
-    <div class="input-group">
-        <input type="search" class="form-control" id="search-box" placeholder="Search"/>
-        <div class="input-group-btn">
-            <button type="button" id="search-btn" class="btn btn-default">Search</button>
+    <link rel="stylesheet" href="{%static 'css/game.css' %}"/>
+    <h1>Consoles!</h1>
+    <div>
+        <div class="console">
+            {% for con in consoles %}
+                {%  include 'consoles/single_console.html' with consoles=consoles %}
+            {% endfor %}
         </div>
-
-    </div>
-    <div class="consoles">
-    {% for console in consoles %}
-        <h4> {{ console.name }}</h4>
-        <p> {{ console.price }}</p>
-    {% endfor %}
     </div>
 {% endblock %}

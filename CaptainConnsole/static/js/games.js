@@ -33,9 +33,12 @@ $(document).ready(function(){
     });
     console.log("console check");
     console.log($('#consoles'));
-    $('#consoles').on('click', function(e) {
+    $('.item').click(function() {
         performSearch();
     })
+    /*$('#checkbox').on('click', function(e) {
+        performSearch();
+    })*/
 });
 
 //values in quotes are id in template

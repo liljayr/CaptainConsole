@@ -44,9 +44,12 @@ def index(request):
     if 'search_filter' in request.GET:
         info=Games.objects.exclude(description=' ')
         if 'check' in request.GET:
-            consoles = request.GET['consoles']
-            for id in consoles.split(',').strip():
-                info = info.filter(console_id=int(id))
+            consoles = request.GET['check']
+            if consoles == "":
+                info = info.all()
+            else:
+                for id in consoles.split(','):
+                    info = info.filter(console_id=int(id))
         info = info.filter(name__icontains=request.GET['search_filter'])
         games = [{
             'id': x.id,

@@ -38,5 +38,5 @@ def index(request):
         return JsonResponse({'data': games})
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all(),
                'prices': {'$0.00-$10.00', '$10.01-$15.00', '$15.01-$20.00'},
-               'consoles': ConsoleCategory.objects.all()}
+               'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id}
     return renderTemplate(request, 'games/index.html', context)

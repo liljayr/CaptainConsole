@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" href="{%static 'css/account/header.css' %}"/>
+<link rel="stylesheet" href="{%static 'css/header.css' %}"/>
 <div class="header">
     <div class="left-corner">
         <a href="{% url 'home-index' %}">
@@ -12,27 +12,22 @@
         </a>
     </div>
     <div class="right-corner">
-        <div class="cart_img">
-            <a href="{% url 'cart-index' %}">
-                <img src="{% static 'images/colored_cart.png' %}" class="img_account" />
-            </a>
+        <div class="cart_img" >
+            <p id="num_in_cart"> </p>
+                <a href="{% url 'cart-index' %}">
+                    <img src="{% static 'images/colored_cart.png' %}" class="img_account" />
+                </a>
         </div>
 
+
         <div class="account">
-            <div class="logged_in_true">
-                {% if isLoggedIn == True %}
-                    <a href="{% url 'account-index' %}"> <!--- þurfum að laga þannig að ef maður er logged in þá se account.id sent með urlinu--->
-                        <img src="{% static 'images/account_icon.png' %}" class="img_account" />
-                        <p> Account </p>
-                    </a>
-                {% endif %}
-            </div>
-            <div class="logged_in_false">
-                {% if isLoggedIn == False %}
-                    <a href="{% url 'login-index' %}">
-                        <img src="{% static 'images/account_icon.png' %}" class="img_account" />
-                        <p> Login </p>
-                    </a>
+            <div class="captain-userprofile">
+                {% if user.is_authenticated %}
+                    <a href="/account/{{ user.id }}"><img src="{% static 'images/account_icon.png' %}" class="img_account" /></a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                    <img src="{% static 'images/account_icon.png' %}" class="img_account" />
+                    <a href="{% url 'login' %}">Login</a>
                 {% endif %}
             </div>
         </div>

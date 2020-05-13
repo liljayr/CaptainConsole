@@ -83,12 +83,20 @@
 }
 
 .prod_img{
-    height: 10px;
-    width: 10px;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 
-.hide{
+.product{
+    height: 40rem;
+}
+
+.inner_prod{
+    height: 35rem;
+}
+
+.helptext{
     display: none;
 }
 

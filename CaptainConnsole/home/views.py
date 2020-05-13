@@ -11,7 +11,7 @@ games = [
 #commonParams = {'isLoggedIn': True}
 
 def index(request):
-    return render(request, 'home/index.html', {'games': games})
+    return renderTemplate(request, 'home/index.html', {'games': games})
 
 
 #def renderTemplate(request, template, params):

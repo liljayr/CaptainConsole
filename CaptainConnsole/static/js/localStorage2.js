@@ -3,10 +3,10 @@ let card_div = document.getElementById("card_info")
 
 for (let i=0; i<localStorage.length; i++) {
     let key = localStorage.key(i);
-    if (key == "Cardholder" || key == "Cardnumber" || key == "Expiration date" || key == "CVC") {
+    if (key == "Cardholder" || key == "Cardnumber" || key == "Expiration date" || key == "CVC" && key != "cart") {
         card_div.innerHTML += "<p>" + key + ": " + localStorage.getItem(key) + "</p>"
     }
-    else{
+    else if (key != "cart"){
         confirm_div.innerHTML += "<p>" + key + ": " + localStorage.getItem(key) + "</p>"
     }
 

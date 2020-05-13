@@ -26,9 +26,6 @@
 
         <p>Total price : ${{ total_price }}</p>
         <div class="buttons">
-            <form action="{% url 'prev-index' %}">
-                <input type="submit" class="prev_order_button" value="Previous orders" />
-            </form>
             <form action="{% url 'checkout-index' %}">
                 <input type="submit" class="checkout_button"value="Checkout" />
             </form>

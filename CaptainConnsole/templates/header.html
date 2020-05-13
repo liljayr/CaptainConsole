@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" href="{%static 'css/account/header.css' %}"/>
+<link rel="stylesheet" href="{%static 'css/header.css' %}"/>
 <div class="header">
     <div class="left-corner">
         <a href="{% url 'home-index' %}">
@@ -12,10 +12,11 @@
         </a>
     </div>
     <div class="right-corner">
-        <div class="cart_img">
-            <a href="{% url 'cart-index' %}">
-                <img src="{% static 'images/colored_cart.png' %}" class="img_account" />
-            </a>
+        <div class="cart_img" >
+            <p id="cart_img"> </p>
+                <a href="{% url 'cart-index' %}">
+                    <img src="{% static 'images/colored_cart.png' %}" class="img_account" />
+                </a>
         </div>
 
         <div class="account">

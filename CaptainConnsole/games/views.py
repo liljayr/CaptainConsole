@@ -18,6 +18,16 @@ def get_game_by_id(request, id):
 def index(request):
     if 'search_filter' in request.GET:
         info = Games.objects.all()
+        if 'sort_by' in request.GET:
+            sort_by = request.GET['sort_by']
+            if sort_by == "alphabet":
+                info = info.order_by('name')
+            elif sort_by == "lowest":
+                info = info.order_by('price')
+                print("CHECK HERE!!!")
+                print(info)
+            elif sort_by == "highest":
+                info = info.order_by('-price')
         if 'check' in request.GET:
             consoles = request.GET['check']
             if consoles != "":
@@ -36,6 +46,5 @@ def index(request):
         } for x in info]
         return JsonResponse({'data': games})
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all(),
-               'prices': {'$0.00-$10.00', '$10.01-$15.00', '$15.01-$20.00'},
                'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id}
     return renderTemplate(request, 'games/index.html', context)

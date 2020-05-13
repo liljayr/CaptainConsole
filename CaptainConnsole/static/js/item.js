@@ -9,9 +9,13 @@ $(document).ready(function(){
     $('.star').click(function() {
         update_favorites();
     });
-    /*$('#checkbox').on('click', function(e) {
-        performSearch();
-    })*/
+    $('.sortbtn').click(function() {
+        console.log("checking stuff");
+        console.log($(this));
+        console.log($(this)[0].id);
+        let btnvalue=$(this)[0].id;
+        performSearch(btnvalue);
+    })
 });
 
 function update_favorites() {
@@ -22,15 +26,13 @@ function update_favorites() {
 };
 
 //values in quotes are id in template
-function performSearch(){
+function performSearch(sort_btn){
     let query = $('#search-box').val();
-    console.log("search");
-    console.log(query);
-    let sort = $('#sort-by').val();
+    //let sort = $('.sortbtn');
+    console.log("sort");
+    console.log(sort_btn);
     let getConsoles = new Array();
     let hiddenValue = $('#hidden')[0].innerText;
-    console.log("pssssst this is hidden");
-    console.log(hiddenValue);
     let count = 0;
     $('#consoleCatG :checked').each(function(index) {
         console.log("Sorting games!!!!");
@@ -42,7 +44,7 @@ function performSearch(){
     });
     //console.log(consoles);
     let types = '';
-    let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles; //+ '&sort_by=' + sort
+    let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles+ '&sort_by=' + sort_btn; //+ '&type=' + type
     console.log("url check");
     console.log(comp_url);
     $.ajax({

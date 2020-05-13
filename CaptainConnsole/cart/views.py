@@ -22,4 +22,8 @@ def confirmation(request):
     return renderTemplate(request, 'cart/confirm.html', context={  'cart' : cart, 'total_price' : total_price, 'num_in_cart' : num_in_cart})
 
 def success(request):
+    # Sækja í localStorage
+    # Setja í DB
+    # Tæma localStorage
+
     return renderTemplate(request, 'cart/success.html')

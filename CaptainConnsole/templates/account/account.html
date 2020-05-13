@@ -1,10 +1,12 @@
 
             <div class="acc">
                 <h1>Account</h1>
-                <img class="profile_pic" src="{{ account.accountimage_set.first.image }}" alt="Profile picture"/>
+                <img class="profile_pic" src="{{ account.userimage_set.first.image }}" alt="Profile picture"/>
             </div>
             <div class="accinfo">
-                <p>{{account.user_name }}</p>
+                <p>{{account.username }}</p>
+                <p>{{ account.first_name }}</p>
+                <p>{{ account.last_name }}</p>
                 <p>{{ account.email }}</p>
                <form action="{% url "edit-index" account.id %}" >
                     <button class="small_button" type="submit">Edit</button>

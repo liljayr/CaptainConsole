@@ -6,7 +6,7 @@ from account.forms.account_form import EditAccountForm, EditImageForm
 
 
 def find_fav(id):
-    fav = Favorites.objects.filter(account_id=id)
+    fav = Favorite.objects.filter(user_id=id)
     fav_games = []
     fav_consoles = []
     for prod in fav:
@@ -19,7 +19,7 @@ def find_fav(id):
     return fav_games, fav_consoles
 
 def find_orders(id):
-    orders = Orders.objects.filter(account_id=id, ordered=True)
+    orders = Order.objects.filter(user_id=id, ordered=True)
     game_orders = []
     console_orders = []
     for ord in orders:
@@ -37,20 +37,20 @@ def index(request):
 
 def get_account_id(request, id):
     fav_games, fav_consoles = find_fav(id)
-    context = {'account': get_object_or_404(Accounts, pk=id), 'game': Games.objects.all(),
+    context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles}
     return renderTemplate(request, 'account/index.html', context)
 
 def prev_orders(request, id):
     game_orders, console_orders = find_orders(id)
-    context = {'account': get_object_or_404(Accounts, pk=id), 'game_orders': game_orders,
+    context = {'account': get_object_or_404(User, pk=id), 'game_orders': game_orders,
                'console_orders': console_orders}
     return renderTemplate(request, 'account/prev_orders.html', context)
 
 def edit(request, id):
     fav_games, fav_consoles = find_fav(id)
-    account = get_object_or_404(Accounts, pk=id)
-    image = AccountImage.objects.all().filter(account=id).first()
+    account = get_object_or_404(User, pk=id)
+    image = ProfileImage.objects.all().filter(user=id).first()
 
     if request.method == 'POST':
         form = EditAccountForm(data=request.POST, instance=account)

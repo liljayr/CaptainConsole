@@ -14,9 +14,9 @@ function addCartToStorage() {
 }
 
 function addToCart() {
-    let add_to_cart_button = document.getElementById("{{ games.id }}
+    let add_to_cart_button = document.getElementById("{{ games.id }}")
     add_to_cart_button.onclick = function () {
-        let product_id = JSON.stringify(add_to_cart_button)
+        let product_id = 
         let current_cart = localStorage.getItem("cart")
         //Bæta við tölu hjá cart
         if (current_cart === null) {

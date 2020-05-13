@@ -1,6 +1,8 @@
 $(document).ready(function(){
+    console.log("HEYYYY");
     $('#search-btn').on('click', function(e) {
         e.preventDefault();
+        console.log("Searching");
         performSearch();
     });
     console.log("console check");
@@ -17,7 +19,7 @@ $(document).ready(function(){
 });
 
 function update_favorites() {
-    $('#game :checked').each(function(index){
+    $('#console :checked').each(function(index){
         console.log($(this));
         console.log(this.value);
     });
@@ -27,30 +29,32 @@ function update_favorites() {
 function performSearch(){
     let query = $('#search-box').val();
     let sort = $('#sort-by').val();
-    let consoles = new Array();
+    console.log("checking query");
+    console.log(query);
+    //let consoles = new Array();
     let count = 0;
-    $('#consoles :checked').each(function(index) {
+    /*$('#consoles :checked').each(function(index) {
         //consoles = consoles
         console.log($(this));
         console.log(this.value);
         consoles[count] = this.value;
         count = count + 1;
-    });
-    console.log(consoles);
+    });*/
+    //console.log(consoles);
     let types = '';
-    let comp_url = '/games?search_filter=' + query + '&check=' + consoles; //+ '&sort_by=' + sort
+    let comp_url = '/consoles?search_filter=' + query;// + '&check=' + consoles; //+ '&sort_by=' + sort
     $.ajax({
         url: comp_url,
         type: 'GET',
         success: function(resp){
             let newHtml = resp.data.map(d => {
-                return `<div class="well-game">
-                            <a href="/games/${d.id}">
-                                <img class="game-img" src="${d.first_image}"/>
+                return `<div class="well-item">
+                            <a href="/consoles/${d.id}">
+                                <img class="item-img" src="${d.first_image}"/>
                                 <h4>${d.name}</h4>
                                 <h4>$${d.price}</h4>
                             </a>
-                        </div> `
+                        </div>`
             });
             $('.games').html(newHtml.join(''));
             $('#search-box').val('');

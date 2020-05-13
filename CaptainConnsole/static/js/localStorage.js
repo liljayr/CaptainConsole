@@ -1,6 +1,5 @@
 
 function insertLocalStorage(inputFields, buttons) {
-
     for (let i=0; i<buttons.length; i++) {
         buttons[i].onclick = function () {
             for (let j=0; j<inputFields.length; j++) {
@@ -13,6 +12,11 @@ function insertLocalStorage(inputFields, buttons) {
         };
     }
 };
+
+
+
+
+
 
 let inp_check = ["Country", "City", "Streetname", "Housenumber", "Postalcode", "Cardholder", "Cardnumber", "Expiration date", "CVC"];
 let next_check = document.getElementById("next_button");

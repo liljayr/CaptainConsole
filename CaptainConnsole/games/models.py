@@ -5,6 +5,8 @@ from consoles.models import ConsoleCategory
 
 class GameCategory(models.Model):
     name = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
 
 class Games(models.Model):
     name = models.CharField(max_length=255)     #blank = True makes it a non required field
@@ -15,7 +17,11 @@ class Games(models.Model):
     discount = models.FloatField(default=0)
     console = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE)
     amount = models.FloatField(default=0)
+    def __str__(self):
+        return self.name
 
 class GameImage(models.Model):
     image = models.CharField(max_length=999)
     game = models.ForeignKey(Games, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name

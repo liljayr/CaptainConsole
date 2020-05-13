@@ -65,8 +65,8 @@ def edit(request, id):
         if form.is_valid() and img_form.is_valid():
             account = form.save()
             img = img_form.save()
-            #account_image = AccountImage(image=request.POST['image'], account=account)
-            #account_image.save()
+            profile_image = ProfileImage(image=request.POST['image'], account=account)
+            profile_image.save()
             return redirect('account-id-index', id=id)
     else:
         form = EditAccountForm(instance=account)

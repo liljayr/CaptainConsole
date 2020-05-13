@@ -1,9 +1,12 @@
+from django.contrib.auth.decorators import login_required
+
 from common.renderTemplates import renderTemplate
 
 
 #Dummy data -- replace with connection to database
 
 # Create your views here.
+@login_required
 def index(request):
     return renderTemplate(request, 'cart/index.html')
 

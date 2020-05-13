@@ -1,15 +1,21 @@
+{% load static %}
+<div class="acc">
+    <h1>Account</h1>
+    <a href="#">
+        <!---<img class="profile-img" src="{{ user.ProfileImage.image }}"/>
+    <img class="profile-img" src="{{ user.userimage_set.first.image }}"/>--->
 
-            <div class="acc">
-                <h1>Account</h1>
-                <img class="profile_pic" src="{{ account.userimage_set.first.image }}" alt="Profile picture"/>
-            </div>
-            <div class="accinfo">
-                <p>{{account.username }}</p>
-                <p>{{ account.first_name }}</p>
-                <p>{{ account.last_name }}</p>
-                <p>{{ account.email }}</p>
-               <form action="{% url "edit-index" account.id %}" >
-                    <button class="small_button" type="submit">Edit</button>
-                </form>
-            </div>
+    </a>
+    <img class="profile-img" src="{{ account.userimage_set.first.image }}" alt="{% static 'images/account_icon.png' %}"/>
+    <!---<img class="profile_pic" src="{{ account.userimage_set.first.image }}" alt="Profile picture"/> --->
+</div>
+<div class="accinfo">
+    <p>{{account.username }}</p>
+    <p>{{ account.first_name }}</p>
+    <p>{{ account.last_name }}</p>
+    <p>{{ account.email }}</p>
+   <form action="{% url "edit-index" account.id %}" >
+        <button class="small_button" type="submit">Edit</button>
+    </form>
+</div>
 

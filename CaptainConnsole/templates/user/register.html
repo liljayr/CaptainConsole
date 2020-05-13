@@ -4,7 +4,13 @@
     <h2>Sign up as a new user </h2>
     <form class ="form from-horizontal" method="post">
         {% csrf_token %}
-        {{ form }}
+        {% for field in form %}
+        <div class="form-group">
+            <label>{{ field.label }}</label>
+            <span>{{ field }}</span>
+            <small class="form-text text-muted captain-form-error">{{ field.errors }}</small>
+        </div>
+        {% endfor %}
         <input type="submit" class="btn btn-primary" value="Sign up"/>
     </form>
     </div>

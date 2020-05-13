@@ -1,15 +1,15 @@
-.game-img {
+.item-img {
     flex: 1 100%;
     position:relative;
     width: 100%;
 }
 
-.games {
+.items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.well-game {
+.well-item {
     width: 100px;
 }
 
@@ -37,4 +37,5 @@
     overflow-y: auto;
     overflow-x: hidden;
     margin-top: 1rem;
+    flex: 1;
 }

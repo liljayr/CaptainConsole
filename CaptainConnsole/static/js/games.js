@@ -10,7 +10,7 @@ $(document).ready(function(){
     });
     $('.star').click(function() {
         update_favorites();
-    })
+    });
     /*$('#checkbox').on('click', function(e) {
         performSearch();
     })*/
@@ -20,15 +20,15 @@ function update_favorites() {
     $('#game :checked').each(function(index){
         console.log($(this));
         console.log(this.value);
-    })
-}
+    });
+};
 
 //values in quotes are id in template
 function performSearch(){
-    var query = $('#search-box').val();
-    var sort = $('#sort-by').val();
-    var consoles = new Array();
-    var count = 0;
+    let query = $('#search-box').val();
+    let sort = $('#sort-by').val();
+    let consoles = new Array();
+    let count = 0;
     $('#consoles :checked').each(function(index) {
         //consoles = consoles
         console.log($(this));
@@ -37,13 +37,13 @@ function performSearch(){
         count = count + 1;
     });
     console.log(consoles);
-    var types = '';
-    var comp_url = '/games?search_filter=' + query + '&check=' + consoles; //+ '&sort_by=' + sort
+    let types = '';
+    let comp_url = '/games?search_filter=' + query + '&check=' + consoles; //+ '&sort_by=' + sort
     $.ajax({
         url: comp_url,
         type: 'GET',
         success: function(resp){
-            var newHtml = resp.data.map(d => {
+            let newHtml = resp.data.map(d => {
                 return `<div class="well-game">
                             <a href="/games/${d.id}">
                                 <img class="game-img" src="${d.first_image}"/>

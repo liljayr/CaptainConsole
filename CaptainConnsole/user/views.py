@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
+from common.renderTemplates import renderTemplate
 from user.forms.registration import RegistrationForm
 
 
@@ -8,6 +9,7 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect('login')
-    return render(request, 'user/register.html', {
+
+    return renderTemplate(request, 'user/register.html', {
         'form': RegistrationForm()
     })

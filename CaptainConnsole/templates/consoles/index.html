@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{%static 'css/game.css' %}"/>
+    <link rel="stylesheet" href="{%static 'css/item.css' %}"/>
     <h1>Consoles!</h1>
     <div>
-        <div class="console">
+        <div class="items">
             {% for con in consoles %}
-                {%  include 'consoles/single_console.html' with consoles=consoles %}
+                {%  include 'consoles/single_console.html' with consoles=con %}
             {% endfor %}
         </div>
     </div>

@@ -3,6 +3,7 @@
 {% block content %}
     <link rel="stylesheet" href="{%static 'css/item.css' %}"/>
     <h1>Games!</h1>
+    <p class="hide" id="hidden" value="games">games</p>
     <div class="input-group">
         {% include '../filter/search.html' %}
     </div>
@@ -21,4 +22,3 @@
         </div>
     </div>
 {% endblock %}
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>-->

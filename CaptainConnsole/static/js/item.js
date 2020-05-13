@@ -24,8 +24,13 @@ function update_favorites() {
 //values in quotes are id in template
 function performSearch(){
     let query = $('#search-box').val();
+    console.log("search");
+    console.log(query);
     let sort = $('#sort-by').val();
     let getConsoles = new Array();
+    let hiddenValue = $('#hidden')[0].innerText;
+    console.log("pssssst this is hidden");
+    console.log(hiddenValue);
     let count = 0;
     $('#consoleCatG :checked').each(function(index) {
         console.log("Sorting games!!!!");
@@ -37,7 +42,7 @@ function performSearch(){
     });
     //console.log(consoles);
     let types = '';
-    let comp_url = '/games?search_filter=' + query + '&check=' + getConsoles; //+ '&sort_by=' + sort
+    let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles; //+ '&sort_by=' + sort
     console.log("url check");
     console.log(comp_url);
     $.ajax({
@@ -46,7 +51,7 @@ function performSearch(){
         success: function(resp){
             let newHtml = resp.data.map(d => {
                 return `<div class="well-item">
-                            <a href="/games/${d.id}">
+                            <a href="/${hiddenValue}/${d.id}">
                                 <img class="item-img" src="${d.first_image}"/>
                                 <h4>${d.name}</h4>
                                 <h4>$${d.price}</h4>

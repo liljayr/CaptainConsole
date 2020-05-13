@@ -11,13 +11,12 @@
                                 <p>{{ game.game_id.name }} </p>
                                 </a>
                             </div>
-
                         </div>
                     {% endfor %}
                     {% for console in fav_consoles %}
                         <div class="product">
                             <div class="inner_prod">
-                                <a>
+                                <a href="/consoles/{{ console.console_id.id }}">
                                 <img class="prod_img" src="{{ console.console_id.consoleimage_set.first.image}}" alt="Picture of product">
                                 <p>{{ console.console_id.name }} </p>
                                 </a>

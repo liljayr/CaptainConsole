@@ -1,0 +1,6 @@
+<!--<div class="consoles" id="consoles">-->
+    {% for item in group %}
+        <input type="checkbox" id="{{ item }}" name="{{ item }}" value="{{ item.id }}">
+        <label for="{{ item }}">{{ item }}</label><br>
+    {% endfor %}
+<!--</div>-->

@@ -7,7 +7,7 @@ from account.models import SearchHistory
 from common.renderTemplates import renderTemplate
 from django.shortcuts import get_object_or_404
 
-from common.views import sort_items, filter_by_category
+from common.views import sort_items, filter_by_category, add_favorite
 from consoles.models import ConsoleCategory
 from games.models import Games, GameCategory
 
@@ -19,6 +19,9 @@ def search_history(id, hidden, search):
     history = SearchHistory(user=id, category=hidden, value=search)
     history.save()
 
+
+
+
 def get_game_by_id(request, id):
     return renderTemplate(request, 'games/game_details.html', {
         'game': get_object_or_404(Games, pk=id)
@@ -28,7 +31,15 @@ def index(request):
     if 'search_filter' in request.GET:
         user_id = request.user.id
         if user_id != None:
+            print("work goddammit")
+            print('prod_id' in request.GET)
             search_history(user_id, request.GET['hidden'], request.GET['search_filter'])
+            if 'prod_id' in request.GET:
+                print("this isss proddddddd!!!!!!!")
+                print(request.GET['hidden'])
+                print(request.GET['prod_id'])
+                print()
+                add_favorite(user_id, request.GET['hidden'], request.GET['prod_id'])
         info = Games.objects.all()
         if 'sort_by' in request.GET:
             sort_by = request.GET['sort_by']
@@ -59,12 +70,4 @@ def index(request):
                'types': GameCategory.objects.all()}
     return renderTemplate(request, 'games/index.html', context)
 
-def update_favorites(request):
-    if request.method == 'POST':
-        print("alalalalalalalalallaallalaal")
-        #fav = Favorite.objects.get()
-        fav = Favorite(game_id='favorite_item', user_id='user_id')
-        #fav.game_id = request.POST['favorite_item']
-        #fav.user_id = request.POST['user_id']
-        fav.save()
-        return HttpResponse("kul")
+

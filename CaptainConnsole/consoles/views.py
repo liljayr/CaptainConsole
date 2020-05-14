@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 
 from common.renderTemplates import renderTemplate
-from common.views import sort_items, filter_by_category
+from common.views import sort_items, filter_by_category, add_favorite
 from consoles.models import Consoles, ConsoleCategory
 
 
@@ -13,6 +13,16 @@ def get_console_by_id(request, id):
 
 def index(request):
     if 'search_filter' in request.GET:
+        user_id = request.user.id
+        if user_id != None:
+            print("work goddammit")
+            print('prod_id' in request.GET)
+            if 'prod_id' in request.GET:
+                print("this isss proddddddd!!!!!!!")
+                print(request.GET['hidden'])
+                print(request.GET['prod_id'])
+                print()
+                add_favorite(user_id, request.GET['hidden'], request.GET['prod_id'])
         info=Consoles.objects.exclude(description=' ')
         if 'sort_by' in request.GET:
             sort_by = request.GET['sort_by']

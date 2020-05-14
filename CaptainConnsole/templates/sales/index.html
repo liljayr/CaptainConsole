@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Sales!</h1>
-    {% for item in onSale %}
-        <h4> {{ item.name }}</h4>
-        <p> {{ item.price }}</p>
+    <h2>Consoles</h2>
+    {% for item in consoles %}
+        {% include 'consoles/single_console.html' with consoles=item %}
+    {% endfor %}
+    <h2>Consoles</h2>
+    {% for item in games %}
+        {% include 'games/single_game.html' with games=item %}
     {% endfor %}
 {% endblock %}

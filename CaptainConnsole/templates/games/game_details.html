@@ -7,12 +7,14 @@
         <div class="scroll">
             <h1>{{ game.name }}</h1>
             <p>${{ game.price }}</p>
+            <img class="{{ games.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
             <p>{{ game }}</p>
             <p>{{ game.description }}</p>
             <p id="amount_in_stock">{{ game.amount }}</p>
             {% for game_image in game.gameimage_set.all %}
                 <img src="{{ game_image.image }}" class="game-img" alt="Picture not available"/>
             {% endfor %}
+            <!--<iframe src="https://www.retrogames.cc/embed/16680-super-mario-bros-3-usa.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>-->
         </div>
         <div class="add_button" id="add_button_div">
             <form action="#">

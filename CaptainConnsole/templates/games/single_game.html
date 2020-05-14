@@ -1,6 +1,6 @@
 {% load static %}
 <link rel="stylesheet" href="{%static 'css/item.css' %}"/>
-<p class="hide" id="hidden_view" name="view" >game_{{ games.id }}</p>
+<p class="hide" id="hidden_view" name="view" >{{ current_user_id }}</p>
 <div class="well-item" id="game">
     <form action="/games/{{ games.id }}" >
         <button class="view " id="view_{{ games.id }}"  type="submit" value="game_{{ games.id }}">
@@ -10,6 +10,7 @@
             <h4>{{ games.name }}</h4>
             <h4>${{ games.price }}</h4>
             <input type="checkbox" value="{{ games.id }}" class="star" name="star">
+
         </button>
     </form>
 

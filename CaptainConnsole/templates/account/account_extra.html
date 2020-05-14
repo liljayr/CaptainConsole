@@ -1,32 +1,48 @@
 
 <div class="favorites">
-            <h2>Favorites</h2>
-            <div class="scrollbox">
-                <div class="scroll">
-                    {% for game in fav_games %}
-                        <div class="product">
-                            <div class="inner_prod">
-                                <a href="/games/{{ game.game_id.id }}" >
-                                <img class="prod_img" src="{{ game.game_id.gameimage_set.first.image}}" alt="Picture of product">
-                                <p>{{ game.game_id.name }} </p>
-                                </a>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    {% for console in fav_consoles %}
-                        <div class="product">
-                            <div class="inner_prod">
-                                <a href="/consoles/{{ console.console_id.id }}">
-                                <img class="prod_img" src="{{ console.console_id.consoleimage_set.first.image}}" alt="Picture of product">
-                                <p>{{ console.console_id.name }} </p>
-                                </a>
-                            </div>
-                        </div>
-                    {% endfor %}
-
+    <h2>Favorites</h2>
+    <div class="scrollbox">
+        <div class="scroll">
+            {% for game in fav_games %}
+                <div class="product">
+                    <div class="inner_prod">
+                        <a href="/games/{{ game.game_id.id }}" >
+                            <img class="prod_img" src="{{ game.game_id.gameimage_set.first.image}}" alt="Picture of product">
+                            <p>{{ game.game_id.name }} </p>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
+            {% endfor %}
+            {% for console in fav_consoles %}
+                <div class="product">
+                    <div class="inner_prod">
+                        <a href="/consoles/{{ console.console_id.id }}">
+                            <img class="prod_img" src="{{ console.console_id.consoleimage_set.first.image}}" alt="Picture of product">
+                            <p>{{ console.console_id.name }} </p>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
+    </div>
+</div>
+<div class="search_history">
+    <h2>Search history</h2>
+    <div class="scrollbox">
+        <div class="scroll">
+            {% for item in search_history %}
+                <div class="product">
+                    <div class="inner_prod">
+                        <a href="/games/{{ game.game_id.id }}" > <!---gera lika fyrir console--->
+                            <p>{{ item.game_id.name }} </p>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
 
 

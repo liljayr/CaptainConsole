@@ -46,8 +46,6 @@ def index(request):
             info = info.filter(onSale=sale)
         info = info.exclude(description=' ')
         info = info.filter(name__icontains=request.GET['search_filter'])
-        print('INFORMATION')
-        print(info)
         games = [{
             'id': x.id,
             'name': x.name,

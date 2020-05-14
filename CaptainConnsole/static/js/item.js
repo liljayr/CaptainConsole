@@ -69,7 +69,7 @@ function performSearch(sort_btn){
                         </div> `
             });
             $('.items').html(newHtml.join(''));
-            $('#search-box').val('');
+            // $('#search-box').val('');
         },
         error: function (xhr, status, error) {
             // TODO: Show toastr

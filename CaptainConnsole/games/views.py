@@ -15,7 +15,6 @@ def get_game_by_id(request, id):
         'game': get_object_or_404(Games, pk=id)
     })
 
-#TODO: add sort by and extra checklist
 def index(request):
     if 'search_filter' in request.GET:
         info = Games.objects.all()

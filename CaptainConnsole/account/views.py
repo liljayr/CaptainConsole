@@ -4,8 +4,9 @@ from account.models import *
 from common.renderTemplates import renderTemplate
 from account.forms.account_form import EditAccountForm, EditImageForm
 
-#def search_history(id):
-#    history = SearchHistory.objects
+def search_history(id, hidden, search):
+    history = SearchHistory(user=id, category=hidden, value=search)
+    history.save()
 
 def find_fav(id):
     fav = Favorite.objects.filter(user_id=id)

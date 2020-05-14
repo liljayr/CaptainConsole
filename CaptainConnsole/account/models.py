@@ -30,6 +30,6 @@ class ProfileImage(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class SearchHistory(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
-    game_id = models.ForeignKey(Games, on_delete=models.CASCADE, blank=True)
-    console_id = models.ForeignKey(Consoles, on_delete=models.CASCADE, blank=True)
+    user = models.FloatField(default=0)
+    category = models.CharField(max_length=255, blank=True)
+    value = models.CharField(max_length=255, blank=True)

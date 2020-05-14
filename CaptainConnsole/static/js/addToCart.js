@@ -15,7 +15,7 @@ function getCartCounter() {
     for (let i=0; i<cart.length; i++) {
         cart_counter += cart[i].amount;
     }
-    console.log(cart_counter);
+
     document.getElementById("num_in_cart").innerHTML = cart_counter;
 }
 
@@ -34,7 +34,6 @@ function addToCart() {
     //let add_console_to_cart = document.getElementById("add_button_consoles");
     let buttons = [add_game_to_cart];
     for (let i=0; i<buttons.length; i++) {
-        console.log(buttons[i]);
         buttons[i].onclick = function () {
             let product_id = -1;
             $('#add_button_div :button').each(function(index){
@@ -73,7 +72,14 @@ function addToCart() {
 
 };
 
+function addToDB() {
+    console.log("DB FUNC");
+};
+
 $(document).ready(addToCart());
+
+
+
 
 
 

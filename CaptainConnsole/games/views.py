@@ -43,6 +43,7 @@ def index(request):
 
 def update_favorites(request):
     if request.method == 'POST':
+        print("alalalalalalalalallaallalaal")
         #fav = Favorite.objects.get()
         fav = Favorite(game_id='favorite_item', user_id='user_id')
         #fav.game_id = request.POST['favorite_item']

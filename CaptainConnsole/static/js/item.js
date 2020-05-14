@@ -36,7 +36,8 @@ function update_favorites() {
         $.ajax({
             url: fav_url,
             data: {'favorite_item': game_id, 'user_id':user_id},
-            type: 'POST'
+            type: 'POST',
+
     }).done(function (response) {
         console.log(response);
 
@@ -66,10 +67,10 @@ function performSearch(sort_btn){
     $('#types :checked').each(function(index) {
         type[count2] = this.value;
         count2 = count + 1;
-    });
+    })
     $('.on-sale :checked').each(function(index) {
         on_sale = 'True';
-    });
+    })
     //console.log(consoles);
     let types = '';
     let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles + '&type=' + type +

@@ -38,7 +38,8 @@ def index(request):
 def get_account_id(request, id):
     fav_games, fav_consoles = find_fav(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
-               'fav_games': fav_games, 'fav_consoles': fav_consoles}
+               'fav_games': fav_games, 'fav_consoles': fav_consoles,
+               'search_history': SearchHistory.objects.all().filter(user_id=id)}
     return renderTemplate(request, 'account/index.html', context)
 
 def prev_orders(request, id):

@@ -1,5 +1,6 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 
+from account.models import Favorite
 from common.renderTemplates import renderTemplate
 from django.shortcuts import get_object_or_404
 
@@ -39,3 +40,12 @@ def index(request):
                'prices': {'$0.00-$10.00', '$10.01-$15.00', '$15.01-$20.00'},
                'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id}
     return renderTemplate(request, 'games/index.html', context)
+
+def update_favorites(request):
+    if request.method == 'POST':
+        #fav = Favorite.objects.get()
+        fav = Favorite(game_id='favorite_item', user_id='user_id')
+        #fav.game_id = request.POST['favorite_item']
+        #fav.user_id = request.POST['user_id']
+        fav.save()
+        return HttpResponse("kul")

@@ -2,7 +2,9 @@
 {% block content %}
     <h1>Sales!</h1>
     {% for item in consoles %}
-        <h4> {{ item.name }}</h4>
-        <p> {{ item.price }}</p>
+        {% include 'consoles/single_console.html' with consoles=item %}
+    {% endfor %}
+    {% for item in games %}
+        {% include 'games/single_game.html' with games=item %}
     {% endfor %}
 {% endblock %}

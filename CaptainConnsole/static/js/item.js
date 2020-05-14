@@ -66,10 +66,10 @@ function performSearch(sort_btn){
     $('#types :checked').each(function(index) {
         type[count2] = this.value;
         count2 = count + 1;
-    })
+    });
     $('.on-sale :checked').each(function(index) {
         on_sale = 'True';
-    })
+    });
     //console.log(consoles);
     let types = '';
     let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles + '&type=' + type +

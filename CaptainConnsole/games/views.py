@@ -57,7 +57,9 @@ def index(request):
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all(),
                'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id, 'on_sale': {'On Sale'},
                'types': GameCategory.objects.all()}
-    return renderTemplate(request, 'games/index.html', context)def update_favorites(request):
+    return renderTemplate(request, 'games/index.html', context)
+
+def update_favorites(request):
     if request.method == 'POST':
         print("alalalalalalalalallaallalaal")
         #fav = Favorite.objects.get()

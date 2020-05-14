@@ -4,9 +4,11 @@ from account.models import *
 from common.renderTemplates import renderTemplate
 from account.forms.account_form import EditAccountForm, EditImageForm
 
-def search_history(id, hidden, search):
-    history = SearchHistory(user=id, category=hidden, value=search)
-    history.save()
+def get_search_history(id_val):
+    history = SearchHistory.filter(user_id=id_val)
+    game_history = history.filter(category='games')
+    console_history = history.filter(category='consoles')
+    return game_history, console_history
 
 def find_fav(id):
     fav = Favorite.objects.filter(user_id=id)
@@ -40,9 +42,10 @@ def index(request):
 
 def get_account_id(request, id):
     fav_games, fav_consoles = find_fav(id)
+    game_history, console_history = get_search_history(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles,
-               'search_history': SearchHistory.objects.all().filter(user_id=id)}
+               'game_history': game_history, 'console_history': console_history}
     return renderTemplate(request, 'account/index.html', context)
 
 def prev_orders(request, id):

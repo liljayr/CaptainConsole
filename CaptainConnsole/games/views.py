@@ -3,8 +3,9 @@ from django.http import JsonResponse
 from common.renderTemplates import renderTemplate
 from django.shortcuts import get_object_or_404
 
-from consoles.models import Consoles, ConsoleCategory
-from games.models import Games
+from common.views import sort_items, filter_by_category
+from consoles.models import ConsoleCategory
+from games.models import Games, GameCategory
 
 
 #if doesn't runn turn off db connection in pycharm
@@ -20,19 +21,18 @@ def index(request):
         info = Games.objects.all()
         if 'sort_by' in request.GET:
             sort_by = request.GET['sort_by']
-            if sort_by == "alphabet":
-                info = info.order_by('name')
-            elif sort_by == "lowest":
-                info = info.order_by('price')
-                print("CHECK HERE!!!")
-                print(info)
-            elif sort_by == "highest":
-                info = info.order_by('-price')
+            info = sort_items(sort_by, info)
         if 'check' in request.GET:
             consoles = request.GET['check']
             if consoles != "":
                 for id in consoles.split(','):
                     info = info.filter(console_id=int(id))
+        if 'type' in request.GET:
+            typeCat = request.GET['type']
+            info = filter_by_category(typeCat, info)
+        if 'on_sale' in request.GET:
+            sale = request.GET['on_sale']
+            info = info.filter(onSale=sale)
         info = info.exclude(description=' ')
         info = info.filter(name__icontains=request.GET['search_filter'])
         print('INFORMATION')
@@ -46,5 +46,6 @@ def index(request):
         } for x in info]
         return JsonResponse({'data': games})
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all(),
-               'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id}
+               'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id, 'on_sale': {'On Sale'},
+               'types': GameCategory.objects.all()}
     return renderTemplate(request, 'games/index.html', context)

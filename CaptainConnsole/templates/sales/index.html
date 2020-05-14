@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Sales!</h1>
-    {% for item in onSale %}
+    {% for item in consoles %}
         <h4> {{ item.name }}</h4>
         <p> {{ item.price }}</p>
     {% endfor %}

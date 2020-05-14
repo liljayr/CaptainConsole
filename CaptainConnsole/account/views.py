@@ -27,8 +27,6 @@ def find_fav(id):
     fav_games = []
     fav_consoles = []
     for prod in fav:
-
-        #try:
         if prod.game_id != -1:
             print(prod.game_id)
             print("lalalalaa game")
@@ -37,10 +35,11 @@ def find_fav(id):
             if game.first() != None:
                 fav_games.append(game.first())
             else:
-                print("cons")
-                c_id = prod.console_id
-                console = Consoles.objects.all().filter(pk=c_id)
-                fav_consoles.append(console.first())
+                if prod.console_id != -1:
+                    print("cons")
+                    c_id = prod.console_id
+                    console = Consoles.objects.all().filter(pk=c_id)
+                    fav_consoles.append(console.first())
     print(fav_consoles)
     print(fav_games)
     return fav_games, fav_consoles

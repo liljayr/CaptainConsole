@@ -28,3 +28,8 @@ class Order(models.Model):
 class ProfileImage(models.Model):
     image = models.CharField(max_length=999)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class SearchHistory(models.Model):
+    user = models.FloatField(default=0)
+    category = models.CharField(max_length=255, blank=True)
+    value = models.CharField(max_length=255, blank=True)

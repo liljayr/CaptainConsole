@@ -3,7 +3,21 @@
 {% block content %}
     <link rel="stylesheet" href="{%static 'css/item.css' %}"/>
     <h1>Consoles!</h1>
+    <p class="hide" id="hidden" value="consoles">consoles</p>
+    <div class="input-group">
+        {% include '../filter/search.html' %}
+    </div>
+    <div class="on-sale">
+        {% include '../filter/checklist.html' with group=on_sale %}
+    </div>
+    {% include '../filter/sort_by.html' %}
     <div>
+        <div class="multiple-choice">
+            <div class="consoleCatG" id="consoleCatG">
+                <h4>Console Categories</h4>
+                {% include '../filter/checklist.html' with group=categories %}
+            </div>
+        </div>
         <div class="items">
             {% for con in consoles %}
                 {%  include 'consoles/single_console.html' with consoles=con %}

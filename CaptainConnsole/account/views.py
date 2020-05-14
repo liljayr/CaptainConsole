@@ -56,9 +56,7 @@ def get_account_id(request, id):
     game_history, console_history = get_search_history(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles,
-
-               'search_history': SearchHistory.objects.all().filter(user=id)}
-
+               'search_history': SearchHistory.objects.all().filter(user=id),
                'game_history': game_history, 'console_history': console_history}
 
     return renderTemplate(request, 'account/index.html', context)

@@ -28,6 +28,14 @@ function update_favorites() {
         console.log(this.value);
 
     });
+    $('#console :checked').each(function(index){
+        prod_id = this.value;
+        favorite_list.push(prod_id);
+        console.log(favorite_list);
+        console.log(this.value);
+
+    });
+
     return prod_id;
 };
 

@@ -1,3 +1,6 @@
+from account.models import Favorite
+
+
 def sort_items(sort_by, info):
     if sort_by == "alphabet":
         info = info.order_by('name')
@@ -6,6 +9,17 @@ def sort_items(sort_by, info):
     elif sort_by == "highest":
         info = info.order_by('-price')
     return info
+
+def add_favorite(id, hidden, prod_id):
+    if hidden == 'games':
+        print(id)
+        print(prod_id)
+        favorite = Favorite(user_id=id, game_id=prod_id)
+        favorite.save()
+    elif hidden == 'consoles':
+        print("CONSOLE JAJAJAJA")
+        favorite = Favorite(user_id=id, console_id=prod_id)
+        favorite.save()
 
 def filter_by_category(category, info):
     if category != "":

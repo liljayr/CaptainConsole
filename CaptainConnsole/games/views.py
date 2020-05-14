@@ -7,7 +7,7 @@ from account.models import Favorite
 from common.renderTemplates import renderTemplate
 from django.shortcuts import get_object_or_404
 
-from common.views import sort_items, filter_by_category
+from common.views import sort_items, filter_by_category, add_favorite
 from consoles.models import ConsoleCategory
 from games.models import Games, GameCategory
 
@@ -19,15 +19,7 @@ def search_history(id, hidden, search):
     history = SearchHistory(user=id, category=hidden, value=search)
     history.save()
 
-def add_favorite(id, hidden, prod_id):
-    if hidden == 'games':
-        print(id)
-        print(prod_id)
-        favorite = Favorite(user_id=id, game_id=prod_id)
-        favorite.save()
-    else:
-        favorite = Favorite(user_id=id, console_id=prod_id)
-        favorite.save()
+
 
 
 def get_game_by_id(request, id):

@@ -90,3 +90,13 @@
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+.False {
+    display: none;
+}
+
+.True {
+    flex: 1 100%;
+    position:relative;
+    width: 100%;
+}

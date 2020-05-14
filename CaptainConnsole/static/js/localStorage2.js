@@ -13,8 +13,19 @@ for (let i=0; i<localStorage.length; i++) {
 }
 
 
-let clear_button = document.getElementById("confirm_button")
-clear_button.onclick = function () {
-    localStorage.clear()
-}
+function clearStorageAddToDB() {
+    // ADD TO DB
+
+    // CLEAR LOCALSTORAGE
+    let clear_button = document.getElementById("confirm_button")
+    clear_button.onclick = function () {
+    window.localStorage.clear()
+    };
+};
+
+clearStorageAddToDB();
+
+
+
+
 

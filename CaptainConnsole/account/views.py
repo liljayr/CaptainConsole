@@ -11,16 +11,27 @@ def get_search_history(id_val):
     return game_history, console_history
 
 def find_fav(id):
+    print("gggggg")
     fav = Favorite.objects.filter(user_id=id)
     fav_games = []
     fav_consoles = []
     for prod in fav:
+
         try:
             if prod.game_id:
-                fav_games.append(prod)
+                print("lalalalaa game")
+                g_id = prod.game_id
+                game = Games.objects.all().filter(pk=g_id)
+                #print(game.value)
+                fav_games.append(game.first())
         except:
             if prod.console_id:
-                fav_consoles.append(prod)
+                print("cons")
+                c_id = prod.console_id
+                console = Consoles.objects.all().filter(pk=c_id)
+                fav_consoles.append(console.first())
+    print(fav_consoles)
+    print(fav_games)
     return fav_games, fav_consoles
 
 def find_orders(id):
@@ -45,7 +56,11 @@ def get_account_id(request, id):
     game_history, console_history = get_search_history(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles,
+
+               'search_history': SearchHistory.objects.all().filter(user=id)}
+
                'game_history': game_history, 'console_history': console_history}
+
     return renderTemplate(request, 'account/index.html', context)
 
 def prev_orders(request, id):

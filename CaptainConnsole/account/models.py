@@ -13,9 +13,9 @@ class Location(models.Model):
     postal_code = models.FloatField(blank=True)
 
 class Favorite(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
-    game_id = models.ForeignKey(Games, on_delete=models.CASCADE, blank=True)
-    console_id = models.ForeignKey(Consoles, on_delete=models.CASCADE, blank=True)
+    user_id = models.FloatField()
+    game_id = models.FloatField()
+    console_id = models.FloatField()
 
 class Order(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)

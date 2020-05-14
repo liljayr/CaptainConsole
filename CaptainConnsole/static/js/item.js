@@ -7,7 +7,7 @@ $(document).ready(function(){
         performSearch();
     });
     $('.star').click(function() {
-        update_favorites();
+        performSearch();
     });
     $('.sortbtn').click(function() {
         console.log("checking stuff");
@@ -20,31 +20,23 @@ $(document).ready(function(){
 
 function update_favorites() {
     let favorite_list = [];
-    let game_id = -1;
+    let prod_id = -1;
     $('#game :checked').each(function(index){
-        game_id = this.value;
-        favorite_list.push(game_id);
+        prod_id = this.value;
+        favorite_list.push(prod_id);
         console.log(favorite_list);
         console.log(this.value);
 
     });
-    let hiddenValue = $('#hidden')[0].innerText;
-    console.log(hiddenValue);
-    let user_id = $('#hidden_view')[0].innerText;
-    console.log(user_id);
-    let fav_url = 'addfavorites';
-        $.ajax({
-            url: fav_url,
-            data: {'favorite_item': game_id, 'user_id':user_id},
-            type: 'POST',
+    $('#console :checked').each(function(index){
+        prod_id = this.value;
+        favorite_list.push(prod_id);
+        console.log(favorite_list);
+        console.log(this.value);
 
-    }).done(function (response) {
-        console.log(response);
+    });
 
-        })
-
-
-
+    return prod_id;
 };
 
 //values in quotes are id in template
@@ -56,6 +48,9 @@ function performSearch(sort_btn){
     let count = 0;
     let count2 = 0;
     let on_sale = 'False';
+    let prod_id = update_favorites();
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    console.log(prod_id)
     $('#consoleCatG :checked').each(function(index) {
         //console.log("Sorting games!!!!");
         //consoles = consoles
@@ -74,7 +69,7 @@ function performSearch(sort_btn){
     //console.log(consoles);
     let types = '';
     let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles + '&type=' + type +
-        '&sort_by=' + sort_btn + '&on_sale=' + on_sale + '&hidden=' + hiddenValue;
+        '&sort_by=' + sort_btn + '&on_sale=' + on_sale + '&hidden=' + hiddenValue +  '&prod_id=' + prod_id;
     console.log("url check");
     console.log(comp_url);
     $.ajax({

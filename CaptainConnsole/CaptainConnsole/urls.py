@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 
-from games.views import update_favorites
+
 
 ''' localhost/3000/admin/ '''
 

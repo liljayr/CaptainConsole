@@ -15,10 +15,31 @@ $(document).ready(function(){
 });
 
 function update_favorites() {
+    let favorite_list = [];
+    let game_id = -1;
     $('#game :checked').each(function(index){
-        console.log($(this));
+        game_id = this.value;
+        favorite_list.push(game_id);
+        console.log(favorite_list);
         console.log(this.value);
+
     });
+    let hiddenValue = $('#hidden')[0].innerText;
+    console.log(hiddenValue);
+    let user_id = $('#hidden_view')[0].innerText;
+    console.log(user_id);
+    let fav_url = 'addfavorites';
+        $.ajax({
+            url: fav_url,
+            data: {'favorite_item': game_id, 'user_id':user_id},
+            type: 'POST'
+    }).done(function (response) {
+        console.log(response);
+
+        })
+
+
+
 };
 
 //values in quotes are id in template
@@ -48,6 +69,7 @@ function performSearch(){
     $.ajax({
         url: comp_url,
         type: 'GET',
+        csrfmiddlewaretoken: '{{ csrf_token }}',
         success: function(resp){
             let newHtml = resp.data.map(d => {
                 return `<div class="well-item">

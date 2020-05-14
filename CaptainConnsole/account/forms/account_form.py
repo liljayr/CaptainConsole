@@ -1,7 +1,7 @@
 from django.forms import ModelForm, widgets
 from django import forms
 
-from account.models import User, ProfileImage
+from account.models import User, ProfileImage, SearchHistory
 
 
 class EditAccountForm(ModelForm):
@@ -25,3 +25,4 @@ class EditImageForm(ModelForm):
         widgets = {
             'image': widgets.TextInput(attrs={'class': 'form-control'})
         }
+

@@ -7,7 +7,7 @@
         <div class="scroll">
             <h1>{{ game.name }}</h1>
             <p>${{ game.price }}</p>
-            <img class="{{ games.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
+            <img class="{{ game.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
             <p>{{ game }}</p>
             <p>{{ game.description }}</p>
             <p id="amount_in_stock">{{ game.amount }}</p>
@@ -18,7 +18,7 @@
         </div>
         <div class="add_button" id="add_button_div">
             <form action="#">
-            <button type="button" value="game_{{ game.id }}_{{ game.name }}" id="add_button_games" class="cart_buttons"> Add to cart</button>
+            <button type="button" value="game_{{ game.id }}_{{ game.name }}_{{ game.price }}" id="add_button_games" class="cart_buttons"> Add to cart</button>
         </form>
         </div>
     </div>

@@ -6,11 +6,10 @@ function insertLocalStorage(inputFields, buttons) {
                 let inputField = document.getElementById(inputFields[j]).value;
                 if (inputField) {
                     localStorage.setItem(inputFields[j], inputField);
-                }
-            }
-        location.reload();
+                };
+            };
         };
-    }
+    };
 };
 
 

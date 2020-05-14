@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <body onload="displayInCart()">
     <link rel="stylesheet" href="{%static 'css/cart/my_cart.css' %}"/>
     <h2>My Cart</h2>
     <div class="cart_div" id="cart_div">
@@ -11,6 +12,6 @@
                 <input type="submit" class="checkout_button" id="checkout_button" value="Checkout" />
             </form>
         </div>
-
+</body>
 
 {% endblock %}

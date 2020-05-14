@@ -1,5 +1,6 @@
 function displayInCart() {
         let cart_str = localStorage.getItem("cart");
+        console.log(cart_str);
         if (cart_str != null) {
             let cart = JSON.parse(cart_str);
             let cart_div = document.getElementById("cart_div");
@@ -35,14 +36,16 @@ function displayInCart() {
                                           </div>`
 
                 };
-            }};
+            }
+        }
+
+
 
 };
 
 
-
-
 let button = document.getElementById("cart_img");
+console.log(button);
 button.onclick = function() {
     $(document).ready(displayInCart());
     return false;

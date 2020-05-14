@@ -43,7 +43,8 @@ def index(request):
             info = filter_by_category(typeCat, info)
         if 'on_sale' in request.GET:
             sale = request.GET['on_sale']
-            info = info.filter(onSale=sale)
+            if sale == 'True':
+                info = info.filter(onSale=sale)
         info = info.exclude(description=' ')
         info = info.filter(name__icontains=request.GET['search_filter'])
         games = [{

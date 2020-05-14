@@ -32,7 +32,8 @@ function update_favorites() {
         $.ajax({
             url: fav_url,
             data: {'favorite_item': game_id, 'user_id':user_id},
-            type: 'POST'
+            type: 'POST',
+
     }).done(function (response) {
         console.log(response);
 

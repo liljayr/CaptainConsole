@@ -47,9 +47,5 @@ function displayInCart() {
 let button = document.getElementById("cart_img");
 console.log(button);
 button.onclick = function() {
-    $(document).ready(displayInCart());
-    return false;
+    $(document).ready(displayInCart);
 }
-
-
-

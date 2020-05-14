@@ -52,7 +52,7 @@ function performSearch(sort_btn){
     //console.log(consoles);
     let types = '';
     let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles + '&type=' + type +
-        '&sort_by=' + sort_btn + '&on_sale=' + on_sale;
+        '&sort_by=' + sort_btn + '&on_sale=' + on_sale + '&hidden=' + hiddenValue;
     console.log("url check");
     console.log(comp_url);
     $.ajax({
@@ -60,7 +60,7 @@ function performSearch(sort_btn){
         type: 'GET',
         success: function(resp){
             let newHtml = resp.data.map(d => {
-                return `<div class="well-item">
+                return `<div class="well-item" id="${hiddenValue}">
                             <a href="/${hiddenValue}/${d.id}">
                                 <img class="item-img" src="${d.first_image}"/>
                                 <h4>${d.name}</h4>

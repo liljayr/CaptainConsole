@@ -54,7 +54,8 @@ def index(request):
             info = filter_by_category(typeCat, info)
         if 'on_sale' in request.GET:
             sale = request.GET['on_sale']
-            info = info.filter(onSale=sale)
+            if sale == 'True':
+                info = info.filter(onSale=sale)
         info = info.exclude(description=' ')
         info = info.filter(name__icontains=request.GET['search_filter'])
         games = [{
@@ -64,6 +65,8 @@ def index(request):
             'description': x.description,
             'first_image': x.gameimage_set.first().image
         } for x in info]
+        #print("information is power")
+        #print(games)
         return JsonResponse({'data': games})
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all(),
                'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id, 'on_sale': {'On Sale'},

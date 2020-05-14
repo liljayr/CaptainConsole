@@ -7,17 +7,13 @@ from account.models import SearchHistory
 from common.renderTemplates import renderTemplate
 from django.shortcuts import get_object_or_404
 
-from common.views import sort_items, filter_by_category, add_favorite
+from common.views import sort_items, filter_by_category, add_favorite, search_history
 from consoles.models import ConsoleCategory
 from games.models import Games, GameCategory
 
 
 #if doesn't run turn off db connection in pycharm
-def search_history(id, hidden, search):
-    print("yippikayyay!!!!")
-    print(id)
-    history = SearchHistory(user=id, category=hidden, value=search)
-    history.save()
+
 
 
 

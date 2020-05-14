@@ -5,9 +5,12 @@ from common.renderTemplates import renderTemplate
 from account.forms.account_form import EditAccountForm, EditImageForm
 
 def get_search_history(id_val):
-    history = SearchHistory.filter(user_id=id_val)
+    history = SearchHistory.objects.all().filter(user=id_val)
     game_history = history.filter(category='games')
+    print("game search")
+    print(game_history);
     console_history = history.filter(category='consoles')
+    print(console_history)
     return game_history, console_history
 
 def find_fav(id):
@@ -56,7 +59,7 @@ def get_account_id(request, id):
     game_history, console_history = get_search_history(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles,
-               'search_history': SearchHistory.objects.all().filter(user=id),
+               #'search_history': SearchHistory.objects.all().filter(user=id),
                'game_history': game_history, 'console_history': console_history}
 
     return renderTemplate(request, 'account/index.html', context)

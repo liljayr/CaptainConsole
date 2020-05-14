@@ -11,7 +11,7 @@
 
 <div class="well-item" id="game">
     <form action="/games/{{ games.id }}" >
-        <button class="view" id="view"  type="submit" value="game_{{ games.id }}">
+        <button class="view" id="view{{ games.id }}"  type="submit" value="game_{{ games.id }}">
 
             <img class="item-img" src="{{ games.gameimage_set.first.image }}" alt="No picture available" />
 

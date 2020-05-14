@@ -2,42 +2,17 @@
 
 <link rel="stylesheet" href="{%static 'css/cart/checkout_cart.css' %}"/>
 <div class="checkout_cart">
-    <div class="items">
-        <p>
-            {{ num_in_cart }} Items
-        </p>
+    <div class="items" id="items">
+
     </div>
+    <div class="table" id="checkout_table"></div>
 
-    <table class="table">
-        <tbody>
-            <tr class="heading">
-                <td>Items</td>
-                <td>Amount</td>
-                <td>Price</td>
-            </tr>
+    </div>
+    <div class="separated_cost" id="separated_cost"></div>
 
-            {% for item in cart%}
-                <tr>
-                    <td> {{ item.name }} </td>
-                    <td> {{ item.amount }} </td>
-                    <td> ${{ item.price }} </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    </div>
+    <div class="total" id="total">
 
-    <p>
-        Subtotal: ${{ total_price }}
-    </p>
-    <p>
-        Shipping: $10.00
-    </p>
-    <p>
-        Tax: $0.00
-    </p>
-
-    <p class="total">
-        Total: $80.00
-    </p>
+    </div>
 
 </div>

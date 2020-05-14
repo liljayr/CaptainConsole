@@ -1,9 +1,9 @@
+from django.http import JsonResponse, HttpResponse
+
+from account.models import Favorite
 from django.contrib.auth.models import User
-from django.http import JsonResponse
 
 from account.models import SearchHistory
-from account.models import Favorite
-
 from common.renderTemplates import renderTemplate
 from django.shortcuts import get_object_or_404
 
@@ -46,8 +46,6 @@ def index(request):
             info = info.filter(onSale=sale)
         info = info.exclude(description=' ')
         info = info.filter(name__icontains=request.GET['search_filter'])
-        print('INFORMATION')
-        print(info)
         games = [{
             'id': x.id,
             'name': x.name,
@@ -57,7 +55,6 @@ def index(request):
         } for x in info]
         return JsonResponse({'data': games})
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all(),
-
                'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id, 'on_sale': {'On Sale'},
                'types': GameCategory.objects.all()}
     return renderTemplate(request, 'games/index.html', context)

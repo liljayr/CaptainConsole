@@ -1,13 +1,13 @@
 {% load static %}
 <link rel="stylesheet" href="{%static 'css/item.css' %}"/>
 <div class="well-item">
-    <form action="/consoles/{{ consoles.id }}" >
-        <button class="view" id="view"  type="submit" value="consoles_{{ consoles.id }}">
+    <form action="/games/{{ games.id }}" >
+        <button class="view" id="view"  type="submit" value="game_{{ games.id }}">
             <img class="{{ consoles.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
             <img class="item-img" src="{{ consoles.consoleimage_set.first.image }}" alt="No picture available" />
             <h4>{{ consoles.name }}</h4>
             <h4>${{ consoles.price }}</h4>
-            <input type="checkbox" value="{{ consoles.id }}" class="star" name="star">
+            <input type="checkbox" value="{{ games.id }}" class="star" name="star">
         </button>
     </form>
 </div>

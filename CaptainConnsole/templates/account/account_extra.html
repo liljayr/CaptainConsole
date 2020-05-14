@@ -6,9 +6,9 @@
             {% for game in fav_games %}
                 <div class="product">
                     <div class="inner_prod">
-                        <a href="/games/{{ game.game_id.id }}" >
-                            <img class="prod_img" src="{{ game.game_id.gameimage_set.first.image}}" alt="Picture of product">
-                            <p>{{ game.game_id.name }} </p>
+                        <a href="/games/{{ game.id }}" >
+                            <img class="prod_img" src="{{ game.gameimage_set.first.image}}" alt="Picture of product">
+                            <p>{{ game.name }} </p>
                         </a>
                     </div>
                 </div>
@@ -16,9 +16,9 @@
             {% for console in fav_consoles %}
                 <div class="product">
                     <div class="inner_prod">
-                        <a href="/consoles/{{ console.console_id.id }}">
-                            <img class="prod_img" src="{{ console.console_id.consoleimage_set.first.image}}" alt="Picture of product">
-                            <p>{{ console.console_id.name }} </p>
+                        <a href="/consoles/{{ console.id }}">
+                            <img class="prod_img" src="{{ console.consoleimage_set.first.image}}" alt="Picture of product">
+                            <p>{{ console.name }} </p>
                         </a>
                     </div>
                 </div>

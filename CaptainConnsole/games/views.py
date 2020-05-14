@@ -1,7 +1,6 @@
 from django.http import JsonResponse
 
 from common.renderTemplates import renderTemplate
-#from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 
 from consoles.models import Consoles, ConsoleCategory
@@ -9,8 +8,6 @@ from games.models import Games
 
 
 #if doesn't runn turn off db connection in pycharm
-#def index2(request):
-#    return renderTemplate(request, 'games/index.html')
 
 def get_game_by_id(request, id):
     return renderTemplate(request, 'games/game_details.html', {
@@ -20,15 +17,16 @@ def get_game_by_id(request, id):
 #TODO: add sort by and extra checklist
 def index(request):
     if 'search_filter' in request.GET:
-        info=Games.objects.exclude(description=' ')
+        info = Games.objects.all()
         if 'check' in request.GET:
             consoles = request.GET['check']
-            if consoles == "":
-                info = info.all()
-            else:
+            if consoles != "":
                 for id in consoles.split(','):
                     info = info.filter(console_id=int(id))
+        info = info.exclude(description=' ')
         info = info.filter(name__icontains=request.GET['search_filter'])
+        print('INFORMATION')
+        print(info)
         games = [{
             'id': x.id,
             'name': x.name,

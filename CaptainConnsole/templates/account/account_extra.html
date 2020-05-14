@@ -30,17 +30,23 @@
     <h2>Search history</h2>
     <div class="scrollbox">
         <div class="scroll">
-            {% for item in search_history %}
-                <div class="product">
-                    <div class="inner_prod">
-                        <a href="/games/{{ game.game_id.id }}" > <!---gera lika fyrir console--->
-                            <p>{{ item.game_id.name }} </p>
+            {% for item in game_history %}
+                <div class="search_result">
+                        <a href="/games" >
+                            <h4>{{ item }} </h4>
                         </a>
-                    </div>
+                </div>
+            {% endfor %}
+            {% for item in console_history %}
+                <div class="search_result">
+                        <a href="/consoles" >
+                            <h4>{{ item }} </h4>
+                        </a>
                 </div>
             {% endfor %}
         </div>
     </div>
+
 </div>
 
 

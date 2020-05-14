@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/item.css' %}">
+    <p class="hide" id="hidden_view" name="view" >game_{{ game.id }}</p>
     <div class="scrollbox">
         <div class="scroll">
             <h1>{{ game.name }}</h1>

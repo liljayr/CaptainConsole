@@ -28,3 +28,8 @@ class Order(models.Model):
 class ProfileImage(models.Model):
     image = models.CharField(max_length=999)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class SearchHistory(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
+    game_id = models.ForeignKey(Games, on_delete=models.CASCADE, blank=True)
+    console_id = models.ForeignKey(Consoles, on_delete=models.CASCADE, blank=True)

@@ -1,11 +1,11 @@
 from common.renderTemplates import renderTemplate
 
-onSale = [
-    {'name': 'Super Mario Bros', 'price': 4.99},
-]
+from consoles.models import Consoles
+from games.models import Games
 
-# Create your views here.
+
 def index(request):
-    return renderTemplate(request, 'sales/index.html', context={
-        'onSale': onSale
-    })
+    consoles = Consoles.objects.filter(onSale=True)
+    games = Games.objects.filter(onSale=True)
+    context = {'consoles': consoles, 'games': games}
+    return renderTemplate(request, 'sales/index.html', context)

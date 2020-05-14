@@ -8,10 +8,10 @@
     <!-- Optional theme -->
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
     <link rel="stylesheet" href="{%static 'css/item.css' %}"/>
-
+<p class="hide" id="hidden_view" name="view" >game_{{ games.id }}</p>
 <div class="well-item" id="game">
     <form action="/games/{{ games.id }}" >
-        <button class="view" id="view"  type="submit" value="game_{{ games.id }}">
+        <button class="view " id="view_{{ games.id }}"  type="submit" value="game_{{ games.id }}">
 
             <img class="item-img" src="{{ games.gameimage_set.first.image }}" alt="No picture available" />
 

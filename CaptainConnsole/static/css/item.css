@@ -24,6 +24,7 @@
     display:flex;
 }
 
+
 .hide {
     display: none;
 }
@@ -43,3 +44,4 @@
     margin-top: 1rem;
     flex: 1;
 }
+

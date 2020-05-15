@@ -22,26 +22,20 @@ def get_search_history(id_val):
     return game_history, console_history
 
 def find_fav(id):
-    print("gggggg")
     fav = Favorite.objects.filter(user_id=id)
     fav_games = []
     fav_consoles = []
     for prod in fav:
         if prod.game_id != -1:
-            print(prod.game_id)
-            print("lalalalaa game")
             g_id = prod.game_id
             game = Games.objects.all().filter(pk=g_id)
             if game.first() != None:
                 fav_games.append(game.first())
             else:
                 if prod.console_id != -1:
-                    print("cons")
                     c_id = prod.console_id
                     console = Consoles.objects.all().filter(pk=c_id)
                     fav_consoles.append(console.first())
-    print(fav_consoles)
-    print(fav_games)
     return fav_games, fav_consoles
 
 def find_orders(id):
@@ -66,9 +60,7 @@ def get_account_id(request, id):
     game_history, console_history = get_search_history(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles,
-               #'search_history': SearchHistory.objects.all().filter(user=id),
                'game_history': game_history, 'console_history': console_history}
-
     return renderTemplate(request, 'account/index.html', context)
 
 def prev_orders(request, id):
@@ -88,8 +80,6 @@ def edit(request, id):
         if form.is_valid() and img_form.is_valid():
             account = form.save()
             img = img_form.save()
-            #account_image = AccountImage(image=request.POST['image'], account=account)
-            #account_image.save()
             return redirect('account-id-index', id=id)
     else:
         form = EditAccountForm(instance=account)

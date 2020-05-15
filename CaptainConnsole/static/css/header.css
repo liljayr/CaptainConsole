@@ -30,3 +30,8 @@
 .captain-userprofile {
     display: flex;
 }
+
+.cart_button {
+    border:none;
+    background-color: aliceblue;
+}

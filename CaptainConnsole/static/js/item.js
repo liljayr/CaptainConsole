@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#search-btn').on('click', function(e) {
         e.preventDefault();
-        performSearch(sort_btn='', s_val='');
+        performSearch();
     });
     $('.item').click(function() {
         performSearch();
@@ -10,9 +10,6 @@ $(document).ready(function(){
         performSearch();
     });
     $('.sortbtn').click(function() {
-        console.log("checking stuff");
-        console.log($(this));
-        console.log($(this)[0].id);
         let btnvalue=$(this)[0].id;
         performSearch(sort_btn=btnvalue);
     })
@@ -33,19 +30,8 @@ function update_favorites() {
 };
 
 //values in quotes are id in template
-function performSearch(sort_btn, s_val ){
-    console.log(s_val);
-    let query = '';
-    if(s_val != ""){
-        query = s_val;
-        console.log("ifffff");
-        console.log(query);
-    }
-    else {
-        query = $('#search-box').val();
-        console.log("elseeeee");
-        console.log(query);
-    }
+function performSearch(sort_btn ){
+    let query = $('#search-box').val();
     let getConsoles = new Array();
     let type = new Array();
     let hiddenValue = $('#hidden')[0].innerText;
@@ -54,10 +40,6 @@ function performSearch(sort_btn, s_val ){
     let on_sale = 'False';
     let prod_id = update_favorites();
     $('#consoleCatG :checked').each(function(index) {
-        //console.log("Sorting games!!!!");
-        //consoles = consoles
-        //console.log($(this));
-        //console.log(this.value);
         getConsoles[count] = this.value;
         count = count + 1;
     });
@@ -68,7 +50,6 @@ function performSearch(sort_btn, s_val ){
     $('.on-sale :checked').each(function(index) {
         on_sale = 'True';
     })
-    //console.log(consoles);
     let types = '';
     let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles + '&type=' + type +
         '&sort_by=' + sort_btn + '&on_sale=' + on_sale + '&hidden=' + hiddenValue +  '&prod_id=' + prod_id;
@@ -79,9 +60,7 @@ function performSearch(sort_btn, s_val ){
         type: 'GET',
         csrfmiddlewaretoken: '{{ csrf_token }}',
         success: function(resp){
-            console.log("grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
             let newHtml = resp.data.map(d => {
-                 console.log("grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
                 return `<link rel="stylesheet" href="{%static 'css/item.css' %}"/>
                         <p class="hide" id="hidden_view" name="view" >{{ current_user_id }}</p>
                         <div class="well-item" id="${hiddenValue}">
@@ -96,7 +75,6 @@ function performSearch(sort_btn, s_val ){
                         </div> `
             });
             $('.items').html(newHtml.join(''));
-            // $('#search-box').val('');
         },
         error: function (xhr, status, error) {
             // TODO: Show toastr

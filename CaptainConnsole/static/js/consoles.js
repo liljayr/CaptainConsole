@@ -1,27 +1,18 @@
 $(document).ready(function(){
-    console.log("HEYYYY");
     $('#search-btn').on('click', function(e) {
         e.preventDefault();
-        console.log("Searching");
         performSearch();
     });
-    console.log("console check");
-    console.log($('#consoles'));
     $('.item').click(function() {
         performSearch();
     });
     $('.star').click(function() {
         update_favorites();
     });
-    /*$('#checkbox').on('click', function(e) {
-        performSearch();
-    })*/
 });
 
 function update_favorites() {
     $('#console :checked').each(function(index){
-        console.log($(this));
-        console.log(this.value);
     });
 };
 
@@ -29,18 +20,7 @@ function update_favorites() {
 function performSearch(){
     let query = $('#search-box').val();
     let sort = $('#sort-by').val();
-    console.log("checking query");
-    console.log(query);
-    //let consoles = new Array();
     let count = 0;
-    /*$('#consoles :checked').each(function(index) {
-        //consoles = consoles
-        console.log($(this));
-        console.log(this.value);
-        consoles[count] = this.value;
-        count = count + 1;
-    });*/
-    //console.log(consoles);
     let types = '';
     let comp_url = '/consoles?search_filter=' + query;// + '&check=' + consoles; //+ '&sort_by=' + sort
     $.ajax({

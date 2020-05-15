@@ -3,26 +3,26 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/item.css' %}">
     <p class="hide" id="hidden_view" name="view" >game_{{ game.id }}</p>
-    <div>
-{#    <div class="scrollbox">#}
-{#        <div class="scroll">#}
+    <div class="detail">
+        <div class="detail-image">
             {% for game_image in game.gameimage_set.all %}
-                <img src="{{ game_image.image }}" class="game-img" alt="Picture not available"/>
+                <img src="{{ game_image.image }}" class="item-detail-img" alt=""/>
             {% endfor %}
+        </div>
+        <div>
             <h1>{{ game.name }}</h1>
             <p>${{ game.price }}</p>
             <img class="{{ game.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
             <p>{{ game.description }}</p>
             {% for em in game.emulator_set.all %}
+                <p class="emulator-text">Emulator #{{ em.id }}</p>
                 <iframe src="{{ em.emulator }}" class="emulator" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
             {% endfor %}
         </div>
-        <div class="add_button" id="add_button_div">
-            <form action="#">
+    </div>
+    <div class="add_button" id="add_button_div">
+        <form action="#">
             <button type="button" value="game_{{ game.id }}_{{ game.name }}_{{ game.price }}" id="add_button_games" class="cart_buttons"> Add to cart</button>
         </form>
-{#        </div>#}
-{#    </div>#}
     </div>
-
 {% endblock %}

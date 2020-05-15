@@ -13,7 +13,8 @@ function getSearchResults(product_type) {
                                     <img class="game_img" src="${d.firstImage}" />
                                     <p>${d.name}</p>
                                     <p>${d.price}</p>
-                                </a>
+                                </
+                                a>
                             </div>`
                 });
                 $('.'+product_type).html(newHtml.join(''));

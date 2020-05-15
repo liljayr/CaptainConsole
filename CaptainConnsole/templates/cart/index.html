@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <body onload="displayInCart()">
-        <link rel="stylesheet" href="{%static 'css/cart/my_cart.css' %}"/>
+        <link rel="stylesheet" href="{%static 'css/cart/cart.css' %}"/>
         <h2>My Cart</h2>
         <div class="cart_div" id="cart_div">
             <div class="cart_header">
@@ -10,7 +10,12 @@
                 <p>Amount</p>
                 <p>Price</p>
             </div>
-            <div class="cart_items" id="cart_items">
+            <div class="cart_single_items" id="cart_items">
+                <div class="cart_single_item">
+                    <div class="item_info"></div>
+                    <div class="item_info"></div>
+                    <div class="item_info"></div>
+                </div>
             </div>
         </div>
 

@@ -1,6 +1,7 @@
 <!--<div class="consoleCatG" id="consoleCatG">-->
     {% for item in group %}
         <input type="checkbox" id={{ item }} class="item" name="{{ item }}" value="{{ item.id }}">
+{#        <span class="custom-item"></span>#}
         <label for="{{ item }}">{{ item }}</label><br>
     {% endfor %}
 <!--</div>-->

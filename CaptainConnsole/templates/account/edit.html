@@ -6,19 +6,21 @@
         <div class="account">
             <div class="acc">
                 <h1>Account</h1>
-                <img class="profile_pic" src="{{ account.accountimage_set.first.image }}" alt="Profile picture">
+                <img class="profile_pic" src="{{ profile_image }}" alt="Profile picture">
             </div>
 
            <div class="accinfo">
                <form class="form" action="{% url 'edit-index' account.id %}" method="post">
-                {% csrf_token %}
-                {{ form }}
-                {{ img_form }}
-                <button class="small_button" type="submit">Save</button>
+                    {% csrf_token %}
+                    {{ form }}
+                    {{ img_form }}
+                    <button class="small_button" id="save_btn" type="submit">Save</button>
                 </form>
-               <form class="form" action="{% url 'account-id-index' account.id %}">
-                <button class="small_button" type="submit">Cancel</button>
-               </form>
+               <div class="cancel">
+                   <form class="form" action="{% url 'account-id-index' account.id %}">
+                       <button class="small_button" id="cancel_btn" type="submit">Cancel</button>
+                    </form>
+               </div>
             </div>
         </div>
         {% include 'account/account_extra.html' %}

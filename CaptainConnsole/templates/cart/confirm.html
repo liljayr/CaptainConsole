@@ -7,31 +7,36 @@
     <h1>My order</h1>
     <p>Step 2 out of 2</p>
 
-    <div class="confirm">
-        <div class="delivery_info" id="delivery_info">
-            <h3>
-                Delivery Address
-            </h3>
-            <form id="confirm-delivery-form" class ="form from-horizontal"></form>
+    <body onload="displayInCheckout()">
+        <div class="confirm">
+            <div class="delivery_info" id="delivery_info">
+                <h3>
+                    Delivery Address
+                </h3>
+                <form id="confirm-delivery-form" class ="form from-horizontal"></form>
+            </div>
+
+            <div class="card_info" id="card_info">
+                <h3>
+                    Card information
+                </h3>
+                <form id="confirm-card-form" class ="form from-horizontal"></form>
+            </div>
+
+            {% include 'cart/checkout_cart.html' %}
         </div>
 
-        <div class="card_info" id="card_info">
-            <h3>
-                Card information
-            </h3>
-            <form id="confirm-card-form" class ="form from-horizontal"></form>
+        <div class="buttons">
+            <form action="{% url 'checkout-index' %}">
+                <input type="submit" class="captain_button" id="back_button_check" value="Back" onclick="return localStorage.clear()" />
+            </form>
+            <form action="{% url 'success-index' %}" method="post">{% csrf_token %}
+                <input type="hidden" name="cart" id="hidden_cart">
+                <button type="submit" id="confirm_button" class="captain_button_primary"> Confirm</button>
+            </form>
         </div>
-    </div>
 
-    <div class="buttons">
-        <form action="{% url 'checkout-index' %}">
-            <input type="submit" class="captain_button" id="back_button_check" value="Back" onclick="return localStorage.clear()" />
-        </form>
-        <form action="{% url 'success-index' %}" method="post">{% csrf_token %}
-            <input type="hidden" name="cart" id="hidden_cart">
-            <button type="submit" id="confirm_button" class="captain_button_primary"> Confirm</button>
-        </form>
-    </div>
+    </body>
 
     <script src="{%static 'js/localStorage2.js' %}"></script>
 

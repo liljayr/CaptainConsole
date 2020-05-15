@@ -9,20 +9,19 @@
 .accinfo{
     text-align: left;
     margin-top: 7rem;
-    width: 40%;
+    width: 30%;
 
 }
 
 .acc{
-    width: 40%;
+    width: 50%;
 }
 
 .account{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 30%;
+    width: 40%;
 }
 
 
@@ -31,7 +30,7 @@
 }
 
 .search_history{
-    width: 30%;
+    width: 20%;
 }
 .scrollbox{
     border: 0.1rem solid black;
@@ -52,23 +51,19 @@
     margin-top: 1rem;
 }
 
-
-
 .prevorders{
     width: 45%;
 }
 
 .small_button{
+    margin-top: 1rem;
     border-radius: 3rem;
     padding: 1rem;
     width: 7rem;
 }
 
-.button{
-    border-radius: 3rem;
-    padding: 1rem;
-    background-color: #7fffd4;
-    width: 14rem;
+#save_btn{
+    background-color: #82cdea;
 }
 
 .edit_info{
@@ -81,7 +76,7 @@
 }
 
 .profile_pic{
-    width: 60%;
+    width: 80%;
     border: 0.1rem solid black;
     border-radius: 1rem;
 }

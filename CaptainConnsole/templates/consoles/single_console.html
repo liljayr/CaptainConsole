@@ -1,9 +1,9 @@
 {% load static %}
 <link rel="stylesheet" href="{%static 'css/item.css' %}"/>
 <p class="hide" id="hidden_view" name="view" >{{ current_user_id }}</p>
-<div class="well-item" id="console">
+<div class="well-item" id="consoles">
     <form action="/consoles/{{ consoles.id }}" >
-        <button class="view" id="view"  type="submit" value="game_{{ games.id }}">
+        <button class="view" id="view"  type="submit" value="consoles_{{ consoles.id }}">
             <img class="{{ consoles.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
             <img class="item-img" src="{{ consoles.consoleimage_set.first.image }}" alt="No picture available" />
             <h4>{{ consoles.name }}</h4>

@@ -9,7 +9,7 @@ def get_search_history(id_val):
     console_history = []
     history = SearchHistory.objects.all().filter(user=id_val)
     for search in history:
-        if search.value != "":
+        if search.value != "" and search.value != "undefined":
             if search.category == "games":
                 game_history.append(search.value)
             if search.category == "consoles":
@@ -33,38 +33,21 @@ def find_fav(id):
                     fav_consoles.append(console.first())
     return fav_games, fav_consoles
 
-def find_orders(id):
-    orders = Order.objects.filter(user_id=id, ordered=True)
-    game_orders = []
-    console_orders = []
-    for ord in orders:
-        try:
-            if ord.game_id:
-                game_orders.append(ord)
-        except:
-            if ord.console_id:
-                console_orders.append(ord)
-    return game_orders, console_orders
-
 # Create your views here.
 def index(request):
     return renderTemplate(request, 'account/login.html')
 
 def get_account_id(request, id):
+    img = ProfileImage.objects.all().filter(user=id).first().image
     fav_games, fav_consoles = find_fav(id)
     game_history, console_history = get_search_history(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles,
-               'game_history': game_history, 'console_history': console_history}
+               'game_history': game_history, 'console_history': console_history, 'profile_image': img}
     return renderTemplate(request, 'account/index.html', context)
 
-def prev_orders(request, id):
-    game_orders, console_orders = find_orders(id)
-    context = {'account': get_object_or_404(User, pk=id), 'game_orders': game_orders,
-               'console_orders': console_orders}
-    return renderTemplate(request, 'account/prev_orders.html', context)
-
 def edit(request, id):
+    img = ProfileImage.objects.all().filter(user=id).first().image
     fav_games, fav_consoles = find_fav(id)
     account = get_object_or_404(User, pk=id)
     image = ProfileImage.objects.all().filter(user=id).first()
@@ -75,14 +58,14 @@ def edit(request, id):
         if form.is_valid() and img_form.is_valid():
             account = form.save()
             img = img_form.save()
-            profile_image = ProfileImage(image=request.POST['image'], account=account)
+            profile_image = ProfileImage(image=request.POST['image'], user=account)
             profile_image.save()
             return redirect('account-id-index', id=id)
     else:
         form = EditAccountForm(instance=account)
         img_form = EditImageForm(instance=image)
     context = {'account': account, 'fav_games': fav_games, 'fav_consoles': fav_consoles,
-               'form': form, 'id': id, 'img_form': img_form}
+               'form': form, 'id': id, 'img_form': img_form, 'profile_image': img}
     return renderTemplate(request, 'account/edit.html', context)
 
 

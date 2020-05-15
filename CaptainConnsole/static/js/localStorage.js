@@ -1,4 +1,5 @@
 
+
 function insertLocalStorage(key, fields) {
     const checkoutFields = {};
     fields.forEach(field => {

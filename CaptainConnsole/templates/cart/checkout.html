@@ -1,51 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{#  <body onload="displayInCheckout()">#}
-{#        <link rel="stylesheet" href="{%static 'css/cart/checkoutt.css' %}"/>#}
-{#        <h1>Checkout</h1>#}
-{#        <p>Step 1 out of 2</p>#}
-{#        <div class="checkout_info">#}
-{#            <div class="shipping_info">#}
-{#                <h3>Shipping information</h3>#}
-{#                 <input type="text" id="Country" placeholder="Country">#}
-{#                <input type="text" id="City" placeholder="City">#}
-{#                <input type="text" id="Streetname" placeholder="Streetname">#}
-{#                <input type="text" id="Housenumber" placeholder="Housenumber">#}
-{#                <input type="text" id="Postalcode" placeholder="Postalcode">#}
-{#            </div>#}
-{##}
-{#            <div class="card_info">#}
-{#                <h3>Card information</h3>#}
-{#                <input type="text" id="Cardholder" placeholder="Cardholder">#}
-{#                <input type="text" id="Cardnumber" placeholder="Cardnumber">#}
-{#                <input type="text" id="Expiration date" placeholder="Expiration date">#}
-{#                <input type="text" id="CVC" placeholder="CVC">#}
-{#            </div>#}
-{#            {%  include 'cart/checkout_cart.html' %}#}
-{#        </div>#}
-{##}
-{#        <div class="buttons" id="buttons">#}
-{#            <form action="{% url 'cart-index' %}">#}
-{#                <button type="submit" id="back_button" class="back_button"> Back</button>#}
-{#            </form>#}
-{##}
-{##}
-{#            <form action="{% url 'confirmation-index' %}" >#}
-{#                <button type="submit" id="next_button" class="next_button"> Next</button>#}
-{#            </form>#}
-{##}
-{##}
-{#        </div>#}
-{#    </body>#}
-{#    {%  include 'cart/checkout_cart.html' %}#}
-    <body onload="displayInCheckout()">
-        <form id="checkout-form" class="form form-horizontal" method="post">
+    <form id="checkout-form" class="form form-horizontal" method="post">
             {% csrf_token %}
-            <div class="checkout_info">
-                {{ form }}
-            </div>
-
+            {{ form }}
             <div class="buttons" id="buttons">
                 <form action="{% url 'cart-index' %}">
                     <button type="submit" id="back_button" class="captain_button"> Back</button>
@@ -53,7 +11,6 @@
                 <input type="submit" id="next_button" class="captain_button_primary" value="Next"/>
             </div>
         </form>
-    </body>
 
 
     <script src="{%static 'js/localStorage.js' %}"></script>

@@ -27,14 +27,8 @@ def index(request):
     if 'search_filter' in request.GET:
         user_id = request.user.id
         if user_id != None:
-            print("work goddammit")
-            print('prod_id' in request.GET)
             search_history(user_id, request.GET['hidden'], request.GET['search_filter'])
             if 'prod_id' in request.GET:
-                print("this isss proddddddd!!!!!!!")
-                print(request.GET['hidden'])
-                print(request.GET['prod_id'])
-                print()
                 add_favorite(user_id, request.GET['hidden'], request.GET['prod_id'])
         info = Games.objects.all()
         if 'sort_by' in request.GET:
@@ -61,8 +55,6 @@ def index(request):
             'description': x.description,
             'first_image': x.gameimage_set.first().image
         } for x in info]
-        #print("information is power")
-        #print(games)
         return JsonResponse({'data': games})
     context = {'indi_games': Games.objects.exclude(description=' '), 'games': Games.objects.all(),
                'consoles': ConsoleCategory.objects.all(), 'current_user_id': request.user.id, 'on_sale': {'On Sale'},

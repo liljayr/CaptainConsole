@@ -56,13 +56,12 @@ def success(request):
     cart_index = decoded_data.find("cart")
     cart_str = decoded_data[cart_index+5:-1]
     cart = json.loads(cart_str)
-    print(cart[0])
     user_id = request.user.id
     # býr til nýtt order
     user = User.objects.get(id=user_id)
     order = Order(user_id=user)
 
-    print(user_id)
+
     order.save()
     for item in cart:
         order_item = OrderItems()

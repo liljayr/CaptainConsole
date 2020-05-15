@@ -1,25 +1,23 @@
 
-function insertLocalStorage(inputFields, buttons) {
-    for (let i=0; i<buttons.length; i++) {
-        buttons[i].onclick = function () {
-            for (let j=0; j<inputFields.length; j++) {
-                let inputField = document.getElementById(inputFields[j]).value;
-                if (inputField) {
-                    localStorage.setItem(inputFields[j], inputField);
-                };
-            };
-        };
-    };
-};
+function insertLocalStorage(key, fields) {
+    const checkoutFields = {};
+    fields.forEach(field => {
+        let fieldValue = document.getElementById(`id_${field}`).value;
+        if (fieldValue) {
+            checkoutFields[field] = fieldValue;
+        }
+    })
+    localStorage.setItem(key, JSON.stringify(checkoutFields));
+}
+
+$('#checkout-form').submit(() => {
+    insertLocalStorage('delivery', checkout_fields);
+})
+
+$('#payment_form').submit(() => {
+    insertLocalStorage('card', card_fields);
+})
 
 
-
-
-
-
-let inp_check = ["Country", "City", "Streetname", "Housenumber", "Postalcode", "Cardholder", "Cardnumber", "Expiration date", "CVC"];
-let next_check = document.getElementById("next_button");
-let back_check = document.getElementById("back_button");
-let buttons_check = [next_check, back_check];
-
-insertLocalStorage(inp_check, buttons_check);
+const checkout_fields = ["country", "city", "street_name", "house_nr", "postal_code"];
+const card_fields = ["card_holder", "card_num", "Exp_date", "CVC"];

@@ -24,7 +24,7 @@ def checkout_address(request):
             address = form.save(commit=False)
             address.user = request.user
             address.save()
-            return renderTemplate(request, 'cart/checkout_payment.html')
+            return redirect('checkout-card')
     form = CheckoutAddressForm(instance=address)
     return renderTemplate(request, 'cart/checkout.html', {
         'form': form
@@ -33,12 +33,14 @@ def checkout_address(request):
 def checkout_card(request):
     if request.method == 'POST':
         form = CheckoutCardForm(data=request.POST)
-        if form.is_valid():
-            print("valid form")
-            return redirect('confirmation-index')
+        # TODO validation
+        #if form.is_valid():
+        #    print("valid form")
+        #    return redirect('confirmation-index')
+        return redirect('confirmation-index')
 
     form = CheckoutCardForm()
-    return renderTemplate(request, 'cart/checkout.html', {
+    return renderTemplate(request, 'cart/checkout_payment.html', {
      'form': form
     })
 

@@ -20,3 +20,18 @@
     padding: 3rem;
 }
 
+.checkout_item_count{
+    font-weight: bold;
+}
+
+.checkout_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cart_single_item{
+    display: flex;
+    flex-direction: row;
+
+}

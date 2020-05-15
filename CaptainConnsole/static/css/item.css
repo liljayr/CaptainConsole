@@ -1,34 +1,40 @@
+/* item sizing for most images */
 .item-img {
     flex: 1 100%;
     position:relative;
     width: 100%;
+    border-radius: 1rem;
 }
 
 .group {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
 }
-
-/*.item-detail-img {*/
-/*    width:*/
-/*}*/
 
 .items {
     display: grid;
-    /*grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );*/
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat( auto-fit, minmax(20rem, 1fr) );
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+}
+
+.group-above {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+    padding-right: 10rem;
+    padding-bottom: 3rem;
 }
 
 .multiple-choice {
     border-color: black;
     border:solid;
     border-width: thin;
-    padding:10px;
-    border-radius: 15px;
+    padding:1rem;
+    border-radius: 1rem;
+    background-color: #7DC4DF;
 }
 
 .well-item {
-    width: 200px;
+    width: 13rem;
     /*height:60%;
     object-fit: fill;*/
     border: none;
@@ -47,8 +53,6 @@
     border-radius: 15px;
 }
 
-/* TODO: Make a hover edit for all games and consoles*/
-
 .gameStyle {
     border: thin solid black;
 }
@@ -57,7 +61,6 @@
     /*flex: auto;*/
     display:flex;
 }
-
 
 .hide {
     display: none;
@@ -80,40 +83,52 @@
 }
 
 .dropbtn {
-  background-color: #C34AF540;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+    background-color: #C34AF540;
+    color: black;
+    padding: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    min-width: 10rem;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
+    min-width: 10rem;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 10rem;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content button {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    display: block;
+    width:100%;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content button:hover {background-color: #f1f1f1}
+.dropdown-content button:hover {
+    background-color: aliceblue;
+    display: block;
+    width:100%;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -122,7 +137,10 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #C34AF560;
+}
+.sortbtn {
+    border:none;
 }
 
 /* Change visibility and size of for sale*/
@@ -134,12 +152,13 @@
     flex: 1 100%;
     position:relative;
     display: inline;
-    max-width: 10%;
+    max-width: 20%;
 }
 
+/* Favorites star under each item */
 .star {
     visibility:hidden;
-    font-size:30px;
+    font-size:2rem;
     cursor:pointer;
 }
 .star:before {
@@ -151,3 +170,34 @@
    content: "\2605";
    position: relative;
 }
+
+.detail {
+    display: grid;
+    grid-template-columns: 1fr 30fr;
+}
+
+.item-detail-img {
+    width: 20rem;
+    padding: 2rem;
+    border-radius: 3rem;
+}
+
+.detail-image {
+    padding: 2rem;
+}
+
+.emulator-text {
+    font-weight: bold;
+}
+
+.cart_buttons {
+    border: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 1rem;
+    margin: 5rem;
+    background-color: #C34AF540;
+}
+/*.item-detail-img {*/
+/*    width:*/
+/*}*/

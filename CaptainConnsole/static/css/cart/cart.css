@@ -40,10 +40,6 @@
     width: 14rem;
 }
 
-.cart_div{
-    border: 2rem solid black;
-
-}
 
 .cart_single_item{
     display: flex;

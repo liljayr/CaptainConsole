@@ -5,11 +5,11 @@
     <form action="/games/{{ games.id }}" >
         <button class="view " id="view_{{ games.id }}"  type="submit" value="games_{{ games.id }}"> {# TODO: tell matta!!!! #}
 
-            <img class="{{ games.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
             <img class="item-img" src="{{ games.gameimage_set.first.image }}" alt="No picture available" />
 
             <h4>{{ games.name }}</h4>
             <h4>${{ games.price }}</h4>
+            <img class="{{ games.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
             <input type="checkbox" value="{{ games.id }}" class="star" name="star">
 
         </button>

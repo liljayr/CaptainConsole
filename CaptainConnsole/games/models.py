@@ -23,5 +23,7 @@ class Games(models.Model):
 class GameImage(models.Model):
     image = models.CharField(max_length=999)
     game = models.ForeignKey(Games, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.name
+
+class emulator(models.Model):
+    game = models.ForeignKey(Games, on_delete=models.CASCADE)
+    emulator = models.CharField(max_length=1000)

@@ -6,11 +6,35 @@
 
 .items {
     display: grid;
+    /*grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );*/
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.multiple-choice {
+    border-color: black;
+    border:solid;
+    padding:10px;
+    border-radius: 15px;
+}
+
 .well-item {
-    width: 100px;
+    width: 200px;
+    /*height:60%;
+    object-fit: fill;*/
+    border: none;
+    background-color: white;
+}
+
+.view {
+    border: none;
+    background-color: white;
+    padding:10px;
+}
+
+.view:hover {
+    background-color: antiquewhite;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 15px;
 }
 
 /* TODO: Make a hover edit for all games and consoles*/
@@ -98,5 +122,27 @@
 .True {
     flex: 1 100%;
     position:relative;
-    width: 100%;
+    /*width:100%;*/
+    display: inline;
+    max-width: 10%;
+    /*width: 50%;
+    height:30%;
+    position:absolute;
+    top: 0;
+    left: 0;*/
+}
+
+.star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+}
+.star:before {
+   content: "\2606";
+   position: relative;
+   visibility:visible;
+}
+.star:checked:before {
+   content: "\2605";
+   position: relative;
 }

@@ -78,12 +78,17 @@ function performSearch(sort_btn){
         csrfmiddlewaretoken: '{{ csrf_token }}',
         success: function(resp){
             let newHtml = resp.data.map(d => {
-                return `<div class="well-item" id="${hiddenValue}">
-                            <a href="/${hiddenValue}/${d.id}">
-                                <img class="item-img" src="${d.first_image}"/>
-                                <h4>${d.name}</h4>
-                                <h4>$${d.price}</h4>
-                            </a>
+                return `<link rel="stylesheet" href="{%static 'css/item.css' %}"/>
+                        <p class="hide" id="hidden_view" name="view" >{{ current_user_id }}</p>
+                        <div class="well-item" id="${hiddenValue}">
+                            <form action="/${hiddenValue}/${d.id}" >
+                                <button class="view " id="view_${d.id}"  type="submit" value="${hiddenValue}_${d.id}">
+                                    <img class="item-img" src="${d.first_image}" alt="No picture available"/>
+                                    <h4>${d.name}</h4>
+                                    <h4>$${d.price}</h4>
+                                    <input type="checkbox" value="${d.id}" class="star" name="star">
+                                </button>
+                            </form>
                         </div> `
             });
             $('.items').html(newHtml.join(''));

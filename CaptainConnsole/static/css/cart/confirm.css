@@ -14,24 +14,7 @@
     flex-direction: column;
 }
 
-.buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-right: 35rem;
-}
-
-.back_button{
-    border-radius: 3rem;
-    padding: 1rem;
-    background-color: none;
-    width: 14rem;
-}
-
-.confirm_button{
-    border-radius: 3rem;
-    padding: 1rem;
-    background-color: #5dbcd2c4;
-    width: 14rem;
-    margin-left: 2rem;
+.checkout_cart_container{
+    border: 0.1rem solid lightgray;
+    border;
 }

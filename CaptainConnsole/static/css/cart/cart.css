@@ -41,7 +41,8 @@
 }
 
 .cart_div{
-    border: black;
+    border: 2rem solid black;
+
 }
 
 .cart_single_item{

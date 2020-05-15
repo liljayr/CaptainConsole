@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#search-btn').on('click', function(e) {
         e.preventDefault();
-        performSearch(sort_btn='', s_val='');
+        performSearch();
     });
     $('.item').click(function() {
         performSearch();
@@ -33,19 +33,8 @@ function update_favorites() {
 };
 
 //values in quotes are id in template
-function performSearch(sort_btn, s_val ){
-    console.log(s_val);
-    let query = '';
-    if(s_val != ""){
-        query = s_val;
-        console.log("ifffff");
-        console.log(query);
-    }
-    else {
-        query = $('#search-box').val();
-        console.log("elseeeee");
-        console.log(query);
-    }
+function performSearch(sort_btn ){
+    let query = $('#search-box').val();
     let getConsoles = new Array();
     let type = new Array();
     let hiddenValue = $('#hidden')[0].innerText;
@@ -79,9 +68,7 @@ function performSearch(sort_btn, s_val ){
         type: 'GET',
         csrfmiddlewaretoken: '{{ csrf_token }}',
         success: function(resp){
-            console.log("grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
             let newHtml = resp.data.map(d => {
-                 console.log("grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
                 return `<link rel="stylesheet" href="{%static 'css/item.css' %}"/>
                         <p class="hide" id="hidden_view" name="view" >{{ current_user_id }}</p>
                         <div class="well-item" id="${hiddenValue}">

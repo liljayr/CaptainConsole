@@ -2,15 +2,22 @@ from django.db import models
 from django.contrib.auth.models import User
 from consoles.models import Consoles
 from games.models import Games
+from django_countries.fields import CountryField
 
 
 class Location(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True)
-    street_name = models.CharField(max_length=225, blank=True)
-    house_nr = models.FloatField(blank=True)
-    city = models.CharField(max_length=225, blank=True)
-    country = models.CharField(max_length=225, blank=True)
-    postal_code = models.FloatField(blank=True)
+    country = CountryField(blank_label='(Select country)')
+    city = models.CharField(max_length=225)
+    street_name = models.CharField(max_length=225)
+    house_nr = models.FloatField()
+    postal_code = models.CharField(max_length=225)
+
+class CardInfo(models.Model):
+    card_holder = models.CharField(max_length=225)
+    card_num = models.IntegerField()
+    Exp_date = models.DateField()
+    CVC = models.IntegerField()
 
 class Favorite(models.Model):
     user_id = models.FloatField()

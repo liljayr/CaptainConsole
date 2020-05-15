@@ -45,5 +45,14 @@ input{
     width: 14rem;
 }
 
+.captain-countrypicker {
+    margin-left: 10px;
+    width: 230px;
+}
+
+.input-container{
+    max-width: 220px;
+}
+
 
 

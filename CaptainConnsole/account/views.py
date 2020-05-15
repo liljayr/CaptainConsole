@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect
-
 from account.models import *
+from cart.forms.checkout_forms import CheckoutAddressForm
 from common.renderTemplates import renderTemplate
 from account.forms.account_form import EditAccountForm, EditImageForm
 
@@ -80,6 +80,8 @@ def edit(request, id):
         if form.is_valid() and img_form.is_valid():
             account = form.save()
             img = img_form.save()
+            profile_image = ProfileImage(image=request.POST['image'], account=account)
+            profile_image.save()
             return redirect('account-id-index', id=id)
     else:
         form = EditAccountForm(instance=account)
@@ -87,8 +89,5 @@ def edit(request, id):
     context = {'account': account, 'fav_games': fav_games, 'fav_consoles': fav_consoles,
                'form': form, 'id': id, 'img_form': img_form}
     return renderTemplate(request, 'account/edit.html', context)
-
-def login(request):
-    return renderTemplate(request, 'account/login.html')
 
 

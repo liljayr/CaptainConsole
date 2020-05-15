@@ -1,0 +1,13 @@
+.countrypicker.filter-option.flag {
+	padding-left: 20px;
+	margin-top: 3px;
+}
+
+.countrypicker.inline-flag {
+	margin-right: 5px;
+}
+
+.countrypicker.dropdown-menu.open {
+	padding: 0;
+}
+

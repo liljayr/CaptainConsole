@@ -10,7 +10,7 @@ function renderFormValue(label, value) {
 }
 
 function renderDeliveryInfo() {
-    const deliveryInfo = JSON.parse(localStorage.getItem('delivery'));
+    const deliveryInfo = JSON.parse(localStorage.getItem('delivery')) || {};
     const readableLabel = {
         "country": 'Country',
         "city": 'City',
@@ -26,7 +26,7 @@ function renderDeliveryInfo() {
 }
 
 function renderCardInfo() {
-    const cardInfo = JSON.parse(localStorage.getItem('card'));
+    const cardInfo = JSON.parse(localStorage.getItem('card')) || {};
     const readableLabel = {
         "card_holder": 'Card Holder',
         "card_num": 'Card Number',
@@ -55,9 +55,8 @@ function AddToDB() {
 
 AddToDB();
 
-$(document).ready(() => {
-    renderCardInfo();
-    renderDeliveryInfo();
-})
+renderCardInfo();
+renderDeliveryInfo();
+
 
 

@@ -22,4 +22,3 @@ $('#payment_form').submit(() => {
 
 const checkout_fields = ["country", "city", "street_name", "house_nr", "postal_code"];
 const card_fields = ["card_holder", "card_num", "Exp_date", "CVC"];
-

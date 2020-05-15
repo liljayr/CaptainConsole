@@ -22,7 +22,7 @@
 
         </div>
 
-        {% include 'cart/checkout_cart.html' %}
+
     </div>
 
         <div class="buttons">
@@ -30,8 +30,10 @@
             <input type="submit" class="back_button" id="back_button_check" value="Back" />
         </form>
 
-        <form action="{% url 'success-index' %}" >
-            <button onclick="window.localStorage.clear();" type="submit" id="confirm_button" class="confirm_button"> Confirm</button>
+        <form action="{% url 'success-index' %}" method="post">{% csrf_token %}
+
+            <input type="hidden" name="cart" id="hidden_cart">
+            <button type="submit" id="confirm_button" class="confirm_button"> Confirm</button>
         </form>
 
 

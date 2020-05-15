@@ -5,9 +5,20 @@ from common.renderTemplates import renderTemplate
 from account.forms.account_form import EditAccountForm, EditImageForm
 
 def get_search_history(id_val):
-    history = SearchHistory.filter(user_id=id_val)
-    game_history = history.filter(category='games')
-    console_history = history.filter(category='consoles')
+    game_history = []
+    console_history = []
+    history = SearchHistory.objects.all().filter(user=id_val)
+    for search in history:
+        if search.value != "":
+            if search.category == "games":
+                game_history.append(search.value)
+                print(search.value)
+            if search.category == "consoles":
+                console_history.append(search.value)
+                print(search.value)
+    print("game search")
+    print(game_history);
+    print(console_history)
     return game_history, console_history
 
 def find_fav(id):
@@ -16,20 +27,19 @@ def find_fav(id):
     fav_games = []
     fav_consoles = []
     for prod in fav:
-
-        try:
-            if prod.game_id:
-                print("lalalalaa game")
-                g_id = prod.game_id
-                game = Games.objects.all().filter(pk=g_id)
-                #print(game.value)
+        if prod.game_id != -1:
+            print(prod.game_id)
+            print("lalalalaa game")
+            g_id = prod.game_id
+            game = Games.objects.all().filter(pk=g_id)
+            if game.first() != None:
                 fav_games.append(game.first())
-        except:
-            if prod.console_id:
-                print("cons")
-                c_id = prod.console_id
-                console = Consoles.objects.all().filter(pk=c_id)
-                fav_consoles.append(console.first())
+            else:
+                if prod.console_id != -1:
+                    print("cons")
+                    c_id = prod.console_id
+                    console = Consoles.objects.all().filter(pk=c_id)
+                    fav_consoles.append(console.first())
     print(fav_consoles)
     print(fav_games)
     return fav_games, fav_consoles
@@ -56,9 +66,6 @@ def get_account_id(request, id):
     game_history, console_history = get_search_history(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles,
-
-               'search_history': SearchHistory.objects.all().filter(user=id)}
-
                'game_history': game_history, 'console_history': console_history}
 
     return renderTemplate(request, 'account/index.html', context)

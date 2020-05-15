@@ -19,11 +19,14 @@ class Favorite(models.Model):
 
 class Order(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    game_id = models.ForeignKey(Games, on_delete=models.CASCADE, blank=True)
-    console_id = models.ForeignKey(Consoles, on_delete=models.CASCADE, blank=True)
-    ordered = models.BooleanField()
-    amount = models.FloatField() #TODO: default value 1
-    order_nr = models.FloatField()
+
+
+class OrderItems(models.Model):
+    order = models.ForeignKey('Order', null=True, blank=True, on_delete=models.CASCADE)
+    game_id = models.ForeignKey(Games, on_delete=models.CASCADE, blank=True, null=True)
+    console_id = models.ForeignKey(Consoles, on_delete=models.CASCADE, blank=True, null=True)
+    amount = models.FloatField()  # TODO: default value 1
+
 
 class ProfileImage(models.Model):
     image = models.CharField(max_length=999)

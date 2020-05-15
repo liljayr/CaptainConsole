@@ -13,8 +13,21 @@ for (let i=0; i<localStorage.length; i++) {
 }
 
 
-let clear_button = document.getElementById("confirm_button")
-clear_button.onclick = function () {
-    localStorage.clear()
-}
+function AddToDB() {
+    // ADD TO DB
+    let cart = localStorage.getItem("cart");
+    let hidden_cart = document.getElementById("hidden_cart");
+    hidden_cart.value = cart;
+    // CLEAR LOCALSTORAGE
+    //let clear_button = document.getElementById("confirm_button")
+    //clear_button.onclick = function () {
+    //window.localStorage.clear()
+    //};
+};
+
+AddToDB();
+
+
+
+
 

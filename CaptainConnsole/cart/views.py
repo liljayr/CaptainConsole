@@ -34,7 +34,6 @@ def checkout_card(request):
     if request.method == 'POST':
         form = CheckoutCardForm(data=request.POST)
         if form.is_valid():
-            print("valid form")
             return redirect('confirmation-index')
 
     form = CheckoutCardForm()

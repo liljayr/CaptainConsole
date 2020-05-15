@@ -10,9 +10,6 @@ $(document).ready(function(){
         performSearch();
     });
     $('.sortbtn').click(function() {
-        console.log("checking stuff");
-        console.log($(this));
-        console.log($(this)[0].id);
         let btnvalue=$(this)[0].id;
         performSearch(sort_btn=btnvalue);
     })
@@ -43,10 +40,6 @@ function performSearch(sort_btn ){
     let on_sale = 'False';
     let prod_id = update_favorites();
     $('#consoleCatG :checked').each(function(index) {
-        //console.log("Sorting games!!!!");
-        //consoles = consoles
-        //console.log($(this));
-        //console.log(this.value);
         getConsoles[count] = this.value;
         count = count + 1;
     });
@@ -57,7 +50,6 @@ function performSearch(sort_btn ){
     $('.on-sale :checked').each(function(index) {
         on_sale = 'True';
     })
-    //console.log(consoles);
     let types = '';
     let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles + '&type=' + type +
         '&sort_by=' + sort_btn + '&on_sale=' + on_sale + '&hidden=' + hiddenValue +  '&prod_id=' + prod_id;
@@ -83,7 +75,6 @@ function performSearch(sort_btn ){
                         </div> `
             });
             $('.items').html(newHtml.join(''));
-            // $('#search-box').val('');
         },
         error: function (xhr, status, error) {
             // TODO: Show toastr

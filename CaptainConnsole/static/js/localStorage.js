@@ -13,10 +13,6 @@ function insertLocalStorage(inputFields, buttons) {
 };
 
 
-
-
-
-
 let inp_check = ["Country", "City", "Streetname", "Housenumber", "Postalcode", "Cardholder", "Cardnumber", "Expiration date", "CVC"];
 let next_check = document.getElementById("next_button");
 let back_check = document.getElementById("back_button");

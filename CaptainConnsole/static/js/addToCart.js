@@ -75,7 +75,6 @@ add_to_cart.onclick = function() {
 
 
 function addToDB() {
-    console.log("DB FUNC");
 };
 
 $(document).ready(addToCart());

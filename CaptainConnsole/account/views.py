@@ -51,11 +51,12 @@ def index(request):
     return renderTemplate(request, 'account/login.html')
 
 def get_account_id(request, id):
+    img = ProfileImage.objects.all().filter(user=id).first().image
     fav_games, fav_consoles = find_fav(id)
     game_history, console_history = get_search_history(id)
     context = {'account': get_object_or_404(User, pk=id), 'game': Games.objects.all(),
                'fav_games': fav_games, 'fav_consoles': fav_consoles,
-               'game_history': game_history, 'console_history': console_history}
+               'game_history': game_history, 'console_history': console_history, 'profile_image': img}
     return renderTemplate(request, 'account/index.html', context)
 
 def prev_orders(request, id):

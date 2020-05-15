@@ -21,21 +21,14 @@ $(document).ready(function(){
 function update_favorites() {
     let favorite_list = [];
     let prod_id = -1;
-    $('#game :checked').each(function(index){
+    $('#games :checked').each(function(index){
         prod_id = this.value;
         favorite_list.push(prod_id);
-        console.log(favorite_list);
-        console.log(this.value);
-
     });
-    $('#console :checked').each(function(index){
+    $('#consoles :checked').each(function(index){
         prod_id = this.value;
         favorite_list.push(prod_id);
-        console.log(favorite_list);
-        console.log(this.value);
-
     });
-
     return prod_id;
 };
 
@@ -49,8 +42,6 @@ function performSearch(sort_btn){
     let count2 = 0;
     let on_sale = 'False';
     let prod_id = update_favorites();
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-    console.log(prod_id)
     $('#consoleCatG :checked').each(function(index) {
         //console.log("Sorting games!!!!");
         //consoles = consoles

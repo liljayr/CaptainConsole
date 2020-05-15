@@ -19,10 +19,10 @@ function AddToDB() {
     let hidden_cart = document.getElementById("hidden_cart");
     hidden_cart.value = cart;
     // CLEAR LOCALSTORAGE
-    //let clear_button = document.getElementById("confirm_button")
-    //clear_button.onclick = function () {
-    //window.localStorage.clear()
-    //};
+    let clear_button = document.getElementById("confirm_button");
+    clear_button.onclick = function () {
+    window.localStorage.clear();
+    };
 };
 
 AddToDB();

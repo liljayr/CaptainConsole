@@ -27,7 +27,7 @@
 
         <div class="buttons">
         <form action="{% url 'checkout-index' %}">
-            <input type="submit" class="back_button" id="back_button_check" value="Back" />
+            <input type="submit" class="back_button" id="back_button_check" value="Back" onclick="return localStorage.clear()" />
         </form>
 
         <form action="{% url 'success-index' %}" method="post">{% csrf_token %}

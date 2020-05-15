@@ -4,6 +4,15 @@
     width: 100%;
 }
 
+.group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*.item-detail-img {*/
+/*    width:*/
+/*}*/
+
 .items {
     display: grid;
     /*grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );*/
@@ -13,6 +22,7 @@
 .multiple-choice {
     border-color: black;
     border:solid;
+    border-width: thin;
     padding:10px;
     border-radius: 15px;
 }
@@ -32,7 +42,7 @@
 }
 
 .view:hover {
-    background-color: antiquewhite;
+    background-color: #C34AF520;
     box-shadow: 2px 2px 5px gray;
     border-radius: 15px;
 }
@@ -70,7 +80,7 @@
 }
 
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #C34AF540;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -115,6 +125,7 @@
   background-color: #3e8e41;
 }
 
+/* Change visibility and size of for sale*/
 .False {
     display: none;
 }
@@ -122,14 +133,8 @@
 .True {
     flex: 1 100%;
     position:relative;
-    /*width:100%;*/
     display: inline;
     max-width: 10%;
-    /*width: 50%;
-    height:30%;
-    position:absolute;
-    top: 0;
-    left: 0;*/
 }
 
 .star {

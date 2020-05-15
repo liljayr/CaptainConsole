@@ -33,7 +33,7 @@
             {% for item in game_history %}
                 <div class="search_result" >
                     <p class="hide" id="hidden" value="consoles">games</p>
-                    <a class="history" href="/games" onclick="performSearch(sort_btn='', s_val='{{ item }}')">
+                    <a class="history" href="/games" >
                         <h4 class="search_value" >{{ item }} </h4>
                     </a>
                 </div>
@@ -41,14 +41,13 @@
             {% for item in console_history %}
                 <div class="search_result" >
                     <p class="hide" id="hidden" value="consoles">consoles</p>
-                        <a href="/consoles" onclick="performSearch(sort_btn='', s_val='{{ item }}')">
+                        <a href="/consoles" >
                             <h4 class="search_value" >{{ item }} </h4>
                         </a>
                 </div>
             {% endfor %}
         </div>
     </div>
-
 </div>
 
 

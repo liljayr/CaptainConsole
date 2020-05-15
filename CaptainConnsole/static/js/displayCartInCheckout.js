@@ -18,9 +18,9 @@ function displayInCheckout() {
                 total_amount += amount;
                 total_price += price * amount;
 
-                items_div.innerHTML += `<p>` + name + `</p>
-                                        <p>` + amount + `</p>
-                                        <p>$` + price + `</p>`
+                items_div.innerHTML += `<div class="name_cart">` + name + `</div>
+                                        <div class="amount_cart">` + amount + `</div>
+                                        <div class="price_cart">$` + price + `</div>`
                 if (i == (cart.length) - 1) {
                     let total_price_plus_shipping = total_price + 10;
                     separated_price_div.innerHTML += `<p>Subtotal: $` + total_price + `</p>

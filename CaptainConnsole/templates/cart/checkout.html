@@ -2,25 +2,16 @@
 {% load static %}
 {% block content %}
     <body onload="displayInCheckout()">
-        <form class="form form-horizontal" method="post" action="{% url 'confirmation-index' %}">
+        <form id="checkout-form" class="form form-horizontal" method="post">
             {% csrf_token %}
             {{ form }}
-            <button type="submit" id="next_button" class="next_button"> Next</button>
-            <!--<input type="submit" id="next_button" class="next_button" value="Next"/>-->
+            <div class="buttons" id="buttons">
+                <form action="{% url 'cart-index' %}">
+                    <button type="submit" id="back_button" class="captain_button"> Back</button>
+                </form>
+                <input type="submit" id="next_button" class="captain_button_primary" value="Next"/>
+            </div>
         </form>
-
-        <div class="buttons" id="buttons">
-            <form action="{% url 'cart-index' %}">
-                <button type="submit" id="back_button" class="back_button"> Back</button>
-            </form>
-
-
-    {#        <form action="{% url 'confirmation-index' %}" >#}
-    {#            <button type="submit" id="next_button" class="next_button"> Next</button>#}
-    {#        </form>#}
-
-
-        </div>
     </body>
 
 

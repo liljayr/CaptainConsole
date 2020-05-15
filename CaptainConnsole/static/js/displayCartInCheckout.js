@@ -8,38 +8,34 @@ function displayInCheckout() {
             let separated_price_div = document.getElementById("separated_price");
             let total_price_div = document.getElementById("checkout_total");
             let total_price = 0;
+            let total_amount = 0;
 
-            for (let i=0; i<cart.length;i++) {
+            for (let i = 0; i < cart.length; i++) {
                 let product_info = cart[i].product_id.split("_");
                 let name = product_info[2];
                 let price = JSON.parse(product_info[3]);
                 let amount = JSON.parse(cart[i].amount);
-
+                total_amount += amount;
                 total_price += price * amount;
 
                 items_div.innerHTML += `<p>` + name + `</p>
                                         <p>` + amount + `</p>
                                         <p>$` + price + `</p>`
-                if (i == (cart.length)-1) {
+                if (i == (cart.length) - 1) {
                     let total_price_plus_shipping = total_price + 10;
-                    separated_price_div.innerHTML += `<p>Subtotal: $` + total_price +`</p>
-                                                     <p>Shipping: $`+ 10.0 +`</p>`
+                    separated_price_div.innerHTML += `<p>Subtotal: $` + total_price + `</p>
+                                                     <p>Shipping: $` + 10.0 + `</p>`
                     total_price_div.innerHTML += `<div class="total_price">
                                                 <p>Total price: $` + total_price_plus_shipping + `</p>
                                           </div>`
-
-
-
+                    item_count_div.innerHTML += `<p>Items: `+ total_amount +`</p>`
                 };
-            }
+            };
         }
-
-
 
 };
 
-
-let button = document.getElementById("");
-button.onclick = function() {
-    $(document).ready(displayInCheckout());
-}
+let checkout_button = document.getElementById("checkout_button");
+checkout_button.onclick = function() {
+    displayInCheckout();
+    }

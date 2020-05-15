@@ -1,4 +1,4 @@
-from account.models import Favorite
+from account.models import Favorite, SearchHistory
 
 
 def sort_items(sort_by, info):
@@ -20,6 +20,12 @@ def add_favorite(id, hidden, prod_id):
         print("CONSOLE JAJAJAJA")
         favorite = Favorite(user_id=id, console_id=prod_id)
         favorite.save()
+
+def search_history(id, hidden, search):
+    print("yippikayyay!!!!")
+    print(id)
+    history = SearchHistory(user=id, category=hidden, value=search)
+    history.save()
 
 def filter_by_category(category, info):
     if category != "":

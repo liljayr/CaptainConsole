@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 
 from common.renderTemplates import renderTemplate
-from common.views import sort_items, filter_by_category, add_favorite
+from common.views import sort_items, filter_by_category, add_favorite, search_history
 from consoles.models import Consoles, ConsoleCategory
 
 
@@ -17,6 +17,7 @@ def index(request):
         if user_id != None:
             print("work goddammit")
             print('prod_id' in request.GET)
+            search_history(user_id, request.GET['hidden'], request.GET['search_filter'])
             if 'prod_id' in request.GET:
                 print("this isss proddddddd!!!!!!!")
                 print(request.GET['hidden'])

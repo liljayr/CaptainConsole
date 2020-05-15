@@ -37,5 +37,5 @@ function displayInCart() {
 
 let button = document.getElementById("cart_img");
 button.onclick = function() {
-    $(document).ready(displayInCart);
+    $(document).ready(displayInCart());
 }

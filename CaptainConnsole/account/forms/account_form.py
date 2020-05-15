@@ -5,8 +5,6 @@ from account.models import User, ProfileImage, SearchHistory
 
 
 class EditAccountForm(ModelForm):
-   # image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
-
     class Meta:
         model = User
         exclude = ['id', 'password', 'last_login', 'is_staff', 'is_superuser', 'is_active', 'date_joined', 'groups', 'user_permissions']

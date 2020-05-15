@@ -2,8 +2,9 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/item.css' %}">
-    <div class="scrollbox">
-        <div class="scroll">
+    <div>
+{#    <div class="scrollbox">#}
+{#        <div class="scroll">#}
             <div>
             <img class="{{ console.onSale }}" src="https://w0.pngwave.com/png/252/114/sales-garage-sale-discounts-and-allowances-shopping-sale-sticker-png-clip-art.png"/>
                 {% for console_image in console.consoleimage_set.all %}
@@ -20,6 +21,7 @@
             <form action="#">
             <button type="button" value="console_{{ console.id }}_{{ console.name }}_{{ console.price }}" id="add_button_games" class="cart_buttons"> Add to cart</button>
         </form>
-        </div>
+{#        </div>#}
+{#    </div>#}
     </div>
 {% endblock %}

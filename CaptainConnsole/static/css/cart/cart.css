@@ -13,7 +13,7 @@
 
 .cart_items{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .table {
@@ -40,12 +40,27 @@
     width: 14rem;
 }
 
+.cart_div{
+    border: .1rem solid black;
 
+}
 .cart_single_item{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 100%;
+}
 
+.name_cart{
+    width: 30%;
+}
+
+.amount_cart{
+    width: 30%;
+}
+
+.price_cart{
+    width: 30%;
 }
 
 .name_cart{

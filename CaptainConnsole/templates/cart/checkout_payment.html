@@ -1,19 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <p>hellluu</p>
-    <form class="form form-horizontal" method="post">
+    <form id="payment_form" class="form form-horizontal" method="post">
         {% csrf_token %}
-        <p>form gang</p>
         {{ form }}
-        <input type="submit" id="next_button" class="next_button" value="Next"/>
-    </form>
-
-
-    <div class="buttons" id="buttons">
+        <div class="buttons" id="buttons">
         <form action="{% url 'cart-index' %}">
-            <button type="submit" id="back_button" class="back_button"> Back</button>
+            <button type="submit" id="back_button" class="captain_button"> Back</button>
         </form>
+        <input type="submit" id="next_button" class="captain_button_primary" value="Next"/>
+    </form>
 
 
 {#        <form action="{% url 'confirmation-index' %}" >#}

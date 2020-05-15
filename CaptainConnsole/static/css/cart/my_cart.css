@@ -16,26 +16,6 @@
     mso-cellspacing: 5rem;
 }
 
-.buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.prev_order_button{
-    border-radius: 3rem;
-    padding: 1rem;
-    background-color: #5dbcd2c4;
-    width: 14rem;
-}
-
-.checkout_button{
-    border-radius: 3rem;
-    padding: 1rem;
-    background-color: #5dbcd2c4;
-    width: 14rem;
-}
-
 .cart{
     border: black;
 }

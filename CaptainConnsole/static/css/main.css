@@ -17,3 +17,25 @@ html {
     overflow: hidden;
     overflow-y: auto;
 }
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-right: 35rem;
+}
+
+.captain_button {
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: initial;
+    width: 14rem;
+}
+
+.captain_button_primary {
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: #5dbcd2c4;
+    width: 14rem;
+    margin-left: 2rem;
+}

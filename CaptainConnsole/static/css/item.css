@@ -89,7 +89,7 @@
     margin-left: 2rem;
     margin-right: 2rem;
     font-size: 16px;
-    border: none;
+    border: thin black;
     border-radius: 2rem;
     cursor: pointer;
     min-width: 10rem;
@@ -184,6 +184,16 @@
 
 .detail-image {
     padding: 2rem;
+}
+
+.emulator {
+    width:600px;
+    height:450px;
+    border:none;
+    allowfullscreen:true;
+    webkitallowfullscreen:true;
+    mozallowfullscreen:true;
+    scrolling:no;
 }
 
 .emulator-text {

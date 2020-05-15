@@ -16,7 +16,7 @@
             <p>{{ game.description }}</p>
             {% for em in game.emulator_set.all %}
                 <p class="emulator-text">Emulator #{{ em.id }}</p>
-                <iframe src="{{ em.emulator }}" class="emulator" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+                <iframe src="{{ em.emulator }}" class="emulator"></iframe>
             {% endfor %}
         </div>
     </div>

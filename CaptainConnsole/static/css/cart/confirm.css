@@ -50,7 +50,7 @@
 
 .item_checkout{
     width: 30%;
-    justify-content: center;
+    text-align: center;
 }
 
 .checkout_total{

@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#search-btn').on('click', function(e) {
         e.preventDefault();
-        performSearch();
+        performSearch(sort_btn='', s_val='');
     });
     $('.item').click(function() {
         performSearch();
@@ -14,8 +14,10 @@ $(document).ready(function(){
         console.log($(this));
         console.log($(this)[0].id);
         let btnvalue=$(this)[0].id;
-        performSearch(btnvalue);
+        performSearch(sort_btn=btnvalue);
     })
+
+
 });
 
 function update_favorites() {
@@ -33,8 +35,19 @@ function update_favorites() {
 };
 
 //values in quotes are id in template
-function performSearch(sort_btn){
-    let query = $('#search-box').val();
+function performSearch(sort_btn, s_val ){
+    console.log(s_val);
+    let query = '';
+    if(s_val != ""){
+        query = s_val;
+        console.log("ifffff");
+        console.log(query);
+    }
+    else {
+        query = $('#search-box').val();
+        console.log("elseeeee");
+        console.log(query);
+    }
     let getConsoles = new Array();
     let type = new Array();
     let hiddenValue = $('#hidden')[0].innerText;

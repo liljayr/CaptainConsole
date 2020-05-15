@@ -12,13 +12,8 @@ def get_search_history(id_val):
         if search.value != "":
             if search.category == "games":
                 game_history.append(search.value)
-                print(search.value)
             if search.category == "consoles":
                 console_history.append(search.value)
-                print(search.value)
-    print("game search")
-    print(game_history);
-    print(console_history)
     return game_history, console_history
 
 def find_fav(id):

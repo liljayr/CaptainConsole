@@ -15,6 +15,7 @@ function displayInCart() {
                 let amount = JSON.parse(cart[i].amount);
 
                 total_price += price * amount;
+                let total_price2 = total_price.toFixed(2);
 
                 cart_items.innerHTML += `<div class="cart_single_item">
                                                 <div class="item_info">` + name + `</div>
@@ -23,7 +24,7 @@ function displayInCart() {
                                             </div>`
                 if (i == (cart.length)-1) {
                     cart_div.innerHTML += `<div class="total_price">
-                                                <p class="total_price_cart">Total price: $` + total_price + `</p>
+                                                <p class="total_price_cart">Total price: $` + total_price2 + `</p>
                                           </div>`
 
                 };

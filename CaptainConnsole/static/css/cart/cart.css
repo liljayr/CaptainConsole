@@ -4,13 +4,17 @@
 
 .cart_header{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
     background-color: #5dbcd2c4;
     font-size: large;
     font-weight: bold;
 }
 
-
+.cart_items{
+    display: flex;
+    flex-direction: row;
+}
 
 .table {
     mso-cellspacing: 5rem;
@@ -36,8 +40,27 @@
     width: 14rem;
 }
 
-.cart{
+.cart_div{
     border: black;
+}
+
+.cart_single_item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.name_cart{
+    width: 30%;
+}
+
+.amount_cart{
+    width: 30%;
+}
+
+.price_cart{
+    width: 30%;
 }
 
 

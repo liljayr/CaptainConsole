@@ -17,13 +17,13 @@ function displayInCart() {
                 total_price += price * amount;
 
                 cart_items.innerHTML += `<div class="cart_single_item">
-                                                <p>` + name + `</p>
-                                                <p>` + amount + `</p>
-                                                <p>$` + price + `</p>
+                                                <div class="name_cart">` + name + `</div>
+                                                <div class="amount_cart">` + amount + `</div>
+                                                <div class="price_cart">$` + price + `</div>
                                             </div>`
                 if (i == (cart.length)-1) {
                     cart_div.innerHTML += `<div class="total_price">
-                                                <p>Total price: $` + total_price + `</p>
+                                                <p class="total_price_cart">Total price: $` + total_price + `</p>
                                           </div>`
 
                 };

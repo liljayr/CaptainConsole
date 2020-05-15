@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'sales.apps.SalesConfig',
     'about_us.apps.AboutUsConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'django_countries'
     ]
 
 

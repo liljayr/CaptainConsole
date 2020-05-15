@@ -53,8 +53,6 @@ function performSearch(sort_btn ){
     let types = '';
     let comp_url = '/' + hiddenValue + '?search_filter=' + query + '&check=' + getConsoles + '&type=' + type +
         '&sort_by=' + sort_btn + '&on_sale=' + on_sale + '&hidden=' + hiddenValue +  '&prod_id=' + prod_id;
-    console.log("url check");
-    console.log(comp_url);
     $.ajax({
         url: comp_url,
         type: 'GET',

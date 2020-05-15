@@ -16,8 +16,6 @@ $(document).ready(function(){
         let btnvalue=$(this)[0].id;
         performSearch(sort_btn=btnvalue);
     })
-
-
 });
 
 function update_favorites() {
@@ -81,7 +79,9 @@ function performSearch(sort_btn, s_val ){
         type: 'GET',
         csrfmiddlewaretoken: '{{ csrf_token }}',
         success: function(resp){
+            console.log("grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
             let newHtml = resp.data.map(d => {
+                 console.log("grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
                 return `<link rel="stylesheet" href="{%static 'css/item.css' %}"/>
                         <p class="hide" id="hidden_view" name="view" >{{ current_user_id }}</p>
                         <div class="well-item" id="${hiddenValue}">

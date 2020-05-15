@@ -3,10 +3,14 @@
 }
 
 .cart_header{
+    display: flex;
+    flex-direction: column;
     background-color: #5dbcd2c4;
     font-size: large;
     font-weight: bold;
 }
+
+
 
 .table {
     mso-cellspacing: 5rem;

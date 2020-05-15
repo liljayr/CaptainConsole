@@ -1,9 +1,9 @@
 function displayInCart() {
         let cart_str = localStorage.getItem("cart");
-        console.log(cart_str);
         if (cart_str != null) {
             let cart = JSON.parse(cart_str);
             let cart_div = document.getElementById("cart_div");
+            let cart_items = document.getElementById("cart_items");
             let total_price = 0;
 
             for (let i=0; i<cart.length;i++) {
@@ -16,15 +16,12 @@ function displayInCart() {
 
                 total_price += price * amount;
 
-                cart_div.innerHTML += `<div class="cart_items">
-                                            <p>` + name + `</p>
-                                            <p>` + amount + `</p>
-                                            <p>$` + price + `</p>
-                                       </div>
-                                       <div class="total_price">
-                                            <p>Total price: $` + total_price + `</p>
-                                       </div>`
-                if (i == cart.length) {
+                cart_items.innerHTML += `<div class="cart_single_item">
+                                                <p>` + name + `</p>
+                                                <p>` + amount + `</p>
+                                                <p>$` + price + `</p>
+                                            </div>`
+                if (i == (cart.length)-1) {
                     cart_div.innerHTML += `<div class="total_price">
                                                 <p>Total price: $` + total_price + `</p>
                                           </div>`
@@ -39,7 +36,6 @@ function displayInCart() {
 
 
 let button = document.getElementById("cart_img");
-console.log(button);
 button.onclick = function() {
     $(document).ready(displayInCart);
 }

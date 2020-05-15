@@ -17,9 +17,9 @@ function displayInCart() {
                 total_price += price * amount;
 
                 cart_items.innerHTML += `<div class="cart_single_item">
-                                                <div class="name_cart">` + name + `</div>
-                                                <div class="amount_cart">` + amount + `</div>
-                                                <div class="price_cart">$` + price + `</div>
+                                                <div class="item_info">` + name + `</div>
+                                                <div class="item_info">` + amount + `</div>
+                                                <div class="item_info">$` + price + `</div>
                                             </div>`
                 if (i == (cart.length)-1) {
                     cart_div.innerHTML += `<div class="total_price">

@@ -23,14 +23,15 @@
 .buttons{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    padding-right: 0;
 }
 
 .prev_order_button{
     border-radius: 3rem;
-    padding: 1rem;
     background-color: #5dbcd2c4;
     width: 14rem;
+
 }
 
 .checkout_button{
@@ -51,29 +52,14 @@
     width: 100%;
 }
 
-.name_cart{
+.amount_info{
     width: 30%;
 }
 
-.amount_cart{
-    width: 30%;
-}
 
-.price_cart{
-    width: 30%;
-}
 
-.name_cart{
-    width: 30%;
-}
 
-.amount_cart{
-    width: 30%;
-}
 
-.price_cart{
-    width: 30%;
-}
 
 
 
